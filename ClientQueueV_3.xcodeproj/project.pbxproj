@@ -99,10 +99,10 @@
 		09EBDE6526BB2BD1003A060B /* ClientQueueV_3 */ = {
 			isa = PBXGroup;
 			children = (
+				09EBDE9626BB30A1003A060B /* Views */,
 				09EBDE6626BB2BD1003A060B /* AppDelegate.swift */,
 				09EBDE6826BB2BD1003A060B /* SceneDelegate.swift */,
 				09EBDE6A26BB2BD1003A060B /* LoginViewController.swift */,
-				09EBDE6C26BB2BD1003A060B /* Main.storyboard */,
 				09EBDE6F26BB2BD1003A060B /* Assets.xcassets */,
 				09EBDE7126BB2BD1003A060B /* LaunchScreen.storyboard */,
 				09EBDE7426BB2BD1003A060B /* Info.plist */,
@@ -126,6 +126,14 @@
 				09EBDE8A26BB2BD2003A060B /* Info.plist */,
 			);
 			path = ClientQueueV_3UITests;
+			sourceTree = "<group>";
+		};
+		09EBDE9626BB30A1003A060B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				09EBDE6C26BB2BD1003A060B /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
