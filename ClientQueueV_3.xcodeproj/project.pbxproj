@@ -15,6 +15,8 @@
 		09EBDE7326BB2BD1003A060B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09EBDE7126BB2BD1003A060B /* LaunchScreen.storyboard */; };
 		09EBDE7E26BB2BD2003A060B /* ClientQueueV_3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDE7D26BB2BD2003A060B /* ClientQueueV_3Tests.swift */; };
 		09EBDE8926BB2BD2003A060B /* ClientQueueV_3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDE8826BB2BD2003A060B /* ClientQueueV_3UITests.swift */; };
+		09EBDE9E26BC2DB6003A060B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDE9D26BC2DB6003A060B /* LoginView.swift */; };
+		09EBDEA026BC2DD3003A060B /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09EBDE9F26BC2DD3003A060B /* LoginView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		09EBDE8426BB2BD2003A060B /* ClientQueueV_3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClientQueueV_3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09EBDE8826BB2BD2003A060B /* ClientQueueV_3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientQueueV_3UITests.swift; sourceTree = "<group>"; };
 		09EBDE8A26BB2BD2003A060B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09EBDE9D26BC2DB6003A060B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		09EBDE9F26BC2DD3003A060B /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				09EBDE6C26BB2BD1003A060B /* Main.storyboard */,
+				09EBDE9D26BC2DB6003A060B /* LoginView.swift */,
+				09EBDE9F26BC2DD3003A060B /* LoginView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -257,6 +263,7 @@
 			files = (
 				09EBDE7326BB2BD1003A060B /* LaunchScreen.storyboard in Resources */,
 				09EBDE7026BB2BD1003A060B /* Assets.xcassets in Resources */,
+				09EBDEA026BC2DD3003A060B /* LoginView.xib in Resources */,
 				09EBDE6E26BB2BD1003A060B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +291,7 @@
 			files = (
 				09EBDE6B26BB2BD1003A060B /* LoginViewController.swift in Sources */,
 				09EBDE6726BB2BD1003A060B /* AppDelegate.swift in Sources */,
+				09EBDE9E26BC2DB6003A060B /* LoginView.swift in Sources */,
 				09EBDE6926BB2BD1003A060B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

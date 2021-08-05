@@ -15,8 +15,33 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Boc-nz-HT7" customClass="LoginView" customModule="ClientQueueV_3" customModuleProvider="target">
+                                <rect key="frame" x="20" y="103" width="374" height="140"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="hGe-c9-7eL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textFieldBorderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="txtFldBWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cRadius">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Boc-nz-HT7" secondAttribute="trailing" constant="20" id="KDD-pC-nJt"/>
+                            <constraint firstItem="Boc-nz-HT7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TTk-RO-qcE"/>
+                            <constraint firstItem="Boc-nz-HT7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="jvg-kP-K7a"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Q1T-4m-ZhI"/>
                 </viewController>
