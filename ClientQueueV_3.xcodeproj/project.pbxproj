@@ -18,6 +18,8 @@
 		09EBDE9E26BC2DB6003A060B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDE9D26BC2DB6003A060B /* LoginView.swift */; };
 		09EBDEA026BC2DD3003A060B /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09EBDE9F26BC2DD3003A060B /* LoginView.xib */; };
 		09EBDEA326BCC0E7003A060B /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDEA226BCC0E7003A060B /* ColorPallete.swift */; };
+		09EBDEA626BCF08B003A060B /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDEA526BCF08B003A060B /* LoginError.swift */; };
+		09EBDEA926BCF1B6003A060B /* ValidateTextFieldInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDEA826BCF1B6003A060B /* ValidateTextFieldInputs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		09EBDE9D26BC2DB6003A060B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		09EBDE9F26BC2DD3003A060B /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		09EBDEA226BCC0E7003A060B /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
+		09EBDEA526BCF08B003A060B /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
+		09EBDEA826BCF1B6003A060B /* ValidateTextFieldInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateTextFieldInputs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 		09EBDE6526BB2BD1003A060B /* ClientQueueV_3 */ = {
 			isa = PBXGroup;
 			children = (
+				09EBDEA726BCF15B003A060B /* Validation */,
+				09EBDEA426BCF071003A060B /* Enums */,
 				09EBDEA126BCC0CF003A060B /* Extensions */,
 				09EBDE9826BB312A003A060B /* Models */,
 				09EBDE9726BB311D003A060B /* ViewControllers */,
@@ -167,6 +173,22 @@
 				09EBDEA226BCC0E7003A060B /* ColorPallete.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		09EBDEA426BCF071003A060B /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				09EBDEA526BCF08B003A060B /* LoginError.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		09EBDEA726BCF15B003A060B /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				09EBDEA826BCF1B6003A060B /* ValidateTextFieldInputs.swift */,
+			);
+			path = Validation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,7 +323,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				09EBDE6B26BB2BD1003A060B /* LoginViewController.swift in Sources */,
+				09EBDEA926BCF1B6003A060B /* ValidateTextFieldInputs.swift in Sources */,
 				09EBDE6726BB2BD1003A060B /* AppDelegate.swift in Sources */,
+				09EBDEA626BCF08B003A060B /* LoginError.swift in Sources */,
 				09EBDE9E26BC2DB6003A060B /* LoginView.swift in Sources */,
 				09EBDEA326BCC0E7003A060B /* ColorPallete.swift in Sources */,
 				09EBDE6926BB2BD1003A060B /* SceneDelegate.swift in Sources */,

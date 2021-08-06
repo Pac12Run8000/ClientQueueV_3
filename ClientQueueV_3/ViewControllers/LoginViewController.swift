@@ -31,7 +31,16 @@ extension LoginViewController:UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.tag == 0 {
-            
+            if let usernameInput = textField.text {
+                let validationData = ValidateTextFieldInputs.validateUserName(username: usernameInput)
+                switch validationData {
+                case .failure(let err):
+                    print(err)
+                case .success(let bool):
+                    print(bool)
+                }
+                
+            }
         } else if textField.tag == 1 {
             
         }
