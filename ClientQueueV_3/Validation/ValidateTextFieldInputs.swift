@@ -16,6 +16,11 @@ struct ValidateTextFieldInputs {
         guard username.count <= 15 else {
             return .failure(.valueTooLong)
         }
+        guard let username = username as? String, username.isAlphanumeric else {
+            return .failure(.invalidUsername)
+        }
         return .success(true)
     }
+    
+    
 }

@@ -9,7 +9,7 @@ import Foundation
 
 public enum LoginError:Error {
     case emptyValue
-    case inValidUsername
-    case inValidPassword
+    case invalidUsername
+    case invalidPassword
     case valueTooLong
 }

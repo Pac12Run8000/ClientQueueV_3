@@ -30,20 +30,22 @@ class LoginViewController: UIViewController {
 extension LoginViewController:UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField.tag == 0 {
-            if let usernameInput = textField.text {
-                let validationData = ValidateTextFieldInputs.validateUserName(username: usernameInput)
-                switch validationData {
-                case .failure(let err):
-                    print(err)
-                case .success(let bool):
-                    print(bool)
-                }
-                
-            }
-        } else if textField.tag == 1 {
-            
-        }
+//        if textField.tag == 0 {
+//            guard let usernameInput = textField.text else {
+//                return false
+//            }
+//            let data = ValidateTextFieldInputs.validateUserName(username: usernameInput)
+//            
+//            switch data {
+//                case .failure(let err):
+//                    print(err)
+//                case .success(let bool):
+//                    print(bool)
+//            }
+//
+//        } else if textField.tag == 1 {
+//            
+//        }
         return false
     }
     
@@ -52,4 +54,6 @@ extension LoginViewController:UITextFieldDelegate {
     }
     
 }
+
+
 
