@@ -36,7 +36,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.015686274509803921" green="0.74901960784313726" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Boc-nz-HT7" secondAttribute="trailing" constant="20" id="KDD-pC-nJt"/>
                             <constraint firstItem="Boc-nz-HT7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TTk-RO-qcE"/>

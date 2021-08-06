@@ -13,10 +13,10 @@ import UIKit
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBInspectable var txtFldBWidth:CGFloat = 0 {
+    @IBInspectable var BWidth:CGFloat = 0 {
         didSet {
-            usernameTextField.layer.borderWidth = txtFldBWidth
-            passwordTextField.layer.borderWidth = txtFldBWidth
+            usernameTextField.layer.borderWidth = BWidth
+            passwordTextField.layer.borderWidth = BWidth
         }
     }
     
@@ -31,13 +31,10 @@ import UIKit
         super.init(frame: frame)
         commonInit()
     }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
-    }
-    
-    override class func prepareForInterfaceBuilder() {
-        
     }
     
     private func commonInit() {
@@ -46,6 +43,7 @@ import UIKit
         view.frame = self.bounds
         usernameTextField.layer.masksToBounds = true
         passwordTextField.layer.masksToBounds = true
+        view.layer.backgroundColor = UIColor.lightGreen.cgColor
         addSubview(view)
     }
     
