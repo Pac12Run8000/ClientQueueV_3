@@ -38,6 +38,7 @@ import UIKit
     }
     
     private func commonInit() {
+
         view = loadViewFromNib(nibName: "LoginView")
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.frame = self.bounds
@@ -53,6 +54,8 @@ import UIKit
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         return view
     }
+    
+    
     
 
 }
