@@ -19,8 +19,8 @@
 		09EBDEA026BC2DD3003A060B /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09EBDE9F26BC2DD3003A060B /* LoginView.xib */; };
 		09EBDEA326BCC0E7003A060B /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDEA226BCC0E7003A060B /* ColorPallete.swift */; };
 		09EBDEA626BCF08B003A060B /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDEA526BCF08B003A060B /* LoginError.swift */; };
-		09EBDEA926BCF1B6003A060B /* ValidateTextFieldInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDEA826BCF1B6003A060B /* ValidateTextFieldInputs.swift */; };
 		09EBDEAB26BD8888003A060B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDEAA26BD8888003A060B /* String+Extensions.swift */; };
+		09EBDEAE26BD8B5B003A060B /* LoginViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDEAD26BD8B5B003A060B /* LoginViewControllerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +59,8 @@
 		09EBDE9F26BC2DD3003A060B /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		09EBDEA226BCC0E7003A060B /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
 		09EBDEA526BCF08B003A060B /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
-		09EBDEA826BCF1B6003A060B /* ValidateTextFieldInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateTextFieldInputs.swift; sourceTree = "<group>"; };
 		09EBDEAA26BD8888003A060B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		09EBDEAD26BD8B5B003A060B /* LoginViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +111,7 @@
 		09EBDE6526BB2BD1003A060B /* ClientQueueV_3 */ = {
 			isa = PBXGroup;
 			children = (
+				09EBDEAC26BD8B34003A060B /* ViewModels */,
 				09EBDEA726BCF15B003A060B /* Validation */,
 				09EBDEA426BCF071003A060B /* Enums */,
 				09EBDEA126BCC0CF003A060B /* Extensions */,
@@ -189,9 +190,16 @@
 		09EBDEA726BCF15B003A060B /* Validation */ = {
 			isa = PBXGroup;
 			children = (
-				09EBDEA826BCF1B6003A060B /* ValidateTextFieldInputs.swift */,
 			);
 			path = Validation;
+			sourceTree = "<group>";
+		};
+		09EBDEAC26BD8B34003A060B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				09EBDEAD26BD8B5B003A060B /* LoginViewControllerViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,8 +333,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09EBDEAE26BD8B5B003A060B /* LoginViewControllerViewModel.swift in Sources */,
 				09EBDE6B26BB2BD1003A060B /* LoginViewController.swift in Sources */,
-				09EBDEA926BCF1B6003A060B /* ValidateTextFieldInputs.swift in Sources */,
 				09EBDE6726BB2BD1003A060B /* AppDelegate.swift in Sources */,
 				09EBDEA626BCF08B003A060B /* LoginError.swift in Sources */,
 				09EBDEAB26BD8888003A060B /* String+Extensions.swift in Sources */,
