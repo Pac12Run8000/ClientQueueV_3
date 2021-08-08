@@ -31,12 +31,19 @@ struct LoginViewControllerViewModel {
         guard !self.password.isEmpty else {
             return .failure(.emptyValue)
         }
+        guard self.password.isPasswordLongEnough else {
+            return .failure(.passwordTooShort)
+        }
         guard self.password.count <= 15 else {
             return .failure(.passwordTooLong)
         }
-        guard self.password.isPasswordLongEnough else {
-            return .failure(.improperPasswordLength)
+        guard self.password.doesHaveCapitalLetter else {
+            return .failure(.passwordCapitalLetterMissing)
         }
+        
+       
+        
+        
         return .success(true)
     }
     

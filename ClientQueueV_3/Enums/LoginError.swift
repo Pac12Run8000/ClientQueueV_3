@@ -12,5 +12,6 @@ public enum LoginError:Error {
     case invalidCharactersInUsername
     case usernameTooLong
     case passwordTooLong
-    case improperPasswordLength
+    case passwordTooShort
+    case passwordCapitalLetterMissing
 }

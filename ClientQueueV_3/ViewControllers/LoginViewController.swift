@@ -43,21 +43,10 @@ extension LoginViewController:UITextFieldDelegate {
             return false
         }
         viewModel = LoginViewControllerViewModel(username: username, password: password)
-        
-        let error = viewModel?.validateLogin()
-        switch error {
-        case .failure(.emptyValue):
-            loginErrorLabel.text = "Please enter input."
-        case .failure(.invalidCharactersInUsername):
-            loginErrorLabel.text = "Enter only alphanumeric characters."
-        case .failure(.improperPasswordLength):
-            loginErrorLabel.text = "You must have at least 8 characters."
-        default:
-            loginErrorLabel.text = ""
+        if let error = viewModel?.validateLogin() {
+            loginErrorLabel.text = LoginValidation.displayLoginError(error: error)
         }
-        
-        
-
+ 
         return true
     }
     

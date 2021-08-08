@@ -21,6 +21,7 @@
 		09EBDEA626BCF08B003A060B /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDEA526BCF08B003A060B /* LoginError.swift */; };
 		09EBDEAB26BD8888003A060B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDEAA26BD8888003A060B /* String+Extensions.swift */; };
 		09EBDEAE26BD8B5B003A060B /* LoginViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDEAD26BD8B5B003A060B /* LoginViewControllerViewModel.swift */; };
+		09EBDEB026BF8909003A060B /* LoginValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDEAF26BF8909003A060B /* LoginValidation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		09EBDEA526BCF08B003A060B /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
 		09EBDEAA26BD8888003A060B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		09EBDEAD26BD8B5B003A060B /* LoginViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerViewModel.swift; sourceTree = "<group>"; };
+		09EBDEAF26BF8909003A060B /* LoginValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 		09EBDEA726BCF15B003A060B /* Validation */ = {
 			isa = PBXGroup;
 			children = (
+				09EBDEAF26BF8909003A060B /* LoginValidation.swift */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				09EBDE6B26BB2BD1003A060B /* LoginViewController.swift in Sources */,
 				09EBDE6726BB2BD1003A060B /* AppDelegate.swift in Sources */,
 				09EBDEA626BCF08B003A060B /* LoginError.swift in Sources */,
+				09EBDEB026BF8909003A060B /* LoginValidation.swift in Sources */,
 				09EBDEAB26BD8888003A060B /* String+Extensions.swift in Sources */,
 				09EBDE9E26BC2DB6003A060B /* LoginView.swift in Sources */,
 				09EBDEA326BCC0E7003A060B /* ColorPallete.swift in Sources */,

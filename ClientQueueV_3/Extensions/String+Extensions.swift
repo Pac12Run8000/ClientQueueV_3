@@ -26,6 +26,17 @@ extension String {
         return output
     }
     
+    var isPasswordTooLong:Bool {
+        return self.count <= 15
+    }
+    
+    var doesHaveCapitalLetter:Bool {
+        let capitalLetterPattern = #"(?=.*[A-Z])"#
+        let result = self.range(of: capitalLetterPattern, options: .regularExpression)
+        let output = (result != nil)
+        return output
+    }
+    
     
     
 }

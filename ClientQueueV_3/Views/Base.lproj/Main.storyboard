@@ -35,9 +35,9 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMT-2I-iYl">
-                                <rect key="frame" x="20" y="318" width="374" height="80"/>
+                                <rect key="frame" x="20" y="268" width="374" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="s4N-vS-zaZ"/>
+                                    <constraint firstAttribute="height" constant="50" id="1ti-wG-NrO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -51,7 +51,7 @@
                             <constraint firstItem="Boc-nz-HT7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TTk-RO-qcE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oMT-2I-iYl" secondAttribute="trailing" constant="20" id="UhO-r9-tWk"/>
                             <constraint firstItem="oMT-2I-iYl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ul9-FG-Xft"/>
-                            <constraint firstItem="oMT-2I-iYl" firstAttribute="top" secondItem="Boc-nz-HT7" secondAttribute="bottom" constant="75" id="iqq-4G-va4"/>
+                            <constraint firstItem="oMT-2I-iYl" firstAttribute="top" secondItem="Boc-nz-HT7" secondAttribute="bottom" constant="25" id="iqq-4G-va4"/>
                             <constraint firstItem="Boc-nz-HT7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="jvg-kP-K7a"/>
                         </constraints>
                     </view>
