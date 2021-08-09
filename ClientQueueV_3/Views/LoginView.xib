@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginView" customModule="ClientQueueV_3" customModuleProvider="target">
             <connections>
+                <outlet property="forgotLoginButton" destination="gno-vK-wzG" id="WpW-La-HcB"/>
                 <outlet property="passwordTextField" destination="ANO-pt-8ha" id="q2U-f0-bZe"/>
                 <outlet property="usernameTextField" destination="yvy-Bf-AF4" id="fZz-76-fOt"/>
                 <outlet property="view" destination="iN0-l3-epB" id="gFg-LF-yEh"/>
@@ -36,6 +37,17 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" returnKeyType="send" secureTextEntry="YES"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gno-vK-wzG">
+                    <rect key="frame" x="20" y="129" width="150" height="30"/>
+                    <color key="backgroundColor" red="0.015686274510000001" green="0.74901960779999999" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="hdH-BF-Fhd"/>
+                        <constraint firstAttribute="height" constant="30" id="w2q-Zb-NST"/>
+                    </constraints>
+                    <state key="normal" title="Forgot Login?">
+                        <color key="titleColor" red="0.94901960780000005" green="0.84313725490000002" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -43,7 +55,9 @@
                 <constraint firstItem="yvy-Bf-AF4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Cuy-72-AMD"/>
                 <constraint firstItem="ANO-pt-8ha" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="GjL-Nn-sZz"/>
                 <constraint firstItem="ANO-pt-8ha" firstAttribute="top" secondItem="yvy-Bf-AF4" secondAttribute="bottom" constant="20" id="NRZ-Ih-BpC"/>
+                <constraint firstItem="gno-vK-wzG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="PPy-8z-byA"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ANO-pt-8ha" secondAttribute="trailing" constant="20" id="Pof-8m-kZf"/>
+                <constraint firstItem="gno-vK-wzG" firstAttribute="top" secondItem="ANO-pt-8ha" secondAttribute="bottom" constant="20" id="hN4-Ky-Biz"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yvy-Bf-AF4" secondAttribute="trailing" constant="20" id="iaV-YO-VHB"/>
                 <constraint firstItem="yvy-Bf-AF4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="tbS-aH-rg9"/>
             </constraints>

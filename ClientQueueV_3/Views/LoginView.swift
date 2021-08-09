@@ -12,6 +12,7 @@ import UIKit
     @IBOutlet var view: UIView!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var forgotLoginButton: UIButton!
     
     @IBInspectable var BWidth:CGFloat = 0 {
         didSet {
@@ -38,7 +39,6 @@ import UIKit
     }
     
     private func commonInit() {
-
         view = loadViewFromNib(nibName: "LoginView")
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.frame = self.bounds
@@ -48,12 +48,13 @@ import UIKit
         addSubview(view)
     }
     
-    func loadViewFromNib(nibName:String) -> UIView {
+    func loadViewFromNib(nibName:String) -> UIView? {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: nibName, bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         return view
     }
+    
     
     
     
