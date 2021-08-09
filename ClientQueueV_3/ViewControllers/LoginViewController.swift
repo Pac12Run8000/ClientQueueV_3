@@ -36,14 +36,16 @@ extension LoginViewController:UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let username = loginView.usernameTextField.text, username.count > 0 else {
             loginErrorLabel.text = "Enter a username."
+            loginView.usernameTextField.becomeFirstResponder()
             return false
         }
         guard let password = loginView.passwordTextField.text, password.count > 0 else {
             loginErrorLabel.text = "Enter a password."
+            loginView.passwordTextField.becomeFirstResponder()
             return false
         }
-        viewModel = LoginViewControllerViewModel(username: username, password: password)
-        viewModel?.validateLogin(completion: { [self] result in
+        
+       LoginViewControllerViewModel(username: username, password: password).validateLoginAndCompleteLoginProcess(completion: { [self] result in
             switch result {
             case .failure(let err):
                 loginErrorLabel.text = LoginValidation.displayLoginError(error: result)

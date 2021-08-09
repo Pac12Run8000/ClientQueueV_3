@@ -12,8 +12,6 @@ struct LoginValidation {
     
     static func displayLoginError(error:Result<Bool, LoginError>) -> String {
         switch error {
-        case .failure(.emptyValue):
-            return "Please enter input."
         case .failure(.invalidCharactersInUsername):
             return "Enter only alphanumeric characters."
         case .failure(.passwordTooShort):
