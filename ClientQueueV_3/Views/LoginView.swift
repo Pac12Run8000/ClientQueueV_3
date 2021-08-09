@@ -12,7 +12,7 @@ import UIKit
     @IBOutlet var view: UIView!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var forgotLoginButton: UIButton!
+    
     
     @IBInspectable var BWidth:CGFloat = 0 {
         didSet {
@@ -47,6 +47,7 @@ import UIKit
         view.layer.backgroundColor = UIColor.lightGreen.cgColor
         addSubview(view)
     }
+    
     
     func loadViewFromNib(nibName:String) -> UIView? {
         let bundle = Bundle(for: type(of: self))

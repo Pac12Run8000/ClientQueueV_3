@@ -22,6 +22,7 @@
 		09EBDEAB26BD8888003A060B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDEAA26BD8888003A060B /* String+Extensions.swift */; };
 		09EBDEAE26BD8B5B003A060B /* LoginViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDEAD26BD8B5B003A060B /* LoginViewControllerViewModel.swift */; };
 		09EBDEB026BF8909003A060B /* LoginValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDEAF26BF8909003A060B /* LoginValidation.swift */; };
+		09EBDEB326C0EEFD003A060B /* ReocoverLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDEB226C0EEFD003A060B /* ReocoverLogin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		09EBDEAA26BD8888003A060B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		09EBDEAD26BD8B5B003A060B /* LoginViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerViewModel.swift; sourceTree = "<group>"; };
 		09EBDEAF26BF8909003A060B /* LoginValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidation.swift; sourceTree = "<group>"; };
+		09EBDEB226C0EEFD003A060B /* ReocoverLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReocoverLogin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		09EBDE6526BB2BD1003A060B /* ClientQueueV_3 */ = {
 			isa = PBXGroup;
 			children = (
+				09EBDEB126C0EEDD003A060B /* Protocols */,
 				09EBDEAC26BD8B34003A060B /* ViewModels */,
 				09EBDEA726BCF15B003A060B /* Validation */,
 				09EBDEA426BCF071003A060B /* Enums */,
@@ -203,6 +206,14 @@
 				09EBDEAD26BD8B5B003A060B /* LoginViewControllerViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		09EBDEB126C0EEDD003A060B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				09EBDEB226C0EEFD003A060B /* ReocoverLogin.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +349,7 @@
 			files = (
 				09EBDEAE26BD8B5B003A060B /* LoginViewControllerViewModel.swift in Sources */,
 				09EBDE6B26BB2BD1003A060B /* LoginViewController.swift in Sources */,
+				09EBDEB326C0EEFD003A060B /* ReocoverLogin.swift in Sources */,
 				09EBDE6726BB2BD1003A060B /* AppDelegate.swift in Sources */,
 				09EBDEA626BCF08B003A060B /* LoginError.swift in Sources */,
 				09EBDEB026BF8909003A060B /* LoginValidation.swift in Sources */,
