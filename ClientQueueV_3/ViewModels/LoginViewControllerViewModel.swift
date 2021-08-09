@@ -18,33 +18,37 @@ struct LoginViewControllerViewModel {
         self.password = password
     }
     
-    func validateLogin() -> Result<Bool, LoginError> {
+    func validateLogin(completion:@escaping(_ result:Result<Bool, LoginError>) -> ()) {
         guard !self.username.isEmpty else {
-            return (.failure(.emptyValue))
+            completion(.failure(.emptyValue))
+            return
         }
         guard self.username.isAlphanumeric else {
-            return .failure(.invalidCharactersInUsername)
+            completion(.failure(.invalidCharactersInUsername))
+            return
         }
         guard self.username.count <= 15 else {
-            return .failure(.usernameTooLong)
+            completion(.failure(.usernameTooLong))
+            return
         }
         guard !self.password.isEmpty else {
-            return .failure(.emptyValue)
+            completion(.failure(.emptyValue))
+            return
         }
         guard self.password.isPasswordLongEnough else {
-            return .failure(.passwordTooShort)
+            completion(.failure(.passwordTooShort))
+            return
         }
         guard self.password.count <= 15 else {
-            return .failure(.passwordTooLong)
+            completion(.failure(.passwordTooLong))
+            return
         }
         guard self.password.doesHaveCapitalLetter else {
-            return .failure(.passwordCapitalLetterMissing)
+            completion(.failure(.passwordCapitalLetterMissing))
+            return
         }
-        
        
-        
-        
-        return .success(true)
+        completion(.success(true))
     }
     
     
