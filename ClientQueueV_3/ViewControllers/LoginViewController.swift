@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
         loginView.usernameTextField.delegate = self
         loginView.passwordTextField.delegate = self
         loginView.forgotLoginDelegate = self
+        loginView.signupDelegate = self
     }
 
 
@@ -46,12 +47,12 @@ extension LoginViewController:UITextFieldDelegate {
             return false
         }
         
-       LoginViewControllerViewModel(username: username, password: password).validateLoginAndCompleteLoginProcess(completion: { [self] result in
+        LoginViewControllerViewModel(username: username, password: password).validateLoginAndCompleteLoginProcess(completion: { result in
             switch result {
             case .failure(let err):
-                loginErrorLabel.text = LoginValidation.displayLoginError(error: result)
+                self.loginErrorLabel.text = LoginValidation.displayLoginError(error: result)
             case .success(let res):
-                loginErrorLabel.text = ""
+                self.loginErrorLabel.text = ""
                 print("Login successful now do somthing: \(res).")
             }
         })
@@ -70,6 +71,14 @@ extension LoginViewController: ForgotLoginDelegate {
         print("did I forget my login: \(didForget)")
     }
     
+    
+    
+}
+
+extension LoginViewController: SignupDelagate {
+    func fetchSignup() {
+        print("Its time to sign up.")
+    }
     
     
 }

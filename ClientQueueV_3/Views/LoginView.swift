@@ -14,6 +14,7 @@ class LoginView: UIView {
     @IBOutlet weak var passwordTextField: UITextField!
     
     weak var forgotLoginDelegate:ForgotLoginDelegate!
+    weak var signupDelegate:SignupDelagate!
     
     
     override init(frame: CGRect) {
@@ -51,5 +52,8 @@ class LoginView: UIView {
     }
     
     
-
+    @IBAction func signupAction(_ sender: UIButton) {
+        signupDelegate.fetchSignup()
+    }
+    
 }
