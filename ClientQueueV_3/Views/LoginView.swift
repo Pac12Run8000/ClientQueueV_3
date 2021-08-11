@@ -7,26 +7,14 @@
 
 import UIKit
 
-@IBDesignable class LoginView: UIView {
+class LoginView: UIView {
     
     @IBOutlet var view: UIView!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    weak var forgotLoginDelegate:ForgotLoginDelegate!
     
-    @IBInspectable var BWidth:CGFloat = 0 {
-        didSet {
-            usernameTextField.layer.borderWidth = BWidth
-            passwordTextField.layer.borderWidth = BWidth
-        }
-    }
-    
-    @IBInspectable var cRadius:CGFloat = 1 {
-        didSet {
-            usernameTextField.layer.cornerRadius = cRadius
-            passwordTextField.layer.cornerRadius = cRadius
-        }
-    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,6 +45,10 @@ import UIKit
     }
     
     
+    
+    @IBAction func forgotLoginAction(_ sender: UIButton) {
+        forgotLoginDelegate.fetchLogin(didForget: true)
+    }
     
     
 

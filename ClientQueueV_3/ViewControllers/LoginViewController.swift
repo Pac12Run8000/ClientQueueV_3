@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
         loginView.usernameTextField.becomeFirstResponder()
         loginView.usernameTextField.delegate = self
         loginView.passwordTextField.delegate = self
+        loginView.forgotLoginDelegate = self
     }
 
 
@@ -60,6 +61,16 @@ extension LoginViewController:UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+}
+
+extension LoginViewController: ForgotLoginDelegate {
+    
+    func fetchLogin(didForget: Bool) {
+        print("did I forget my login: \(didForget)")
+    }
+    
+    
     
 }
 

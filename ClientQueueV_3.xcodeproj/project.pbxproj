@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09A62F3F26C3B0A500D0B6AB /* ForgotLoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A62F3E26C3B0A500D0B6AB /* ForgotLoginDelegate.swift */; };
 		09EBDE6726BB2BD1003A060B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDE6626BB2BD1003A060B /* AppDelegate.swift */; };
 		09EBDE6926BB2BD1003A060B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDE6826BB2BD1003A060B /* SceneDelegate.swift */; };
 		09EBDE6B26BB2BD1003A060B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDE6A26BB2BD1003A060B /* LoginViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09A62F3E26C3B0A500D0B6AB /* ForgotLoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotLoginDelegate.swift; sourceTree = "<group>"; };
 		09EBDE6326BB2BD1003A060B /* ClientQueueV_3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClientQueueV_3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09EBDE6626BB2BD1003A060B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09EBDE6826BB2BD1003A060B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				09EBDEB226C0EEFD003A060B /* ReocoverLogin.swift */,
+				09A62F3E26C3B0A500D0B6AB /* ForgotLoginDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				09EBDE6726BB2BD1003A060B /* AppDelegate.swift in Sources */,
 				09EBDEA626BCF08B003A060B /* LoginError.swift in Sources */,
 				09EBDEB026BF8909003A060B /* LoginValidation.swift in Sources */,
+				09A62F3F26C3B0A500D0B6AB /* ForgotLoginDelegate.swift in Sources */,
 				09EBDEAB26BD8888003A060B /* String+Extensions.swift in Sources */,
 				09EBDE9E26BC2DB6003A060B /* LoginView.swift in Sources */,
 				09EBDEA326BCC0E7003A060B /* ColorPallete.swift in Sources */,
