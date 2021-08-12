@@ -9,5 +9,5 @@ import Foundation
 
 
 protocol ForgotLoginDelegate:AnyObject {
-    func fetchLogin(didForget:Bool)
+    func fetchLogin()
 }

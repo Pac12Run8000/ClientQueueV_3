@@ -48,7 +48,7 @@ class LoginView: UIView {
     
     
     @IBAction func forgotLoginAction(_ sender: UIButton) {
-        forgotLoginDelegate.fetchLogin(didForget: true)
+        forgotLoginDelegate.fetchLogin()
     }
     
     

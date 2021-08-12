@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -57,11 +58,45 @@
                     <connections>
                         <outlet property="loginErrorLabel" destination="oMT-2I-iYl" id="rM0-TS-MpB"/>
                         <outlet property="loginView" destination="Boc-nz-HT7" id="A3E-Se-wTf"/>
+                        <segue destination="jpz-Wu-RDZ" kind="show" identifier="signUpSegueue" id="eGm-ZC-Ef5"/>
+                        <segue destination="rVw-i8-1U9" kind="show" identifier="forgotLoginSegue" id="Rm3-mN-CxY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1015.9420289855074" y="72.991071428571431"/>
+        </scene>
+        <!--Forgot Login View Controller-->
+        <scene sceneID="ssR-DY-7FF">
+            <objects>
+                <viewController id="rVw-i8-1U9" customClass="ForgotLoginViewController" customModule="ClientQueueV_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j7s-od-dxD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="7f0-vZ-6Ir"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8IL-6L-nKr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hzP-Hw-jrU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2096" y="73"/>
+        </scene>
+        <!--Signup View Controller-->
+        <scene sceneID="RWO-s3-sh6">
+            <objects>
+                <viewController id="jpz-Wu-RDZ" customClass="SignupViewController" customModule="ClientQueueV_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aam-Nm-1cl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="odm-Q5-Zm5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="659-EM-8ds"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wwc-nA-dTm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2097" y="804"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hv3-Tm-so0">
@@ -82,4 +117,9 @@
             <point key="canvasLocation" x="105.79710144927537" y="72.991071428571431"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

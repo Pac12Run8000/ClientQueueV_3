@@ -67,9 +67,11 @@ extension LoginViewController:UITextFieldDelegate {
 
 extension LoginViewController: ForgotLoginDelegate {
     
-    func fetchLogin(didForget: Bool) {
-        print("did I forget my login: \(didForget)")
+    func fetchLogin() {
+        performSegue(withIdentifier: "forgotLoginSegue", sender: nil)
     }
+    
+    
     
     
     
@@ -77,7 +79,7 @@ extension LoginViewController: ForgotLoginDelegate {
 
 extension LoginViewController: SignupDelagate {
     func fetchSignup() {
-        print("Its time to sign up.")
+        performSegue(withIdentifier: "signUpSegueue", sender: nil)
     }
     
     
