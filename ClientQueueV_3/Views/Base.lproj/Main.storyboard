@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -66,23 +65,66 @@
             </objects>
             <point key="canvasLocation" x="1015.9420289855074" y="72.991071428571431"/>
         </scene>
-        <!--Forgot Login View Controller-->
+        <!--Recover Login-->
         <scene sceneID="ssR-DY-7FF">
             <objects>
                 <viewController id="rVw-i8-1U9" customClass="ForgotLoginViewController" customModule="ClientQueueV_3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j7s-od-dxD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMu-9P-P6L">
+                                <rect key="frame" x="20" y="193" width="374" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="TCY-9r-k1J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cV6-Lm-Pfe">
+                                <rect key="frame" x="20" y="248" width="374" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="LtX-wQ-c8k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your email address used with this account." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJd-5V-mse">
+                                <rect key="frame" x="20" y="108" width="374" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="4rk-nG-G4f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="7f0-vZ-6Ir"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.015686274510000001" green="0.74901960779999999" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jMu-9P-P6L" firstAttribute="leading" secondItem="7f0-vZ-6Ir" secondAttribute="leading" constant="20" id="3Ac-FQ-Ih4"/>
+                            <constraint firstItem="jMu-9P-P6L" firstAttribute="top" secondItem="zJd-5V-mse" secondAttribute="bottom" constant="20" id="BbX-H2-tnZ"/>
+                            <constraint firstItem="7f0-vZ-6Ir" firstAttribute="trailing" secondItem="zJd-5V-mse" secondAttribute="trailing" constant="20" id="K9j-3c-iH4"/>
+                            <constraint firstItem="zJd-5V-mse" firstAttribute="leading" secondItem="7f0-vZ-6Ir" secondAttribute="leading" constant="20" id="SmI-Lm-hut"/>
+                            <constraint firstItem="cV6-Lm-Pfe" firstAttribute="leading" secondItem="7f0-vZ-6Ir" secondAttribute="leading" constant="20" id="UTv-z9-Fte"/>
+                            <constraint firstItem="7f0-vZ-6Ir" firstAttribute="trailing" secondItem="cV6-Lm-Pfe" secondAttribute="trailing" constant="20" id="WwG-nR-UKU"/>
+                            <constraint firstItem="7f0-vZ-6Ir" firstAttribute="trailing" secondItem="jMu-9P-P6L" secondAttribute="trailing" constant="20" id="Xfp-Lp-tbe"/>
+                            <constraint firstItem="zJd-5V-mse" firstAttribute="top" secondItem="7f0-vZ-6Ir" secondAttribute="top" constant="20" id="jlT-SS-For"/>
+                            <constraint firstItem="cV6-Lm-Pfe" firstAttribute="top" secondItem="jMu-9P-P6L" secondAttribute="bottom" constant="20" id="pGY-gN-3di"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8IL-6L-nKr"/>
+                    <navigationItem key="navigationItem" title="Recover Login" id="8IL-6L-nKr"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="jMu-9P-P6L" id="qRB-3M-wV8"/>
+                        <outlet property="errormsgLabel" destination="cV6-Lm-Pfe" id="K2m-cP-hhp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hzP-Hw-jrU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2096" y="73"/>
+            <point key="canvasLocation" x="2095.6521739130435" y="72.991071428571431"/>
         </scene>
-        <!--Signup View Controller-->
+        <!--Sign Up-->
         <scene sceneID="RWO-s3-sh6">
             <objects>
                 <viewController id="jpz-Wu-RDZ" customClass="SignupViewController" customModule="ClientQueueV_3" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,9 +132,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="odm-Q5-Zm5"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.015686274510000001" green="0.74901960779999999" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="659-EM-8ds"/>
+                    <navigationItem key="navigationItem" title="Sign Up" id="659-EM-8ds"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wwc-nA-dTm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,9 +159,4 @@
             <point key="canvasLocation" x="105.79710144927537" y="72.991071428571431"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

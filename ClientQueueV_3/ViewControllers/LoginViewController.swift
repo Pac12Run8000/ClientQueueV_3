@@ -18,6 +18,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         loginView.usernameTextField.becomeFirstResponder()
         loginView.usernameTextField.delegate = self
         loginView.passwordTextField.delegate = self
@@ -66,7 +68,6 @@ extension LoginViewController:UITextFieldDelegate {
 }
 
 extension LoginViewController: ForgotLoginDelegate {
-    
     func fetchLogin() {
         performSegue(withIdentifier: "forgotLoginSegue", sender: nil)
     }

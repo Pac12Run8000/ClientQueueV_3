@@ -9,6 +9,14 @@ import Foundation
 
 extension String {
     
+//    #"^\S+@\S+\.\S+$"#
+    var isValidEmail:Bool {
+        let emailPattern = #"^\S+@\S+\.\S+$"#
+        let result = self.range(of: emailPattern, options: .regularExpression)
+        let output = (result != nil)
+        return output
+    }
+    
     // MARK:- Checks for alphanumeric chars
     var isAlphanumeric: Bool {
         let usernamePattern = "[^a-zA-Z0-9]"
