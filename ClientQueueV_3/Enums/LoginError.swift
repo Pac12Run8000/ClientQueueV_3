@@ -15,3 +15,13 @@ public enum LoginError:Error {
     case passwordTooShort
     case passwordCapitalLetterMissing
 }
+
+public enum ForgotLoginError:Error {
+    case noEmail
+    case isInvalidEmail
+    case emailIsNotInSystem
+}
+
+
+
+

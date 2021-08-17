@@ -16,6 +16,7 @@ class ForgotLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         emailTextField.becomeFirstResponder()
         emailTextField.delegate = self
         
@@ -29,6 +30,18 @@ class ForgotLoginViewController: UIViewController {
 extension ForgotLoginViewController:UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let email = textField.text else {
+            return false
+        }
+        
+        LoginValidation.fetchEmailError(email: email) { result in
+            switch result {
+            case .failure(let err):
+                self.errormsgLabel.text = err.description
+            case .success(let isEmail):
+                self.errormsgLabel.text = "Log into your email to reset your password."
+            }
+        }
         return true
     }
     
