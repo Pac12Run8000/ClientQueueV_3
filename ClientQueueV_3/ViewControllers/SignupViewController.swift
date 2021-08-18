@@ -9,10 +9,14 @@ import UIKit
 
 class SignupViewController: UIViewController {
 
+    @IBOutlet weak var profileImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        profileImageView.configureProfileImageView(borderColor: UIColor.beige.cgColor, borderWidth: 4)
 
-        // Do any additional setup after loading the view.
+
     }
     
 

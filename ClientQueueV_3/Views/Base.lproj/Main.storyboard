@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="ClientQueueV_3" customModuleProvider="target" sceneMemberID="viewController">
@@ -53,7 +53,7 @@
                             <constraint firstItem="Boc-nz-HT7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="jvg-kP-K7a"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Q1T-4m-ZhI"/>
+                    <navigationItem key="navigationItem" title="Login" id="Q1T-4m-ZhI"/>
                     <connections>
                         <outlet property="loginErrorLabel" destination="oMT-2I-iYl" id="rM0-TS-MpB"/>
                         <outlet property="loginView" destination="Boc-nz-HT7" id="A3E-Se-wTf"/>
@@ -131,14 +131,42 @@
                     <view key="view" contentMode="scaleToFill" id="aam-Nm-1cl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mdN-em-7K5">
+                                <rect key="frame" x="91.5" y="113" width="231" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="tao-7g-P7o"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="client"/>
+                                    <segment title="Sevice Provider"/>
+                                </segments>
+                            </segmentedControl>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3dR-2G-LNc">
+                                <rect key="frame" x="107" y="168" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="CWA-se-9JX"/>
+                                    <constraint firstAttribute="height" constant="200" id="RlH-Rm-68x"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="odm-Q5-Zm5"/>
                         <color key="backgroundColor" red="0.015686274510000001" green="0.74901960779999999" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mdN-em-7K5" firstAttribute="centerX" secondItem="aam-Nm-1cl" secondAttribute="centerX" id="3Fp-OU-V8V"/>
+                            <constraint firstItem="3dR-2G-LNc" firstAttribute="top" secondItem="mdN-em-7K5" secondAttribute="bottom" constant="25" id="EEx-DY-XSQ"/>
+                            <constraint firstItem="3dR-2G-LNc" firstAttribute="centerX" secondItem="aam-Nm-1cl" secondAttribute="centerX" id="Fl2-ge-4D8"/>
+                            <constraint firstItem="mdN-em-7K5" firstAttribute="top" secondItem="odm-Q5-Zm5" secondAttribute="top" constant="25" id="yGe-gV-gbd"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="659-EM-8ds"/>
+                    <connections>
+                        <outlet property="profileImageView" destination="3dR-2G-LNc" id="QJJ-pF-sSZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wwc-nA-dTm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2097" y="804"/>
+            <point key="canvasLocation" x="2095.6521739130435" y="803.57142857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hv3-Tm-so0">
