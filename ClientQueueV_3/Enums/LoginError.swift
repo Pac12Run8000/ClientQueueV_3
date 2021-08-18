@@ -14,6 +14,7 @@ public enum LoginError:Error {
     case passwordTooLong
     case passwordTooShort
     case passwordCapitalLetterMissing
+    
 }
 
 public enum ForgotLoginError:Error {

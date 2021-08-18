@@ -50,12 +50,14 @@ extension LoginViewController:UITextFieldDelegate {
         }
         
         LoginViewControllerViewModel(username: username, password: password).validateLoginAndCompleteLoginProcess(completion: { result in
+            
+            
+            
             switch result {
             case .failure(let err):
-                self.loginErrorLabel.text = LoginValidation.displayLoginError(error: result)
-            case .success(let res):
-                self.loginErrorLabel.text = ""
-                print("Login successful now do somthing: \(res).")
+                self.loginErrorLabel.text = err.description
+            case .success(_ ):
+                self.loginErrorLabel.text = "Login is successful."
             }
         })
         return true

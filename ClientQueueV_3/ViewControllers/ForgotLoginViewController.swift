@@ -20,7 +20,7 @@ class ForgotLoginViewController: UIViewController {
         emailTextField.becomeFirstResponder()
         emailTextField.delegate = self
         
-//       Blahhh?
+
         
     }
     
@@ -40,7 +40,7 @@ extension ForgotLoginViewController:UITextFieldDelegate {
             switch result {
             case .failure(let err):
                 self.errormsgLabel.text = err.description
-            case .success(let isEmail):
+            case .success(_ ):
                 self.errormsgLabel.text = "Log into your email to reset your password."
             }
         }

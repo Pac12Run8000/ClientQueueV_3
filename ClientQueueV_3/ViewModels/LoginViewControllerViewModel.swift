@@ -19,6 +19,7 @@ struct LoginViewControllerViewModel {
     }
     
     func validateLoginAndCompleteLoginProcess(completion:@escaping(_ result:Result<Bool, LoginError>) -> ()) {
+        
         guard self.username.isAlphanumeric else {
             completion(.failure(.invalidCharactersInUsername))
             return
@@ -27,6 +28,8 @@ struct LoginViewControllerViewModel {
             completion(.failure(.usernameTooLong))
             return
         }
+        
+        
         guard self.password.isPasswordLongEnough else {
             completion(.failure(.passwordTooShort))
             return
