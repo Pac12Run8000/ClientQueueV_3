@@ -55,6 +55,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>This application is requesting access to your phone camera so that you can add a profile image.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This application is requesting access to your photo library in order for you to create a profile image.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -13,7 +13,8 @@
 		09A62F4526C4D19000D0B6AB /* ForgotLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A62F4426C4D19000D0B6AB /* ForgotLoginViewController.swift */; };
 		09A62F4B26CC0D7000D0B6AB /* CustomStringConvertible+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A62F4A26CC0D7000D0B6AB /* CustomStringConvertible+extension.swift */; };
 		09A62F4D26CCCC5300D0B6AB /* imageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A62F4C26CCCC5300D0B6AB /* imageView+extension.swift */; };
-		09A62F4F26CD49F300D0B6AB /* Signupstate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A62F4E26CD49F300D0B6AB /* Signupstate.swift */; };
+		09A62F4F26CD49F300D0B6AB /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A62F4E26CD49F300D0B6AB /* Alert.swift */; };
+		09A62F5126CD650F00D0B6AB /* ImagePickerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A62F5026CD650F00D0B6AB /* ImagePickerState.swift */; };
 		09EBDE6726BB2BD1003A060B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDE6626BB2BD1003A060B /* AppDelegate.swift */; };
 		09EBDE6926BB2BD1003A060B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDE6826BB2BD1003A060B /* SceneDelegate.swift */; };
 		09EBDE6B26BB2BD1003A060B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDE6A26BB2BD1003A060B /* LoginViewController.swift */; };
@@ -55,7 +56,8 @@
 		09A62F4426C4D19000D0B6AB /* ForgotLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotLoginViewController.swift; sourceTree = "<group>"; };
 		09A62F4A26CC0D7000D0B6AB /* CustomStringConvertible+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomStringConvertible+extension.swift"; sourceTree = "<group>"; };
 		09A62F4C26CCCC5300D0B6AB /* imageView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "imageView+extension.swift"; sourceTree = "<group>"; };
-		09A62F4E26CD49F300D0B6AB /* Signupstate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signupstate.swift; sourceTree = "<group>"; };
+		09A62F4E26CD49F300D0B6AB /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		09A62F5026CD650F00D0B6AB /* ImagePickerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerState.swift; sourceTree = "<group>"; };
 		09EBDE6326BB2BD1003A060B /* ClientQueueV_3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClientQueueV_3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09EBDE6626BB2BD1003A060B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09EBDE6826BB2BD1003A060B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09A62F5226CD660500D0B6AB /* CustomObjects */ = {
+			isa = PBXGroup;
+			children = (
+				09A62F4E26CD49F300D0B6AB /* Alert.swift */,
+			);
+			path = CustomObjects;
+			sourceTree = "<group>";
+		};
 		09EBDE5A26BB2BD0003A060B = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +137,7 @@
 		09EBDE6526BB2BD1003A060B /* ClientQueueV_3 */ = {
 			isa = PBXGroup;
 			children = (
+				09A62F5226CD660500D0B6AB /* CustomObjects */,
 				09EBDEB126C0EEDD003A060B /* Protocols */,
 				09EBDEAC26BD8B34003A060B /* ViewModels */,
 				09EBDEA726BCF15B003A060B /* Validation */,
@@ -204,7 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				09EBDEA526BCF08B003A060B /* LoginError.swift */,
-				09A62F4E26CD49F300D0B6AB /* Signupstate.swift */,
+				09A62F5026CD650F00D0B6AB /* ImagePickerState.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -368,13 +379,14 @@
 				09EBDEAE26BD8B5B003A060B /* LoginViewControllerViewModel.swift in Sources */,
 				09EBDE6B26BB2BD1003A060B /* LoginViewController.swift in Sources */,
 				09A62F4526C4D19000D0B6AB /* ForgotLoginViewController.swift in Sources */,
-				09A62F4F26CD49F300D0B6AB /* Signupstate.swift in Sources */,
+				09A62F4F26CD49F300D0B6AB /* Alert.swift in Sources */,
 				09A62F4D26CCCC5300D0B6AB /* imageView+extension.swift in Sources */,
 				09EBDE6726BB2BD1003A060B /* AppDelegate.swift in Sources */,
 				09EBDEA626BCF08B003A060B /* LoginError.swift in Sources */,
 				09EBDEB026BF8909003A060B /* LoginValidation.swift in Sources */,
 				09A62F3F26C3B0A500D0B6AB /* ForgotLoginDelegate.swift in Sources */,
 				09A62F4326C4D0CA00D0B6AB /* SignupViewController.swift in Sources */,
+				09A62F5126CD650F00D0B6AB /* ImagePickerState.swift in Sources */,
 				09EBDEAB26BD8888003A060B /* String+Extensions.swift in Sources */,
 				09A62F4126C4882600D0B6AB /* SignupDelegate.swift in Sources */,
 				09EBDE9E26BC2DB6003A060B /* LoginView.swift in Sources */,

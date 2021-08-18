@@ -11,15 +11,26 @@ class SignupViewController: UIViewController {
 
     @IBOutlet weak var profileImageView: UIImageView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profileImageView.configureProfileImageView(borderColor: UIColor.beige.cgColor, borderWidth: 4)
+        let tapgesture = UITapGestureRecognizer(target: self, action: #selector(didTapImage(sender:)))
+        profileImageView.configureProfileImageView(borderColor: UIColor.beige.cgColor, borderWidth: 4, tapGestureRecog:tapgesture)
+        
+        
+        
 
 
     }
     
+    @IBAction func didTapImage(sender:UITapGestureRecognizer) {
+        Alert.pushactionsheet(title: "Profile Photos", message: "Select a methid of adding a profile photo.", preferredStyle: .actionSheet, control: self) { picker in
+            
+            print("state: \(picker)")
+        }
 
+    }
     
 
 }
