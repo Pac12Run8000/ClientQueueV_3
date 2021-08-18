@@ -9,6 +9,13 @@ import UIKit
 
 struct Alert {
     
+    static func pushErrorAlert(msg:String, control:UIViewController) {
+        let alert = UIAlertController(title: "Imporatnt Message", message: msg, preferredStyle: .alert)
+        let cancelButton = UIAlertAction(title: "done", style: .cancel, handler: nil)
+        alert.addAction(cancelButton)
+        control.present(alert, animated: true, completion: nil)
+    }
+    
     
     static func pushactionsheet(title:String, message:String, preferredStyle:UIAlertController.Style, control:UIViewController, completionHandler:@escaping(_ imagepickerstate:ImagePickerState) -> ()) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
