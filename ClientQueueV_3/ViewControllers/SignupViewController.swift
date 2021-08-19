@@ -29,20 +29,9 @@ class SignupViewController: UIViewController {
             
             switch pickerState {
             case .cameraphoto:
-                if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                    self.imgPickerController.sourceType = .camera
-                    self.present(self.imgPickerController, animated: true, completion: nil)
-                } else {
-                    Alert.pushErrorAlert(msg: ProfileImageError.cameraIsNotAvailable.description, control: self)
-                }
+                SignUpViewControllerViewModel().pickCameraPhotoForProfile(control: self)
             case .photolibrary:
-                if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-                    self.imgPickerController.sourceType = .photoLibrary
-                    self.present(self.imgPickerController, animated: true, completion: nil)
-                } else {
-                    Alert.pushErrorAlert(msg: ProfileImageError.photoLibraryIsNotAvailable.description, control: self)
-                }
-               
+                SignUpViewControllerViewModel().pickLibraryPhotoForProfile(control: self)
             case .noImage:
                 print("Do nothing")
             }

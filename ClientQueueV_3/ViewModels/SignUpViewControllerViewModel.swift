@@ -17,4 +17,22 @@ struct SignUpViewControllerViewModel {
             control.profileImageView.image = originalImage
         }
     }
+    
+    func pickCameraPhotoForProfile(control:SignupViewController) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            control.imgPickerController.sourceType = .camera
+            control.present(control.imgPickerController, animated: true, completion: nil)
+        } else {
+            Alert.pushErrorAlert(msg: ProfileImageError.cameraIsNotAvailable.description, control: control)
+        }
+    }
+    
+    func pickLibraryPhotoForProfile(control:SignupViewController) {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            control.imgPickerController.sourceType = .photoLibrary
+            control.present(control.imgPickerController, animated: true, completion: nil)
+        } else {
+            Alert.pushErrorAlert(msg: ProfileImageError.photoLibraryIsNotAvailable.description, control: control)
+        }
+    }
 }
