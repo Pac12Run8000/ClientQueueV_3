@@ -28,6 +28,12 @@ struct Alert {
         let cancelAction = UIAlertAction(title: "cancel", style: .cancel) { action in
             completionHandler(.noImage)
         }
+        if let profileControl = (control as? SignupViewController), profileControl.profileImageView.image != nil {
+            let clearAction = UIAlertAction(title: "clear", style: .default) { action in
+                profileControl.profileImageView.image = nil
+            }
+            alert.addAction(clearAction)
+        }
         alert.addAction(takephotoAction)
         alert.addAction(libraryAction)
         alert.addAction(cancelAction)

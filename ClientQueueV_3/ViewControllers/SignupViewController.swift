@@ -21,10 +21,6 @@ class SignupViewController: UIViewController {
         
         let tapgesture = UITapGestureRecognizer(target: self, action: #selector(didTapImage(sender:)))
         profileImageView.configureProfileImageView(borderColor: UIColor.beige.cgColor, borderWidth: 4, tapGestureRecog:tapgesture)
-        
-        
-        
-
 
     }
     
@@ -40,8 +36,13 @@ class SignupViewController: UIViewController {
                     Alert.pushErrorAlert(msg: ProfileImageError.cameraIsNotAvailable.description, control: self)
                 }
             case .photolibrary:
-                self.imgPickerController.sourceType = .photoLibrary
-                self.present(self.imgPickerController, animated: true, completion: nil)
+                if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                    self.imgPickerController.sourceType = .photoLibrary
+                    self.present(self.imgPickerController, animated: true, completion: nil)
+                } else {
+                    Alert.pushErrorAlert(msg: ProfileImageError.photoLibraryIsNotAvailable.description, control: self)
+                }
+               
             case .noImage:
                 print("Do nothing")
             }
@@ -58,6 +59,13 @@ extension SignupViewController:UIImagePickerControllerDelegate, UINavigationCont
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            profileImageView.image = editedImage
+            
+        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            profileImageView.image = originalImage
+        }
+        picker.dismiss(animated: true, completion: nil)
     }
     
 }
