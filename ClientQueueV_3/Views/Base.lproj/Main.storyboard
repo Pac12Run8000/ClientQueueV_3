@@ -143,10 +143,10 @@
                                 </segments>
                             </segmentedControl>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3dR-2G-LNc">
-                                <rect key="frame" x="107" y="168" width="200" height="200"/>
+                                <rect key="frame" x="132" y="168" width="150" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="CWA-se-9JX"/>
-                                    <constraint firstAttribute="height" constant="200" id="RlH-Rm-68x"/>
+                                    <constraint firstAttribute="width" constant="150" id="CWA-se-9JX"/>
+                                    <constraint firstAttribute="height" constant="150" id="RlH-Rm-68x"/>
                                 </constraints>
                             </imageView>
                         </subviews>
