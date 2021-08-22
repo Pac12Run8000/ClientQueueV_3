@@ -146,6 +146,13 @@
                                     <action selector="segmntedSelect:" destination="jpz-Wu-RDZ" eventType="valueChanged" id="xbT-uh-Hce"/>
                                 </connections>
                             </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7NO-T2-lg7" customClass="SPSignupView" customModule="ClientQueueV_3" customModuleProvider="target">
+                                <rect key="frame" x="20" y="338" width="374" height="380"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="380" id="RfB-bf-8rN"/>
+                                </constraints>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3dR-2G-LNc">
                                 <rect key="frame" x="132" y="168" width="150" height="150"/>
                                 <constraints>
@@ -168,8 +175,11 @@
                             <constraint firstItem="3dR-2G-LNc" firstAttribute="top" secondItem="mdN-em-7K5" secondAttribute="bottom" constant="25" id="EEx-DY-XSQ"/>
                             <constraint firstItem="3dR-2G-LNc" firstAttribute="centerX" secondItem="aam-Nm-1cl" secondAttribute="centerX" id="Fl2-ge-4D8"/>
                             <constraint firstItem="odm-Q5-Zm5" firstAttribute="trailing" secondItem="Wqy-VX-oiP" secondAttribute="trailing" constant="20" id="IX1-mw-iqG"/>
+                            <constraint firstItem="odm-Q5-Zm5" firstAttribute="trailing" secondItem="7NO-T2-lg7" secondAttribute="trailing" constant="20" id="KNy-ec-7L7"/>
                             <constraint firstItem="Wqy-VX-oiP" firstAttribute="top" secondItem="3dR-2G-LNc" secondAttribute="bottom" constant="20" id="RJi-og-n91"/>
                             <constraint firstItem="Wqy-VX-oiP" firstAttribute="leading" secondItem="odm-Q5-Zm5" secondAttribute="leading" constant="20" id="Whi-kx-RoK"/>
+                            <constraint firstItem="7NO-T2-lg7" firstAttribute="top" secondItem="3dR-2G-LNc" secondAttribute="bottom" constant="20" id="kZ1-gD-VOv"/>
+                            <constraint firstItem="7NO-T2-lg7" firstAttribute="leading" secondItem="odm-Q5-Zm5" secondAttribute="leading" constant="20" id="plX-E9-3rS"/>
                             <constraint firstItem="mdN-em-7K5" firstAttribute="top" secondItem="odm-Q5-Zm5" secondAttribute="top" constant="25" id="yGe-gV-gbd"/>
                         </constraints>
                     </view>
@@ -177,6 +187,7 @@
                     <connections>
                         <outlet property="clientView" destination="Wqy-VX-oiP" id="dgD-ns-DbI"/>
                         <outlet property="profileImageView" destination="3dR-2G-LNc" id="QJJ-pF-sSZ"/>
+                        <outlet property="spView" destination="7NO-T2-lg7" id="m4z-rL-7pv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wwc-nA-dTm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

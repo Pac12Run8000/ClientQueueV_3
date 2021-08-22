@@ -11,17 +11,19 @@ class SignupViewController: UIViewController {
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var clientView: ClientSignupView!
-    
+    @IBOutlet weak var spView: SPSignupView!
     
     var signupstate:SignupState = .clientState {
         didSet {
             if signupstate == .clientState {
                 UIView.animate(withDuration: 0.4) {
                     self.clientView.alpha = 1.0
+                    self.spView.alpha = 0.0
                 }
             } else {
                 UIView.animate(withDuration: 0.4) {
                     self.clientView.alpha = 0.0
+                    self.spView.alpha = 1.0
                 }
             }
             
@@ -32,8 +34,6 @@ class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
         
         imgPickerController.delegate = self
         imgPickerController.allowsEditing = true
