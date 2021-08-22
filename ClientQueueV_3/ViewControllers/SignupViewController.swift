@@ -16,9 +16,13 @@ class SignupViewController: UIViewController {
     var signupstate:SignupState = .clientState {
         didSet {
             if signupstate == .clientState {
-                clientView.alpha = 1.0
+                UIView.animate(withDuration: 0.4) {
+                    self.clientView.alpha = 1.0
+                }
             } else {
-                clientView.alpha = 0.0
+                UIView.animate(withDuration: 0.4) {
+                    self.clientView.alpha = 0.0
+                }
             }
             
         }
