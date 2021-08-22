@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -141,6 +142,9 @@
                                     <segment title="client"/>
                                     <segment title="Sevice Provider"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmntedSelect:" destination="jpz-Wu-RDZ" eventType="valueChanged" id="xbT-uh-Hce"/>
+                                </connections>
                             </segmentedControl>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3dR-2G-LNc">
                                 <rect key="frame" x="132" y="168" width="150" height="150"/>
@@ -149,6 +153,13 @@
                                     <constraint firstAttribute="height" constant="150" id="RlH-Rm-68x"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wqy-VX-oiP" customClass="ClientSignupView" customModule="ClientQueueV_3" customModuleProvider="target">
+                                <rect key="frame" x="20" y="338" width="374" height="380"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="380" id="82X-fc-SrC"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="odm-Q5-Zm5"/>
                         <color key="backgroundColor" red="0.015686274510000001" green="0.74901960779999999" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -156,17 +167,21 @@
                             <constraint firstItem="mdN-em-7K5" firstAttribute="centerX" secondItem="aam-Nm-1cl" secondAttribute="centerX" id="3Fp-OU-V8V"/>
                             <constraint firstItem="3dR-2G-LNc" firstAttribute="top" secondItem="mdN-em-7K5" secondAttribute="bottom" constant="25" id="EEx-DY-XSQ"/>
                             <constraint firstItem="3dR-2G-LNc" firstAttribute="centerX" secondItem="aam-Nm-1cl" secondAttribute="centerX" id="Fl2-ge-4D8"/>
+                            <constraint firstItem="odm-Q5-Zm5" firstAttribute="trailing" secondItem="Wqy-VX-oiP" secondAttribute="trailing" constant="20" id="IX1-mw-iqG"/>
+                            <constraint firstItem="Wqy-VX-oiP" firstAttribute="top" secondItem="3dR-2G-LNc" secondAttribute="bottom" constant="20" id="RJi-og-n91"/>
+                            <constraint firstItem="Wqy-VX-oiP" firstAttribute="leading" secondItem="odm-Q5-Zm5" secondAttribute="leading" constant="20" id="Whi-kx-RoK"/>
                             <constraint firstItem="mdN-em-7K5" firstAttribute="top" secondItem="odm-Q5-Zm5" secondAttribute="top" constant="25" id="yGe-gV-gbd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="659-EM-8ds"/>
                     <connections>
+                        <outlet property="clientView" destination="Wqy-VX-oiP" id="dgD-ns-DbI"/>
                         <outlet property="profileImageView" destination="3dR-2G-LNc" id="QJJ-pF-sSZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wwc-nA-dTm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2095.6521739130435" y="803.57142857142856"/>
+            <point key="canvasLocation" x="2292.753623188406" y="801.5625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hv3-Tm-so0">
@@ -187,4 +202,9 @@
             <point key="canvasLocation" x="105.79710144927537" y="72.991071428571431"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

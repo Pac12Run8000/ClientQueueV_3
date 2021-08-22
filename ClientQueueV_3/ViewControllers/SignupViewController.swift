@@ -10,11 +10,26 @@ import UIKit
 class SignupViewController: UIViewController {
 
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var clientView: ClientSignupView!
+    
+    
+    var signupstate:SignupState = .clientState {
+        didSet {
+            if signupstate == .clientState {
+                clientView.alpha = 1.0
+            } else {
+                clientView.alpha = 0.0
+            }
+            
+        }
+    }
     
     var imgPickerController = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
         
         imgPickerController.delegate = self
         imgPickerController.allowsEditing = true
@@ -23,6 +38,18 @@ class SignupViewController: UIViewController {
         profileImageView.configureProfileImageView(borderColor: UIColor.beige.cgColor, borderWidth: 4, tapGestureRecog:tapgesture)
 
     }
+    
+    @IBAction func segmntedSelect(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            self.signupstate = .clientState
+        case 1:
+            self.signupstate = .serviceProviderState
+        default:
+            print("do nothing")
+        }
+    }
+    
     
     @IBAction func didTapImage(sender:UITapGestureRecognizer) {
         Alert.pushactionsheet(title: "Profile Photos", message: "Select a methid of adding a profile photo.", preferredStyle: .actionSheet, control: self) { pickerState in
