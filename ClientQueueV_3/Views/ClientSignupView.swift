@@ -11,6 +11,9 @@ class ClientSignupView: UIView {
 
     @IBOutlet var view: UIView!
     
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
     override init(frame:CGRect) {
         super.init(frame: frame)
         commonInti()
@@ -21,7 +24,7 @@ class ClientSignupView: UIView {
         commonInti()
     }
     
-    func commonInti() {
+    private func commonInti() {
         view = loadViewFromNib(nibName: "ClientSignupView")
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.frame = self.bounds
@@ -29,7 +32,7 @@ class ClientSignupView: UIView {
         addSubview(view)
     }
     
-    func loadViewFromNib(nibName:String) -> UIView {
+    private func loadViewFromNib(nibName:String) -> UIView {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: nibName, bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil).first as? UIView

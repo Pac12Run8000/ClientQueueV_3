@@ -15,18 +15,12 @@ class SignupViewController: UIViewController {
     
     var signupstate:SignupState = .clientState {
         didSet {
-            if signupstate == .clientState {
+            SignUpViewControllerViewModel().fetchFormForSignup(signupState: signupstate) { clientAlpha, spAlpha in
                 UIView.animate(withDuration: 0.4) {
-                    self.clientView.alpha = 1.0
-                    self.spView.alpha = 0.0
-                }
-            } else {
-                UIView.animate(withDuration: 0.4) {
-                    self.clientView.alpha = 0.0
-                    self.spView.alpha = 1.0
+                    self.clientView.alpha = clientAlpha
+                    self.spView.alpha = spAlpha
                 }
             }
-            
         }
     }
     
@@ -35,12 +29,29 @@ class SignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        
+        
         imgPickerController.delegate = self
         imgPickerController.allowsEditing = true
         
         let tapgesture = UITapGestureRecognizer(target: self, action: #selector(didTapImage(sender:)))
         profileImageView.configureProfileImageView(borderColor: UIColor.beige.cgColor, borderWidth: 4, tapGestureRecog:tapgesture)
+        
+        
+        
+        
 
+    }
+    
+    
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     @IBAction func segmntedSelect(_ sender: UISegmentedControl) {
@@ -56,7 +67,7 @@ class SignupViewController: UIViewController {
     
     
     @IBAction func didTapImage(sender:UITapGestureRecognizer) {
-        Alert.pushactionsheet(title: "Profile Photos", message: "Select a methid of adding a profile photo.", preferredStyle: .actionSheet, control: self) { pickerState in
+        Alert.pushactionsheet(title: "Profile Photos", message: "Select a method of adding a profile photo.", preferredStyle: .actionSheet, control: self) { pickerState in
             
             switch pickerState {
             case .cameraphoto:
@@ -80,6 +91,34 @@ extension SignupViewController:UIImagePickerControllerDelegate, UINavigationCont
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         SignUpViewControllerViewModel().fetchMediaWithInfo(info: info, control: self)
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+extension SignupViewController:UITextFieldDelegate {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    
+}
+
+// MARK:- Notification functions
+extension SignupViewController {
+    
+    
+    
+    @objc func keyboardWillChange(notification:Notification) {
+        guard let keyboardRect = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        
+        if (notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardDidChangeFrameNotification) {
+            view.frame.origin.y = -keyboardRect.height + 260
+        } else {
+            view.frame.origin.y = 0
+        }
     }
     
 }

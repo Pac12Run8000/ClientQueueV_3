@@ -35,4 +35,13 @@ struct SignUpViewControllerViewModel {
             Alert.pushErrorAlert(msg: ProfileImageError.photoLibraryIsNotAvailable.description, control: control)
         }
     }
+    
+    func fetchFormForSignup(signupState:SignupState, completionHandler:@escaping(_ clientAlpha:CGFloat,_ spAlpha:CGFloat) -> ()) {
+        if signupState == .clientState {
+            completionHandler(1.0, 0.0)
+        } else {
+            completionHandler(0.0, 1.0)
+        }
+        
+    }
 }
