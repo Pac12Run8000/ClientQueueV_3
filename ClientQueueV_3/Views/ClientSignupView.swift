@@ -10,6 +10,9 @@ import UIKit
 class ClientSignupView: UIView {
 
     @IBOutlet var view: UIView!
+    
+    
+    @IBOutlet weak var phonenumberTextField: UITextField!
     @IBOutlet weak var firstnameTextField: UITextField!
     @IBOutlet weak var lastnameTextField: UITextField!
     @IBOutlet weak var streetaddressTextField: UITextField!
@@ -17,7 +20,6 @@ class ClientSignupView: UIView {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var zipcodeTextField: UITextField!
     
     
