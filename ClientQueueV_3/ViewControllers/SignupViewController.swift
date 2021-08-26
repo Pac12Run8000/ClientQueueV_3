@@ -14,15 +14,16 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var clientView: ClientSignupView!
     @IBOutlet weak var spView: SPSignupView!
+    var viewModel:SignUpViewControllerViewModel?
+    
     
     var signupstate:SignupState = .clientState {
         didSet {
-            SignUpViewControllerViewModel().fetchFormForSignup(signupState: signupstate) { clientAlpha, spAlpha in
-                UIView.animate(withDuration: 0.4) {
-                    self.clientView.alpha = clientAlpha
-                    self.spView.alpha = spAlpha
-                }
-            }
+            viewModel = SignUpViewControllerViewModel(signupState: signupstate, client: clientView, serviceProvider: spView)
+            viewModel?.fetchFormForSignup(completionHandler: { clientAlpha, spAlpha in
+                self.clientView.alpha = clientAlpha
+                self.spView.alpha = spAlpha
+            })
         }
     }
     
@@ -31,7 +32,8 @@ class SignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        signupstate = .clientState
+        
         // MARK: Observers for moving the textfields above the keyboard so that the view is not obscured.
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -69,9 +71,9 @@ class SignupViewController: UIViewController {
             
             switch pickerState {
             case .cameraphoto:
-                SignUpViewControllerViewModel().pickCameraPhotoForProfile(control: self)
+                self.viewModel!.pickCameraPhotoForProfile(control: self)
             case .photolibrary:
-                SignUpViewControllerViewModel().pickLibraryPhotoForProfile(control: self)
+                self.viewModel!.pickLibraryPhotoForProfile(control: self)
             case .noImage:
                 print("Do nothing")
             }
@@ -86,7 +88,7 @@ class SignupViewController: UIViewController {
 extension SignupViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        SignUpViewControllerViewModel().fetchMediaWithInfo(info: info, control: self)
+        self.viewModel!.fetchMediaWithInfo(info: info, control: self)
         picker.dismiss(animated: true, completion: nil)
     }
     

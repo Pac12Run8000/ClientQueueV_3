@@ -9,6 +9,17 @@ import UIKit
 
 struct SignUpViewControllerViewModel {
     
+    var signupState:SignupState?
+    var client:ClientSignupView
+    var serviceProvider:SPSignupView
+    
+    init(signupState:SignupState, client:ClientSignupView, serviceProvider:SPSignupView) {
+        self.signupState = signupState
+        self.client = client
+        self.serviceProvider = serviceProvider
+    }
+    
+    
     func fetchMediaWithInfo(info:[UIImagePickerController.InfoKey : Any], control:SignupViewController) {
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             control.profileImageView.image = editedImage
@@ -36,8 +47,8 @@ struct SignUpViewControllerViewModel {
         }
     }
     
-    func fetchFormForSignup(signupState:SignupState, completionHandler:@escaping(_ clientAlpha:CGFloat,_ spAlpha:CGFloat) -> ()) {
-        if signupState == .clientState {
+    func fetchFormForSignup(completionHandler:@escaping(_ clientAlpha:CGFloat,_ spAlpha:CGFloat) -> ()) {
+        if self.signupState == .clientState {
             completionHandler(1.0, 0.0)
         } else {
             completionHandler(0.0, 1.0)
