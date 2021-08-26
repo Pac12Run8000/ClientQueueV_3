@@ -43,8 +43,27 @@ extension String {
         return output
     }
     
+//    "(888)888-8888"
     
-    
+    var isPhoneNumberFormatted:Bool {
+        for item in self.enumerated() {
+            if item.offset == 0 && item.element != "(" {
+                return false
+            }
+        }
+        for item in self.enumerated() {
+            if item.offset == 4 && item.element != ")" {
+                return false
+            }
+        }
+        for item in self.enumerated() {
+            if item.offset == 8 && item.element != "-" {
+                return false
+            }
+        }
+        
+        return true
+    }
     
     
     

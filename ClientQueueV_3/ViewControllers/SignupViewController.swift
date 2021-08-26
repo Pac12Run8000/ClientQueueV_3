@@ -34,6 +34,7 @@ class SignupViewController: UIViewController {
         
         signupstate = .clientState
 
+       
         
         // MARK: Observers for moving the textfields above the keyboard so that the view is not obscured.
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -135,6 +136,27 @@ extension SignupViewController:UITextFieldDelegate {
                 print("Enter a valid zip code that is 5 characters long.")
                 return false
             }
+            guard !clientView.phonenumberTextField.text!.isEmpty else {
+                print("Enter a phone number")
+                return false
+            }
+            guard clientView.phonenumberTextField.text?.count == 13 else {
+                print("The phone number is incomplete. Add more numbers.")
+                return false
+            }
+            guard clientView.phonenumberTextField.text?.isPhoneNumberFormatted as! Bool else {
+                print("The phone number is improperly formatted.")
+                return false
+            }
+            guard !clientView.emailTextField.text!.isEmpty, clientView.emailTextField.text!.count > 0 else {
+                print("Enter an email address.")
+                return false
+            }
+            guard clientView.emailTextField.text?.isValidEmail as! Bool else {
+                print("The email formatted improperly.")
+                return false
+            }
+            
             print("Mission accomplished")
         } else if signupstate == .serviceProviderState {
             
@@ -146,6 +168,9 @@ extension SignupViewController:UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField.tag == 1 {
             return textField.filterTextField(filterString: "0123456789", range: range, replacementString: string, inverted: true)
+        }
+        if textField.tag == 2 {
+            return textField.filterTextFieldForPhoneNumber(filterString: "0123456789-()", range: range, replacementString: string)
         }
         return true
     }

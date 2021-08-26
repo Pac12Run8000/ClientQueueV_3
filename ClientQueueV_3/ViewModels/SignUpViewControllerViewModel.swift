@@ -26,6 +26,7 @@ struct SignUpViewControllerViewModel {
             self.client.zipcodeTextField.delegate = controller as! UITextFieldDelegate
             self.client.cityandstateTextField.delegate = controller as! UITextFieldDelegate
             self.client.phonenumberTextField.delegate = controller as! UITextFieldDelegate
+            self.client.emailTextField.delegate = controller as! UITextFieldDelegate
         } else if signupState == .serviceProviderState {
             
         }
