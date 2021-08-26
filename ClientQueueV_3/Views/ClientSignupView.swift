@@ -16,7 +16,7 @@ class ClientSignupView: UIView {
     @IBOutlet weak var cityandstateTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
+    @IBOutlet weak var emailTextField: UITextField!
     
     override init(frame:CGRect) {
         super.init(frame: frame)
