@@ -111,11 +111,45 @@ extension SignupViewController:UITextFieldDelegate {
                 print("Enter only alpha-numeric characters.")
                 return false
             }
+            guard !clientView.lastnameTextField.text!.isEmpty, clientView.lastnameTextField.text!.count > 0 else {
+                print("Enter a last name.")
+                return false
+            }
+            guard clientView.lastnameTextField.text?.isAlphanumeric as! Bool else {
+                print("Enter only alpha-numeric characters for lastname.")
+                return false
+            }
+            guard !clientView.streetaddressTextField.text!.isEmpty as! Bool else {
+                print("Enter an address.")
+                return false
+            }
+            guard !clientView.cityandstateTextField.text!.isEmpty as! Bool else {
+                print("Enter a city and state")
+                return false
+            }
+            guard !clientView.zipcodeTextField.text!.isEmpty, clientView.zipcodeTextField.text!.count > 0 else {
+                print("Enter a zip code")
+                return false
+            }
+            guard clientView.zipcodeTextField.text?.count == 5 else {
+                print("Enter a valid zip code that is 5 characters long.")
+                return false
+            }
             print("Mission accomplished")
         } else if signupstate == .serviceProviderState {
             
         }
 
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField.tag == 1 {
+            let allowedChars = "0123456789"
+            let allowedCharacterSet = CharacterSet(charactersIn: allowedChars)
+            let typedCharacterSet = CharacterSet(charactersIn: string)
+            return allowedCharacterSet.isSuperset(of: typedCharacterSet) 
+        }
         return true
     }
     

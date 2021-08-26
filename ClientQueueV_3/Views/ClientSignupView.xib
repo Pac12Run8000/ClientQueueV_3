@@ -18,6 +18,7 @@
                 <outlet property="streetaddressTextField" destination="jXd-Eq-g3g" id="NMq-Ic-bFr"/>
                 <outlet property="usernameTextField" destination="UWI-l1-Dy0" id="Yst-1L-yjK"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xSq-at-K31"/>
+                <outlet property="zipcodeTextField" destination="NTW-2f-QsO" id="eec-3A-f4N"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -49,14 +50,14 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NTW-2f-QsO">
+                <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NTW-2f-QsO">
                     <rect key="frame" x="285" y="184" width="130" height="35"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="130" id="4MW-bT-DBw"/>
                         <constraint firstAttribute="height" constant="35" id="S8u-7o-GTV"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City, State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qfk-Bg-ssO">
                     <rect key="frame" x="20" y="184" width="255" height="35"/>
