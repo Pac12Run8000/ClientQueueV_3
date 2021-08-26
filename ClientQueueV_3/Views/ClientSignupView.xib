@@ -10,7 +10,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClientSignupView" customModule="ClientQueueV_3" customModuleProvider="target">
             <connections>
-                <outlet property="passwordTextField" destination="Wdm-cX-FM4" id="3lZ-Dm-Hqy"/>
+                <outlet property="cityandstateTextField" destination="Qfk-Bg-ssO" id="fFd-S4-4RJ"/>
+                <outlet property="firstnameTextField" destination="MAz-xS-fw8" id="P1h-aQ-Ll9"/>
+                <outlet property="lastnameTextField" destination="Xbj-0W-dC8" id="UYv-kY-lLX"/>
+                <outlet property="passwordTextField" destination="Wdm-cX-FM4" id="dgO-QH-MV1"/>
+                <outlet property="streetaddressTextField" destination="jXd-Eq-g3g" id="NMq-Ic-bFr"/>
+                <outlet property="usernameTextField" destination="UWI-l1-Dy0" id="Yst-1L-yjK"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xSq-at-K31"/>
             </connections>
         </placeholder>
