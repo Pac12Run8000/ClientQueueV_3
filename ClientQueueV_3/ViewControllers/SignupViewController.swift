@@ -19,7 +19,7 @@ class SignupViewController: UIViewController {
     
     var signupstate:SignupState = .clientState {
         didSet {
-            viewModel = SignUpViewControllerViewModel(signupState: signupstate, client: clientView, serviceProvider: spView)
+            viewModel = SignUpViewControllerViewModel(signupState: signupstate, client: clientView, serviceProvider: spView, controller: self)
             viewModel?.fetchFormForSignup(completionHandler: { clientAlpha, spAlpha in
                 self.clientView.alpha = clientAlpha
                 self.spView.alpha = spAlpha
@@ -33,6 +33,7 @@ class SignupViewController: UIViewController {
         super.viewDidLoad()
         
         signupstate = .clientState
+
         
         // MARK: Observers for moving the textfields above the keyboard so that the view is not obscured.
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -98,6 +99,24 @@ extension SignupViewController:UITextFieldDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if signupstate == .clientState {
+            guard !clientView.firstnameTextField.text!.isEmpty, clientView.firstnameTextField.text!.count > 0 else {
+                print("Enter a first name.")
+                return false
+            }
+            guard clientView.firstnameTextField.text?.isAlphanumeric as! Bool else {
+                print("Enter only alpha-numeric characters.")
+                return false
+            }
+            print("Mission accomplished")
+        } else if signupstate == .serviceProviderState {
+            
+        }
+
+        return true
     }
     
     

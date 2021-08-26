@@ -12,11 +12,20 @@ struct SignUpViewControllerViewModel {
     var signupState:SignupState?
     var client:ClientSignupView
     var serviceProvider:SPSignupView
+    var controller:UIViewController
     
-    init(signupState:SignupState, client:ClientSignupView, serviceProvider:SPSignupView) {
+    init(signupState:SignupState, client:ClientSignupView, serviceProvider:SPSignupView, controller:UIViewController) {
         self.signupState = signupState
         self.client = client
         self.serviceProvider = serviceProvider
+        self.controller = controller
+        if signupState == .clientState {
+            self.client.firstnameTextField.delegate = controller as! UITextFieldDelegate
+            self.client.lastnameTextField.delegate = controller as! UITextFieldDelegate
+        } else if signupState == .serviceProviderState {
+            
+        }
+       
     }
     
     
@@ -56,5 +65,15 @@ struct SignUpViewControllerViewModel {
         
     }
     
+    public func validateForm(handler:@escaping(_ result:Bool) -> ()) {
+        if signupState == .clientState {
+            
+        } else {
+            
+        }
+    }
+    
     
 }
+
+
