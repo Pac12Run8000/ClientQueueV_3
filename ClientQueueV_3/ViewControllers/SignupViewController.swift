@@ -104,6 +104,7 @@ extension SignupViewController:UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if signupstate == .clientState {
+            
             guard !clientView.firstnameTextField.text!.isEmpty, clientView.firstnameTextField.text!.count > 0 else {
                 print("Enter a first name.")
                 return false
@@ -156,6 +157,24 @@ extension SignupViewController:UITextFieldDelegate {
                 print("The email formatted improperly.")
                 return false
             }
+            guard !clientView.usernameTextField.text!.isEmpty as! Bool, clientView.usernameTextField.text!.count > 0 else {
+                print("Enter a username.")
+                return false
+            }
+            guard clientView.usernameTextField.text?.isAlphanumeric as! Bool else {
+                print("Enter only alpha-numeric characters for the username.")
+                return false
+            }
+            guard clientView.usernameTextField.text!.count >= 8 else {
+                print("Username must have at least 8 characters.")
+                return false
+            }
+            guard clientView.usernameTextField.text!.count <= 15 else {
+                print("Username must have less than 15 characters.")
+                return false
+            }
+            
+            
             
             print("Mission accomplished")
         } else if signupstate == .serviceProviderState {
