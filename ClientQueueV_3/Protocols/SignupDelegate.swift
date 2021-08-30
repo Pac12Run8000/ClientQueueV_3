@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol SignupDelagate:AnyObject {
+protocol SignupDelegate:AnyObject {
     func fetchSignup()
 }

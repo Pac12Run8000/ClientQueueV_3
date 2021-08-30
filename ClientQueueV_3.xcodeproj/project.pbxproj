@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09163A4B26D7FBB600897A82 /* TextField+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09163A4A26D7FBB600897A82 /* TextField+extension.swift */; };
+		09163A4D26DD84E800897A82 /* RemoveProfileImageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09163A4C26DD84E800897A82 /* RemoveProfileImageDelegate.swift */; };
 		09A62F3F26C3B0A500D0B6AB /* ForgotLoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A62F3E26C3B0A500D0B6AB /* ForgotLoginDelegate.swift */; };
 		09A62F4126C4882600D0B6AB /* SignupDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A62F4026C4882600D0B6AB /* SignupDelegate.swift */; };
 		09A62F4326C4D0CA00D0B6AB /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A62F4226C4D0CA00D0B6AB /* SignupViewController.swift */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		09163A4A26D7FBB600897A82 /* TextField+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+extension.swift"; sourceTree = "<group>"; };
+		09163A4C26DD84E800897A82 /* RemoveProfileImageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveProfileImageDelegate.swift; sourceTree = "<group>"; };
 		09A62F3E26C3B0A500D0B6AB /* ForgotLoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotLoginDelegate.swift; sourceTree = "<group>"; };
 		09A62F4026C4882600D0B6AB /* SignupDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupDelegate.swift; sourceTree = "<group>"; };
 		09A62F4226C4D0CA00D0B6AB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			children = (
 				09A62F3E26C3B0A500D0B6AB /* ForgotLoginDelegate.swift */,
 				09A62F4026C4882600D0B6AB /* SignupDelegate.swift */,
+				09163A4C26DD84E800897A82 /* RemoveProfileImageDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				09A62F4326C4D0CA00D0B6AB /* SignupViewController.swift in Sources */,
 				09A62F5126CD650F00D0B6AB /* ImagePickerState.swift in Sources */,
 				09EBDEAB26BD8888003A060B /* String+Extensions.swift in Sources */,
+				09163A4D26DD84E800897A82 /* RemoveProfileImageDelegate.swift in Sources */,
 				09A62F4126C4882600D0B6AB /* SignupDelegate.swift in Sources */,
 				09EBDE9E26BC2DB6003A060B /* LoginView.swift in Sources */,
 				09EBDEA326BCC0E7003A060B /* ColorPallete.swift in Sources */,

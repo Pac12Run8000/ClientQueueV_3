@@ -16,6 +16,7 @@
                 <outlet property="lastnameTextField" destination="Xbj-0W-dC8" id="UYv-kY-lLX"/>
                 <outlet property="passwordTextField" destination="Wdm-cX-FM4" id="dgO-QH-MV1"/>
                 <outlet property="phonenumberTextField" destination="3CQ-or-b9Y" id="X0t-av-8SD"/>
+                <outlet property="resetButton" destination="Gjy-KE-l29" id="zCy-xa-cgb"/>
                 <outlet property="streetaddressTextField" destination="jXd-Eq-g3g" id="NMq-Ic-bFr"/>
                 <outlet property="usernameTextField" destination="UWI-l1-Dy0" id="Yst-1L-yjK"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xSq-at-K31"/>
@@ -108,13 +109,16 @@
                     <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjy-KE-l29">
-                    <rect key="frame" x="330" y="359" width="95" height="35"/>
+                    <rect key="frame" x="330" y="404" width="95" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="qxN-xY-Hn7"/>
                     </constraints>
                     <state key="normal" title="clear">
                         <color key="titleColor" red="0.94901960780000005" green="0.84313725490000002" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="clearBtnAction:" destination="-1" eventType="touchUpInside" id="G7T-8F-4OP"/>
+                    </connections>
                 </button>
                 <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number (888)888-8888" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3CQ-or-b9Y">
                     <rect key="frame" x="20" y="269" width="300" height="35"/>
@@ -133,10 +137,10 @@
                 <constraint firstItem="1fI-Ur-Slz" firstAttribute="top" secondItem="3CQ-or-b9Y" secondAttribute="bottom" constant="10" id="7S5-aC-K97"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Xbj-0W-dC8" secondAttribute="trailing" constant="20" id="AC4-Mh-b32"/>
                 <constraint firstItem="vrT-oz-Wgw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="C7S-Vr-zIg"/>
-                <constraint firstItem="Gjy-KE-l29" firstAttribute="leading" secondItem="Wdm-cX-FM4" secondAttribute="trailing" constant="10" id="Db3-b5-Wzn"/>
                 <constraint firstItem="MAz-xS-fw8" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="E1U-Xh-a1w"/>
                 <constraint firstItem="1fI-Ur-Slz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="EZH-Wc-1Tf"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Gjy-KE-l29" secondAttribute="trailing" constant="10" id="J1m-8U-FDK"/>
+                <constraint firstItem="Gjy-KE-l29" firstAttribute="leading" secondItem="Wdm-cX-FM4" secondAttribute="trailing" constant="10" id="JrU-qC-S5E"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NTW-2f-QsO" secondAttribute="trailing" constant="20" id="KRv-GI-Xrd"/>
                 <constraint firstItem="3CQ-or-b9Y" firstAttribute="top" secondItem="vrT-oz-Wgw" secondAttribute="bottom" constant="10" id="NH6-VZ-cG1"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jXd-Eq-g3g" secondAttribute="trailing" constant="20" id="SKm-vP-AHH"/>
@@ -153,7 +157,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MAz-xS-fw8" secondAttribute="trailing" constant="20" id="fub-WR-m4Y"/>
                 <constraint firstItem="MAz-xS-fw8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="kSO-yF-f8y"/>
                 <constraint firstItem="jXd-Eq-g3g" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="q1L-BK-xL6"/>
-                <constraint firstItem="Gjy-KE-l29" firstAttribute="top" secondItem="NTW-2f-QsO" secondAttribute="bottom" constant="140" id="q5n-ne-Rzq"/>
+                <constraint firstItem="Gjy-KE-l29" firstAttribute="top" secondItem="NTW-2f-QsO" secondAttribute="bottom" constant="185" id="q5n-ne-Rzq"/>
                 <constraint firstItem="3CQ-or-b9Y" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="u23-ZP-EgN"/>
                 <constraint firstItem="Wdm-cX-FM4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="vs0-as-oho"/>
                 <constraint firstItem="jXd-Eq-g3g" firstAttribute="top" secondItem="Xbj-0W-dC8" secondAttribute="bottom" constant="10" id="zGY-AF-NOa"/>

@@ -78,7 +78,7 @@ extension LoginViewController: ForgotLoginDelegate {
     
 }
 
-extension LoginViewController: SignupDelagate {
+extension LoginViewController: SignupDelegate {
     func fetchSignup() {
         performSegue(withIdentifier: "signUpSegueue", sender: nil)
     }

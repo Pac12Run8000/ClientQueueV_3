@@ -141,7 +141,7 @@ extension SignupViewController:UITextFieldDelegate {
                 print("Enter a valid zip code that is 5 characters long.")
                 return false
             }
-            guard !clientView.phonenumberTextField.text!.isEmpty else {
+            guard !clientView.phonenumberTextField.text!.isEmpty, clientView.phonenumberTextField.text!.count > 0 else {
                 print("Enter a phone number")
                 return false
             }
@@ -177,7 +177,11 @@ extension SignupViewController:UITextFieldDelegate {
                 print("Username must have less than 15 characters.")
                 return false
             }
-            guard !clientView.passwordTextField.text!.isEmpty, clientView.passwordTextField.text!.count >= 4 else {
+            guard !clientView.passwordTextField.text!.isEmpty, clientView.passwordTextField.text!.count > 0 else {
+                print("Enter a password.")
+                return false
+            }
+            guard  clientView.passwordTextField.text!.count > 4 else {
                 print("Password needs to be entered and must be longer than 4 characters.")
                 return false
             }
@@ -228,5 +232,15 @@ extension SignupViewController {
             view.frame.origin.y = 0
         }
     }
+    
+}
+
+
+extension SignupViewController:RemoveProfileImageDelegate {
+    
+    func resetProfileImage() {
+        self.profileImageView.image = nil
+    }
+    
     
 }

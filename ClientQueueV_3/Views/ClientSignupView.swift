@@ -8,10 +8,12 @@
 import UIKit
 
 class ClientSignupView: UIView {
+    
+    
 
     @IBOutlet var view: UIView!
     
-    
+    @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var phonenumberTextField: UITextField!
     @IBOutlet weak var firstnameTextField: UITextField!
     @IBOutlet weak var lastnameTextField: UITextField!
@@ -48,5 +50,19 @@ class ClientSignupView: UIView {
         return view!
     }
     
-
+    @IBAction func clearBtnAction(_ sender: UIButton) {
+        self.firstnameTextField.text = ""
+        self.lastnameTextField.text = ""
+        self.streetaddressTextField.text = ""
+        self.cityandstateTextField.text = ""
+        self.zipcodeTextField.text = ""
+        self.phonenumberTextField.text = ""
+        self.emailTextField.text = ""
+        self.usernameTextField.text = ""
+        self.passwordTextField.text = ""
+        
+    }
+    
 }
+
+

@@ -14,7 +14,7 @@ class LoginView: UIView {
     @IBOutlet weak var passwordTextField: UITextField!
     
     weak var forgotLoginDelegate:ForgotLoginDelegate!
-    weak var signupDelegate:SignupDelagate!
+    weak var signupDelegate:SignupDelegate!
     
     
     override init(frame: CGRect) {
