@@ -96,7 +96,7 @@
                         <constraint firstAttribute="width" constant="300" id="U97-X7-aU6"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1fI-Ur-Slz">
                     <rect key="frame" x="20" y="314" width="300" height="35"/>

@@ -103,6 +103,10 @@ extension SignupViewController:UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let p_Image = profileImageView.image, p_Image != nil else {
+            print("Select a profile image")
+            return false
+        }
         if signupstate == .clientState {
             
             guard !clientView.firstnameTextField.text!.isEmpty, clientView.firstnameTextField.text!.count > 0 else {
@@ -165,15 +169,26 @@ extension SignupViewController:UITextFieldDelegate {
                 print("Enter only alpha-numeric characters for the username.")
                 return false
             }
-            guard clientView.usernameTextField.text!.count >= 8 else {
-                print("Username must have at least 8 characters.")
+            guard clientView.usernameTextField.text!.count >= 4 else {
+                print("Username must have at least 4 characters.")
                 return false
             }
             guard clientView.usernameTextField.text!.count <= 15 else {
                 print("Username must have less than 15 characters.")
                 return false
             }
-            
+            guard !clientView.passwordTextField.text!.isEmpty, clientView.passwordTextField.text!.count >= 4 else {
+                print("Password needs to be entered and must be longer than 4 characters.")
+                return false
+            }
+            guard clientView.passwordTextField.text!.doesHaveCapitalLetter else {
+                print("The password must have at least one capital letter.")
+                return false
+            }
+            guard clientView.passwordTextField.text!.isAlphanumeric else {
+                print("The password must have ONLY alpha-numeric characters.")
+                return false
+            }
             
             
             print("Mission accomplished")

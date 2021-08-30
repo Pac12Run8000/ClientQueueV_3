@@ -31,17 +31,17 @@ extension LoginError:CustomStringConvertible {
     public var description: String {
         switch self {
         case .invalidCharactersInUsername:
-            return "Enter only alphanumeric characters."
+            return "Enter only alphanumeric characters in username."
         case .passwordTooShort:
-            return "You must have at least 8 characters in password."
+            return "You must have at least 4 characters in password."
         case .passwordTooLong:
-            return "You can't have more than 16 characters in password."
+            return "You can't have more than 15 characters in password."
         case .passwordCapitalLetterMissing:
             return "You must have at least one capital letter."
         case .emptyValue:
             return "Enter a value"
         case .usernameTooLong:
-            return "You can't have more than 16 characters in a username."
+            return "You can't have more than 15 characters in a username."
         }
         
     }

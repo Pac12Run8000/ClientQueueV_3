@@ -28,7 +28,7 @@ struct LoginViewControllerViewModel {
             completion(.failure(.usernameTooLong))
             return
         }
-        guard self.password.isPasswordLongEnough else {
+        guard self.password.count >= 4 else {
             completion(.failure(.passwordTooShort))
             return
         }
