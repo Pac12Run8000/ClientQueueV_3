@@ -11,6 +11,7 @@ import Foundation
 public enum ProfileImageError:Error {
     case cameraIsNotAvailable
     case photoLibraryIsNotAvailable
+    case noImageAvailable
 }
 
 
@@ -22,6 +23,8 @@ extension ProfileImageError:CustomStringConvertible {
             return "The camera is not available on this device."
         case .photoLibraryIsNotAvailable:
             return "This device cannot access the photo library."
+        case .noImageAvailable:
+            return "Please select an image for the profile"
         }
     }
     

@@ -9,7 +9,7 @@ import UIKit
 
 class ClientSignupView: UIView {
     
-    weak var remDelegate:RemoveProfileImageDelegate?
+    weak var removeProfileImageDelegate:RemoveProfileImageDelegate?
 
     @IBOutlet var view: UIView!
     
@@ -61,7 +61,7 @@ class ClientSignupView: UIView {
         self.usernameTextField.text = ""
         self.passwordTextField.text = ""
         
-        self.remDelegate?.resetProfileImage()
+        self.removeProfileImageDelegate?.resetProfileImage()
         
     }
     

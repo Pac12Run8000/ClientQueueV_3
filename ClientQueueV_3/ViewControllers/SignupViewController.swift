@@ -103,106 +103,15 @@ extension SignupViewController:UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
         guard let p_Image = profileImageView.image, p_Image != nil else {
-            print("Select a profile image")
+            print(ProfileImageError.noImageAvailable.description)
             return false
         }
         
         viewModel?.validateSignupForm(handler: { result in
             
         })
-//        if signupstate == .clientState {
-//            viewModel?.clientFormFunctionalityViewModel()
-//            guard !clientView.firstnameTextField.text!.isEmpty, clientView.firstnameTextField.text!.count > 0 else {
-//                print("Enter a first name.")
-//                return false
-//            }
-//            guard clientView.firstnameTextField.text?.isAlphanumeric as! Bool else {
-//                print("Enter only alpha-numeric characters.")
-//                return false
-//            }
-//            guard !clientView.lastnameTextField.text!.isEmpty, clientView.lastnameTextField.text!.count > 0 else {
-//                print("Enter a last name.")
-//                return false
-//            }
-//            guard clientView.lastnameTextField.text?.isAlphanumeric as! Bool else {
-//                print("Enter only alpha-numeric characters for lastname.")
-//                return false
-//            }
-//            guard !clientView.streetaddressTextField.text!.isEmpty as! Bool else {
-//                print("Enter an address.")
-//                return false
-//            }
-//            guard !clientView.cityandstateTextField.text!.isEmpty as! Bool else {
-//                print("Enter a city and state")
-//                return false
-//            }
-//            guard !clientView.zipcodeTextField.text!.isEmpty, clientView.zipcodeTextField.text!.count > 0 else {
-//                print("Enter a zip code")
-//                return false
-//            }
-//            guard clientView.zipcodeTextField.text?.count == 5 else {
-//                print("Enter a valid zip code that is 5 characters long.")
-//                return false
-//            }
-//            guard !clientView.phonenumberTextField.text!.isEmpty, clientView.phonenumberTextField.text!.count > 0 else {
-//                print("Enter a phone number")
-//                return false
-//            }
-//            guard clientView.phonenumberTextField.text?.count == 13 else {
-//                print("The phone number is incomplete. Add more numbers.")
-//                return false
-//            }
-//            guard clientView.phonenumberTextField.text?.isPhoneNumberFormatted as! Bool else {
-//                print("The phone number is improperly formatted.")
-//                return false
-//            }
-//            guard !clientView.emailTextField.text!.isEmpty, clientView.emailTextField.text!.count > 0 else {
-//                print("Enter an email address.")
-//                return false
-//            }
-//            guard clientView.emailTextField.text?.isValidEmail as! Bool else {
-//                print("The email formatted improperly.")
-//                return false
-//            }
-//            guard !clientView.usernameTextField.text!.isEmpty as! Bool, clientView.usernameTextField.text!.count > 0 else {
-//                print("Enter a username.")
-//                return false
-//            }
-//            guard clientView.usernameTextField.text?.isAlphanumeric as! Bool else {
-//                print("Enter only alpha-numeric characters for the username.")
-//                return false
-//            }
-//            guard clientView.usernameTextField.text!.count >= 4 else {
-//                print("Username must have at least 4 characters.")
-//                return false
-//            }
-//            guard clientView.usernameTextField.text!.count <= 15 else {
-//                print("Username must have less than 15 characters.")
-//                return false
-//            }
-//            guard !clientView.passwordTextField.text!.isEmpty, clientView.passwordTextField.text!.count > 0 else {
-//                print("Enter a password.")
-//                return false
-//            }
-//            guard  clientView.passwordTextField.text!.count > 4 else {
-//                print("Password needs to be entered and must be longer than 4 characters.")
-//                return false
-//            }
-//            guard clientView.passwordTextField.text!.doesHaveCapitalLetter else {
-//                print("The password must have at least one capital letter.")
-//                return false
-//            }
-//            guard clientView.passwordTextField.text!.isAlphanumeric else {
-//                print("The password must have ONLY alpha-numeric characters.")
-//                return false
-//            }
-            
-            
-//            print("Mission accomplished")
-//        } else if signupstate == .serviceProviderState {
-//
-//        }
 
         return true
     }

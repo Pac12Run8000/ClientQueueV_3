@@ -11,6 +11,8 @@ class SPSignupView: UIView {
     
     @IBOutlet var view: UIView!
     
+    @IBOutlet weak var businessnameTextField: UITextField!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
