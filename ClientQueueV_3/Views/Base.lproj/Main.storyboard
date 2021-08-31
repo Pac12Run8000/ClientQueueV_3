@@ -161,10 +161,10 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wqy-VX-oiP" customClass="ClientSignupView" customModule="ClientQueueV_3" customModuleProvider="target">
-                                <rect key="frame" x="20" y="338" width="374" height="380"/>
+                                <rect key="frame" x="20" y="338" width="374" height="500"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="380" id="82X-fc-SrC"/>
+                                    <constraint firstAttribute="height" constant="500" id="82X-fc-SrC"/>
                                 </constraints>
                             </view>
                         </subviews>

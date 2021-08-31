@@ -21,8 +21,11 @@ class SignupViewController: UIViewController {
         didSet {
             viewModel = SignUpViewControllerViewModel(signupState: signupstate, client: clientView, serviceProvider: spView, controller: self)
             viewModel?.fetchFormForSignup(completionHandler: { clientAlpha, spAlpha in
-                self.clientView.alpha = clientAlpha
-                self.spView.alpha = spAlpha
+                UIView.animate(withDuration: 0.4) {
+                    self.clientView.alpha = clientAlpha
+                    self.spView.alpha = spAlpha
+                }
+               
             })
         }
     }
