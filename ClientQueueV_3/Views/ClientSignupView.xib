@@ -109,7 +109,7 @@
                     <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjy-KE-l29">
-                    <rect key="frame" x="330" y="404" width="95" height="35"/>
+                    <rect key="frame" x="330" y="359" width="95" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="qxN-xY-Hn7"/>
                     </constraints>
@@ -157,7 +157,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MAz-xS-fw8" secondAttribute="trailing" constant="20" id="fub-WR-m4Y"/>
                 <constraint firstItem="MAz-xS-fw8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="kSO-yF-f8y"/>
                 <constraint firstItem="jXd-Eq-g3g" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="q1L-BK-xL6"/>
-                <constraint firstItem="Gjy-KE-l29" firstAttribute="top" secondItem="NTW-2f-QsO" secondAttribute="bottom" constant="185" id="q5n-ne-Rzq"/>
+                <constraint firstItem="Gjy-KE-l29" firstAttribute="top" secondItem="NTW-2f-QsO" secondAttribute="bottom" constant="140" id="q5n-ne-Rzq"/>
                 <constraint firstItem="3CQ-or-b9Y" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="u23-ZP-EgN"/>
                 <constraint firstItem="Wdm-cX-FM4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="vs0-as-oho"/>
                 <constraint firstItem="jXd-Eq-g3g" firstAttribute="top" secondItem="Xbj-0W-dC8" secondAttribute="bottom" constant="10" id="zGY-AF-NOa"/>

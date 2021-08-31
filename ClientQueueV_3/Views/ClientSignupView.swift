@@ -9,7 +9,7 @@ import UIKit
 
 class ClientSignupView: UIView {
     
-    
+    weak var remDelegate:RemoveProfileImageDelegate?
 
     @IBOutlet var view: UIView!
     
@@ -60,6 +60,8 @@ class ClientSignupView: UIView {
         self.emailTextField.text = ""
         self.usernameTextField.text = ""
         self.passwordTextField.text = ""
+        
+        self.remDelegate?.resetProfileImage()
         
     }
     
