@@ -13,11 +13,12 @@ extension UITextField {
         var aSet = CharacterSet()
         var newText = self.text! as NSString
         newText = newText.replacingCharacters(in: range, with: string) as NSString
-        if inverted == true {
-            aSet = CharacterSet(charactersIn:filterString).inverted
-        } else {
-            aSet = CharacterSet(charactersIn:filterString)
-        }
+        aSet = inverted == true ? CharacterSet(charactersIn:filterString).inverted : CharacterSet(charactersIn:filterString)
+//        if inverted == true {
+//            aSet = CharacterSet(charactersIn:filterString).inverted
+//        } else {
+//            aSet = CharacterSet(charactersIn:filterString)
+//        }
 
         let compSepByCharInSet = string.components(separatedBy: aSet)
         let numberFiltered = compSepByCharInSet.joined(separator: "")

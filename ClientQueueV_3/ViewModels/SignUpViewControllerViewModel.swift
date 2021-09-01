@@ -31,7 +31,19 @@ struct SignUpViewControllerViewModel {
             self.client.passwordTextField.delegate = controller as! UITextFieldDelegate
             self.client.removeProfileImageDelegate = controller as! RemoveProfileImageDelegate
         } else if signupState == .serviceProviderState {
+            self.serviceProvider.rmvPrflImgDelegate = controller as! RemoveProfileImageDelegate
             self.serviceProvider.businessnameTextField.delegate = controller as! UITextFieldDelegate
+            self.serviceProvider.firstnameTextField.delegate = controller as! UITextFieldDelegate
+            self.serviceProvider.lastnameTextField.delegate = controller as! UITextFieldDelegate
+            self.serviceProvider.streetAddressTextField.delegate = controller as! UITextFieldDelegate
+            self.serviceProvider.cityStateTextField.delegate = controller as! UITextFieldDelegate
+            self.serviceProvider.phonenumberTextField.delegate = controller as! UITextFieldDelegate
+            self.serviceProvider.emailTextField.delegate = controller as! UITextFieldDelegate
+            self.serviceProvider.usernameTextField.delegate = controller as! UITextFieldDelegate
+            self.serviceProvider.passwordTextField.delegate = controller as! UITextFieldDelegate
+            self.serviceProvider.zipCodeTextField.delegate = controller as! UITextFieldDelegate
+            
+            
         }
        
     }
@@ -162,9 +174,89 @@ struct SignUpViewControllerViewModel {
                 print("The password must have ONLY alpha-numeric characters.")
                 return
             }
+            print("Client signup")
         }
         if signupState == .serviceProviderState {
-            print("Provider signup!")
+            
+            guard !serviceProvider.firstnameTextField.text!.isEmpty, serviceProvider.firstnameTextField.text!.count > 0 else {
+                print("Enter a firstname.")
+                return
+            }
+            guard !serviceProvider.lastnameTextField.text!.isEmpty, serviceProvider.lastnameTextField.text!.count > 0 else {
+                print("Enter a lastname.")
+                return
+            }
+            guard !serviceProvider.streetAddressTextField.text!.isEmpty, serviceProvider.streetAddressTextField.text!.count > 0 else {
+                print("Enter an address.")
+                return
+            }
+            guard !serviceProvider.zipCodeTextField.text!.isEmpty, serviceProvider.zipCodeTextField.text!.count > 0 else {
+                print("Enter a zip code.")
+                return
+            }
+            guard serviceProvider.zipCodeTextField.text!.count == 5 else {
+                print("The zip code contains 5 characters. Please enter 5 characters.")
+                return
+            }
+            guard !serviceProvider.cityStateTextField.text!.isEmpty, serviceProvider.cityStateTextField.text!.count > 0 else {
+                print("Enter a city and state.")
+                return
+            }
+            
+            guard !serviceProvider.phonenumberTextField.text!.isEmpty, serviceProvider.phonenumberTextField.text!.count > 0 else {
+                print("Enter a phone number.")
+                return
+            }
+            
+            guard serviceProvider.phonenumberTextField.text?.count == 13 else {
+                print("The number of characters is off. Make sure that the number is properly formatted.")
+                return
+            }
+            guard !serviceProvider.emailTextField.text!.isEmpty, serviceProvider.emailTextField.text!.count > 0  else {
+                print("Enter an email address.")
+                return
+            }
+            guard serviceProvider.emailTextField.text!.isValidEmail else {
+                print("Enter a valid email.")
+                return
+            }
+            guard !serviceProvider.usernameTextField.text!.isEmpty, serviceProvider.usernameTextField.text!.count > 0  else {
+                print("Enter a username.")
+                return
+            }
+            guard serviceProvider.usernameTextField.text!.isAlphanumeric else {
+                print("Username must contain only alpha-numeric characters.")
+                return
+            }
+            guard serviceProvider.usernameTextField.text!.count >= 4 else {
+                print("Username must have at least 4 characters.")
+                return
+            }
+            guard serviceProvider.usernameTextField.text!.count <= 15 else {
+                print("The username must be less than 15 characters")
+                return
+            }
+            guard !serviceProvider.passwordTextField.text!.isEmpty, serviceProvider.passwordTextField!.text!.count > 0 else {
+                print("Enter a password.")
+                return
+            }
+            guard serviceProvider.passwordTextField.text!.isAlphanumeric else {
+                print("The password can only have alpha-numeric characters.")
+                return
+            }
+            guard serviceProvider.passwordTextField.text!.count >= 4 else {
+                print("The password must have at least 4 characters.")
+                return
+            }
+            guard serviceProvider.passwordTextField.text!.doesHaveCapitalLetter else {
+                print("The password must have at least one capital letter.")
+                return
+            }
+            
+            
+            print("Mission accomplished")
+            
+            
         }
     }
     
