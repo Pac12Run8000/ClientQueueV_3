@@ -141,10 +141,12 @@ extension SignupViewController {
         guard let keyboardRect = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             return
         }
+        
+//        UIResponder.keyboardWillHideNotification
 
-        if (notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardDidChangeFrameNotification) {
+        if (notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification) {
             view.frame.origin.y = -keyboardRect.height + 110
-        } else {
+        } else if notification.name == UIResponder.keyboardWillHideNotification {
             view.frame.origin.y = 0
         }
     }
