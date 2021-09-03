@@ -91,89 +91,88 @@ struct SignUpViewControllerViewModel {
         if signupState == .clientState {
             
         guard !client.firstnameTextField.text!.isEmpty, client.firstnameTextField.text!.count > 0 else {
-                print("Enter a first name.")
             handler(.failure(.no_first_name))
                 return
             }
             guard client.firstnameTextField.text?.isAlphanumeric as! Bool else {
-                print("Enter only alpha-numeric characters.")
                 handler(.failure(.only_alphanumeric_chars))
                 return
             }
             guard !client.lastnameTextField.text!.isEmpty, client.lastnameTextField.text!.count > 0 else {
-                print("Enter a last name.")
+                handler(.failure(.no_last_name))
                 return
             }
             guard client.lastnameTextField.text?.isAlphanumeric as! Bool else {
-                print("Enter only alpha-numeric characters for lastname.")
+                handler(.failure(.only_alphanumeric_chars))
                 return
             }
             guard !client.streetaddressTextField.text!.isEmpty as! Bool else {
-                print("Enter an address.")
+                handler(.failure(.no_street_address))
                 return
             }
             guard !client.cityandstateTextField.text!.isEmpty as! Bool else {
-                print("Enter a city and state")
+                handler(.failure(.no_city_state))
                 return
             }
             guard !client.zipcodeTextField.text!.isEmpty, client.zipcodeTextField.text!.count > 0 else {
-                print("Enter a zip code")
+                handler(.failure(.no_zip_code))
                 return
             }
             guard client.zipcodeTextField.text?.count == 5 else {
-                print("Enter a valid zip code that is 5 characters long.")
+                handler(.failure(.zip_code_is_too_short))
                 return
             }
             guard !client.phonenumberTextField.text!.isEmpty, client.phonenumberTextField.text!.count > 0 else {
-                print("Enter a phone number")
+                handler(.failure(.no_phone_number))
                 return
             }
             guard client.phonenumberTextField.text?.count == 13 else {
-                print("The number of characters is off. Make sure that the number is properly formatted.")
+                handler(.failure(.need_13_characters))
                 return
             }
             guard client.phonenumberTextField.text?.isPhoneNumberFormatted as! Bool else {
-                print("The phone number is improperly formatted.")
+                handler(.failure(.is_phone_number_formatted))
                 return
             }
             guard !client.emailTextField.text!.isEmpty, client.emailTextField.text!.count > 0 else {
-                print("Enter an email address.")
+                handler(.failure(.no_emailaddress))
                 return
             }
             guard client.emailTextField.text?.isValidEmail as! Bool else {
-                print("The email formatted improperly.")
+                handler(.failure(.invalid_email_formatting))
                 return
             }
             guard !client.usernameTextField.text!.isEmpty as! Bool, client.usernameTextField.text!.count > 0 else {
-                print("Enter a username.")
+                handler(.failure(.no_username))
                 return
             }
             guard client.usernameTextField.text?.isAlphanumeric as! Bool else {
-                print("Enter only alpha-numeric characters for the username.")
+                handler(.failure(.only_alpha_numeric_chars_username))
                 return
             }
             guard client.usernameTextField.text!.count >= 4 else {
-                print("Username must have at least 4 characters.")
+                handler(.failure(.username_must_have_4_chars))
                 return
             }
             guard client.usernameTextField.text!.count <= 15 else {
-                print("Username must have less than 15 characters.")
+                handler(.failure(.username_must_have_lessthan_15))
                 return
             }
             guard !client.passwordTextField.text!.isEmpty, client.passwordTextField.text!.count > 0 else {
-                print("Enter a password.")
+                handler(.failure(.no_password))
                 return
             }
-            guard  client.passwordTextField.text!.count > 4 else {
-                print("Password needs to be entered and must be longer than 4 characters.")
+            guard client.passwordTextField.text!.count > 4 else {
+                handler(.failure(.password_must_have_4_characters))
                 return
             }
             guard client.passwordTextField.text!.doesHaveCapitalLetter else {
-                print("The password must have at least one capital letter.")
+                handler(.failure(.password_must_have_capital_letter))
                 return
             }
             guard client.passwordTextField.text!.isAlphanumeric else {
                 print("The password must have ONLY alpha-numeric characters.")
+                handler(.failure(.password_must_be_alpha_numeric))
                 return
             }
             print("Client signup")
