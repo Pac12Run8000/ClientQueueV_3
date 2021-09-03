@@ -10,7 +10,7 @@ import UIKit
 struct Alert {
     
     static func pushErrorAlert(msg:String, control:UIViewController) {
-        let alert = UIAlertController(title: "Imporatnt Message", message: msg, preferredStyle: .alert)
+        let alert = UIAlertController(title: "IMPORTANT MESSAGE🚨", message: msg, preferredStyle: .alert)
         let cancelButton = UIAlertAction(title: "done", style: .cancel, handler: nil)
         alert.addAction(cancelButton)
         control.present(alert, animated: true, completion: nil)
@@ -39,4 +39,14 @@ struct Alert {
         alert.addAction(cancelAction)
         control.present(alert, animated: true)
     }
+    
+    
+    static func errorActionSheet(errMsg:String, control:UIViewController) {
+        let acsheet = UIAlertController(title: "IMPORTANT MESSAGE🚨", message: errMsg, preferredStyle: .actionSheet)
+        let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        acsheet.addAction(action)
+        control.present(acsheet, animated: true, completion: nil)
+        
+    }
+    
 }

@@ -24,7 +24,7 @@ extension ProfileImageError:CustomStringConvertible {
         case .photoLibraryIsNotAvailable:
             return "This device cannot access the photo library."
         case .noImageAvailable:
-            return "Please select an image for the profile"
+            return "Please select an image for your profile"
         }
     }
     

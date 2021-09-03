@@ -87,15 +87,17 @@ struct SignUpViewControllerViewModel {
         
     }
     
-    public func validateSignupForm(handler:@escaping(_ result:Bool) -> ()) {
+    public func validateSignupForm(handler:@escaping(_ result:Result<Bool, ClientSignupError>) -> ()) {
         if signupState == .clientState {
             
         guard !client.firstnameTextField.text!.isEmpty, client.firstnameTextField.text!.count > 0 else {
                 print("Enter a first name.")
+            handler(.failure(.no_first_name))
                 return
             }
             guard client.firstnameTextField.text?.isAlphanumeric as! Bool else {
                 print("Enter only alpha-numeric characters.")
+                handler(.failure(.only_alphanumeric_chars))
                 return
             }
             guard !client.lastnameTextField.text!.isEmpty, client.lastnameTextField.text!.count > 0 else {

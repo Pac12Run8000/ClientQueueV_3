@@ -108,12 +108,17 @@ extension SignupViewController:UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         guard let p_Image = profileImageView.image, p_Image != nil else {
-            print(ProfileImageError.noImageAvailable.description)
+            Alert.pushErrorAlert(msg: ProfileImageError.noImageAvailable.description, control: self)
             return false
         }
         
         viewModel?.validateSignupForm(handler: { result in
-            
+            switch result {
+            case .failure(let err):
+                Alert.pushErrorAlert(msg: err.description, control: self)
+            case .success(_ ):
+                print("Login!!!")
+            }
         })
 
         return true
