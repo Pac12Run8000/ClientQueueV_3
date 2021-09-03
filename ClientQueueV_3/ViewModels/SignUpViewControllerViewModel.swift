@@ -31,7 +31,7 @@ struct SignUpViewControllerViewModel {
             self.client.passwordTextField.delegate = controller as! UITextFieldDelegate
             self.client.removeProfileImageDelegate = controller as! RemoveProfileImageDelegate
         } else if signupState == .serviceProviderState {
-            self.serviceProvider.rmvPrflImgDelegate = controller as! RemoveProfileImageDelegate
+            self.serviceProvider.removeProfileImageDelegate = controller as! RemoveProfileImageDelegate
             self.serviceProvider.businessnameTextField.delegate = controller as! UITextFieldDelegate
             self.serviceProvider.firstnameTextField.delegate = controller as! UITextFieldDelegate
             self.serviceProvider.lastnameTextField.delegate = controller as! UITextFieldDelegate

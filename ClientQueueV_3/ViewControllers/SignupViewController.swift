@@ -23,7 +23,6 @@ class SignupViewController: UIViewController {
             viewModel?.fetchFormForSignup(completionHandler: { clientAlpha, spAlpha in
                 UIView.animate(withDuration: 0.4) {
                     self.clientView.alpha = clientAlpha
-                    
                     self.spView.alpha = spAlpha
                 }
                

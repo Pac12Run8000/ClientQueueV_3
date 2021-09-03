@@ -9,7 +9,7 @@ import UIKit
 
 class SPSignupView: UIView {
     
-    weak var rmvPrflImgDelegate:RemoveProfileImageDelegate?
+    weak var removeProfileImageDelegate:RemoveProfileImageDelegate?
     
     @IBOutlet var view: UIView!
     
@@ -50,7 +50,17 @@ class SPSignupView: UIView {
     }
     
     @IBAction func resetBtnAction(_ sender: Any) {
-        rmvPrflImgDelegate?.resetProfileImage()
+        removeProfileImageDelegate?.resetProfileImage()
+        self.businessnameTextField.text = ""
+        self.firstnameTextField.text = ""
+        self.lastnameTextField.text = ""
+        self.streetAddressTextField.text = ""
+        self.zipCodeTextField.text = ""
+        self.cityStateTextField.text = ""
+        self.phonenumberTextField.text = ""
+        self.emailTextField.text = ""
+        self.usernameTextField.text = ""
+        self.passwordTextField.text = ""
     }
     
 
