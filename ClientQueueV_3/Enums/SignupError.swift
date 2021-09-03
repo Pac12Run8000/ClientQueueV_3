@@ -30,8 +30,19 @@ enum SignupError:Error {
     case client_password_must_have_capital_letter
     case client_password_must_be_alpha_numeric
     // ****
-    
-    
+    case service_provider_no_firstname
+    case service_provider_no_lastname
+    case service_provider_no_address
+    case service_provider_no_zipcode
+    case service_provider_zipcode_has_5_characters
+    case service_provider_no_city_state
+    case service_provider_no_phone_number
+    case service_provider_phone_number_has_bad_formatting
+    case service_provider_no_email
+    case service_provider_invalid_email
+    case service_provider_no_username
+    case service_provider_only_alpha_numeric_characters_in_username
+    case service_provider_username_must_have_4_characters
 }
 
 
@@ -78,6 +89,32 @@ extension SignupError:CustomStringConvertible {
             return "The password must have at least one capital letter."
         case .client_password_must_be_alpha_numeric:
             return "The password must have ONLY alpha-numeric characters."
+        case .service_provider_no_firstname:
+            return "Enter a firstname."
+        case .service_provider_no_lastname:
+            return "Enter a firstname."
+        case .service_provider_no_address:
+            return "Enter an address."
+        case .service_provider_no_zipcode:
+            return "Enter a zipcode."
+        case .service_provider_zipcode_has_5_characters:
+            return "The zip code contains 5 characters. Please enter 5 characters."
+        case .service_provider_no_city_state:
+            return "Enter a city and a state."
+        case .service_provider_no_phone_number:
+            return "Enter a phone number."
+        case .service_provider_phone_number_has_bad_formatting:
+            return "The number of characters is off. Make sure that the number is properly formatted."
+        case .service_provider_no_email:
+            return "Enter an email address."
+        case .service_provider_invalid_email:
+            return "The email that you entered is invalid. Re-enter the email address."
+        case .service_provider_no_username:
+            return "Enter a username."
+        case .service_provider_only_alpha_numeric_characters_in_username:
+            return "Only alpha-numeric characters are allowed in the username."
+        case .service_provider_username_must_have_4_characters:
+            return "Username must contain at least 4 characters."
         }
     }
 }

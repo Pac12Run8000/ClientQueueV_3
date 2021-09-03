@@ -180,57 +180,57 @@ struct SignUpViewControllerViewModel {
         if signupState == .serviceProviderState {
             
             guard !serviceProvider.firstnameTextField.text!.isEmpty, serviceProvider.firstnameTextField.text!.count > 0 else {
-                print("Enter a firstname.")
+                handler(.failure(.service_provider_no_firstname))
                 return
             }
             guard !serviceProvider.lastnameTextField.text!.isEmpty, serviceProvider.lastnameTextField.text!.count > 0 else {
-                print("Enter a lastname.")
+                handler(.failure(.service_provider_no_lastname))
                 return
             }
             guard !serviceProvider.streetAddressTextField.text!.isEmpty, serviceProvider.streetAddressTextField.text!.count > 0 else {
-                print("Enter an address.")
+                handler(.failure(.service_provider_no_address))
                 return
             }
             guard !serviceProvider.zipCodeTextField.text!.isEmpty, serviceProvider.zipCodeTextField.text!.count > 0 else {
-                print("Enter a zip code.")
+                handler(.failure(.service_provider_no_zipcode))
                 return
             }
             guard serviceProvider.zipCodeTextField.text!.count == 5 else {
-                print("The zip code contains 5 characters. Please enter 5 characters.")
+                handler(.failure(.service_provider_zipcode_has_5_characters))
                 return
             }
             guard !serviceProvider.cityStateTextField.text!.isEmpty, serviceProvider.cityStateTextField.text!.count > 0 else {
-                print("Enter a city and state.")
+                handler(.failure(.service_provider_no_city_state))
                 return
             }
             
             guard !serviceProvider.phonenumberTextField.text!.isEmpty, serviceProvider.phonenumberTextField.text!.count > 0 else {
-                print("Enter a phone number.")
+                handler(.failure(.service_provider_no_phone_number))
                 return
             }
             
             guard serviceProvider.phonenumberTextField.text?.count == 13 else {
-                print("The number of characters is off. Make sure that the number is properly formatted.")
+                handler(.failure(.service_provider_phone_number_has_bad_formatting))
                 return
             }
             guard !serviceProvider.emailTextField.text!.isEmpty, serviceProvider.emailTextField.text!.count > 0  else {
-                print("Enter an email address.")
+                handler(.failure(.service_provider_no_email))
                 return
             }
             guard serviceProvider.emailTextField.text!.isValidEmail else {
-                print("Enter a valid email.")
+                handler(.failure(.service_provider_invalid_email))
                 return
             }
             guard !serviceProvider.usernameTextField.text!.isEmpty, serviceProvider.usernameTextField.text!.count > 0  else {
-                print("Enter a username.")
+                handler(.failure(.service_provider_no_username))
                 return
             }
             guard serviceProvider.usernameTextField.text!.isAlphanumeric else {
-                print("Username must contain only alpha-numeric characters.")
+                handler(.failure(.service_provider_only_alpha_numeric_characters_in_username))
                 return
             }
             guard serviceProvider.usernameTextField.text!.count >= 4 else {
-                print("Username must have at least 4 characters.")
+                handler(.failure(.service_provider_username_must_have_4_characters))
                 return
             }
             guard serviceProvider.usernameTextField.text!.count <= 15 else {
