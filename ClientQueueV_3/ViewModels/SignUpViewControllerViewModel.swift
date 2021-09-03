@@ -87,7 +87,7 @@ struct SignUpViewControllerViewModel {
         
     }
     
-    public func validateSignupForm(handler:@escaping(_ result:Result<Bool, ClientSignupError>) -> ()) {
+    public func validateSignupForm(handler:@escaping(_ result:Result<Bool, SignupError>) -> ()) {
         if signupState == .clientState {
             
         guard !client.firstnameTextField.text!.isEmpty, client.firstnameTextField.text!.count > 0 else {

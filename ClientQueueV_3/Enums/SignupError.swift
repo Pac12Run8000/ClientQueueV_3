@@ -1,5 +1,5 @@
 //
-//  ClientSignupError.swift
+//  SignupError.swift
 //  ClientQueueV_3
 //
 //  Created by Michelle Grover on 8/31/21.
@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum ClientSignupError:Error {
+enum SignupError:Error {
     case no_first_name
     case no_last_name
     case only_alphanumeric_chars
@@ -29,10 +29,13 @@ enum ClientSignupError:Error {
     case password_must_have_4_characters
     case password_must_have_capital_letter
     case password_must_be_alpha_numeric
+    // ****
+    
+    
 }
 
 
-extension ClientSignupError:CustomStringConvertible {
+extension SignupError:CustomStringConvertible {
     var description: String {
         switch self {
         case .no_first_name:
