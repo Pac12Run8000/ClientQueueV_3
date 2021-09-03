@@ -91,88 +91,88 @@ struct SignUpViewControllerViewModel {
         if signupState == .clientState {
             
         guard !client.firstnameTextField.text!.isEmpty, client.firstnameTextField.text!.count > 0 else {
-            handler(.failure(.no_first_name))
+            handler(.failure(.client_no_first_name))
                 return
             }
             guard client.firstnameTextField.text?.isAlphanumeric as! Bool else {
-                handler(.failure(.only_alphanumeric_chars))
+                handler(.failure(.client_only_alphanumeric_chars))
                 return
             }
             guard !client.lastnameTextField.text!.isEmpty, client.lastnameTextField.text!.count > 0 else {
-                handler(.failure(.no_last_name))
+                handler(.failure(.client_no_last_name))
                 return
             }
             guard client.lastnameTextField.text?.isAlphanumeric as! Bool else {
-                handler(.failure(.only_alphanumeric_chars))
+                handler(.failure(.client_only_alphanumeric_chars))
                 return
             }
             guard !client.streetaddressTextField.text!.isEmpty as! Bool else {
-                handler(.failure(.no_street_address))
+                handler(.failure(.client_no_street_address))
                 return
             }
             guard !client.cityandstateTextField.text!.isEmpty as! Bool else {
-                handler(.failure(.no_city_state))
+                handler(.failure(.client_no_city_state))
                 return
             }
             guard !client.zipcodeTextField.text!.isEmpty, client.zipcodeTextField.text!.count > 0 else {
-                handler(.failure(.no_zip_code))
+                handler(.failure(.client_no_zip_code))
                 return
             }
             guard client.zipcodeTextField.text?.count == 5 else {
-                handler(.failure(.zip_code_is_too_short))
+                handler(.failure(.client_zip_code_is_too_short))
                 return
             }
             guard !client.phonenumberTextField.text!.isEmpty, client.phonenumberTextField.text!.count > 0 else {
-                handler(.failure(.no_phone_number))
+                handler(.failure(.client_no_phone_number))
                 return
             }
             guard client.phonenumberTextField.text?.count == 13 else {
-                handler(.failure(.need_13_characters))
+                handler(.failure(.client_need_13_characters))
                 return
             }
             guard client.phonenumberTextField.text?.isPhoneNumberFormatted as! Bool else {
-                handler(.failure(.is_phone_number_formatted))
+                handler(.failure(.client_is_phone_number_formatted))
                 return
             }
             guard !client.emailTextField.text!.isEmpty, client.emailTextField.text!.count > 0 else {
-                handler(.failure(.no_emailaddress))
+                handler(.failure(.client_no_emailaddress))
                 return
             }
             guard client.emailTextField.text?.isValidEmail as! Bool else {
-                handler(.failure(.invalid_email_formatting))
+                handler(.failure(.client_invalid_email_formatting))
                 return
             }
             guard !client.usernameTextField.text!.isEmpty as! Bool, client.usernameTextField.text!.count > 0 else {
-                handler(.failure(.no_username))
+                handler(.failure(.client_no_username))
                 return
             }
             guard client.usernameTextField.text?.isAlphanumeric as! Bool else {
-                handler(.failure(.only_alpha_numeric_chars_username))
+                handler(.failure(.client_only_alpha_numeric_chars_username))
                 return
             }
             guard client.usernameTextField.text!.count >= 4 else {
-                handler(.failure(.username_must_have_4_chars))
+                handler(.failure(.client_username_must_have_4_chars))
                 return
             }
             guard client.usernameTextField.text!.count <= 15 else {
-                handler(.failure(.username_must_have_lessthan_15))
+                handler(.failure(.client_username_must_have_lessthan_15))
                 return
             }
             guard !client.passwordTextField.text!.isEmpty, client.passwordTextField.text!.count > 0 else {
-                handler(.failure(.no_password))
+                handler(.failure(.client_no_password))
                 return
             }
             guard client.passwordTextField.text!.count > 4 else {
-                handler(.failure(.password_must_have_4_characters))
+                handler(.failure(.client_password_must_have_4_characters))
                 return
             }
             guard client.passwordTextField.text!.doesHaveCapitalLetter else {
-                handler(.failure(.password_must_have_capital_letter))
+                handler(.failure(.client_password_must_have_capital_letter))
                 return
             }
             guard client.passwordTextField.text!.isAlphanumeric else {
                 print("The password must have ONLY alpha-numeric characters.")
-                handler(.failure(.password_must_be_alpha_numeric))
+                handler(.failure(.client_password_must_be_alpha_numeric))
                 return
             }
             print("Client signup")
