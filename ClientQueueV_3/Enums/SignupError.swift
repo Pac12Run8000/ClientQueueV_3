@@ -43,6 +43,11 @@ enum SignupError:Error {
     case service_provider_no_username
     case service_provider_only_alpha_numeric_characters_in_username
     case service_provider_username_must_have_4_characters
+    case service_provider_username_less_than_15_characters
+    case service_provider_no_password
+    case service_provider_password_isAlpa_numeric
+    case service_provider_password_4_characters
+    case service_provider_password_capital_letter
 }
 
 
@@ -115,6 +120,16 @@ extension SignupError:CustomStringConvertible {
             return "Only alpha-numeric characters are allowed in the username."
         case .service_provider_username_must_have_4_characters:
             return "Username must contain at least 4 characters."
+        case .service_provider_username_less_than_15_characters:
+            return "The username must be less than 15 characters."
+        case .service_provider_no_password:
+            return "Enter a password."
+        case .service_provider_password_isAlpa_numeric:
+            return "The password can only have alpha-numeric characters."
+        case .service_provider_password_4_characters:
+            return "The password must have at least 4 characters."
+        case .service_provider_password_capital_letter:
+            return "The password must have a capital letter."
         }
     }
 }

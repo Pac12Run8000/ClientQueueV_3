@@ -175,7 +175,7 @@ struct SignUpViewControllerViewModel {
                 handler(.failure(.client_password_must_be_alpha_numeric))
                 return
             }
-            print("Client signup")
+            handler(.success(true))
         }
         if signupState == .serviceProviderState {
             
@@ -234,29 +234,26 @@ struct SignUpViewControllerViewModel {
                 return
             }
             guard serviceProvider.usernameTextField.text!.count <= 15 else {
-                print("The username must be less than 15 characters")
+                handler(.failure(.service_provider_username_less_than_15_characters))
                 return
             }
             guard !serviceProvider.passwordTextField.text!.isEmpty, serviceProvider.passwordTextField!.text!.count > 0 else {
-                print("Enter a password.")
+                handler(.failure(.service_provider_no_password))
                 return
             }
             guard serviceProvider.passwordTextField.text!.isAlphanumeric else {
-                print("The password can only have alpha-numeric characters.")
+                handler(.failure(.service_provider_password_isAlpa_numeric))
                 return
             }
             guard serviceProvider.passwordTextField.text!.count >= 4 else {
-                print("The password must have at least 4 characters.")
+                handler(.failure(.service_provider_password_4_characters))
                 return
             }
             guard serviceProvider.passwordTextField.text!.doesHaveCapitalLetter else {
-                print("The password must have at least one capital letter.")
+                handler(.failure(.service_provider_password_capital_letter))
                 return
             }
-            
-            
-            print("Mission accomplished")
-            
+            handler(.success(true))
             
         }
     }
