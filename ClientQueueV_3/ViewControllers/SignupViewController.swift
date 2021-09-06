@@ -149,7 +149,6 @@ extension SignupViewController {
             return
         }
         
-//        UIResponder.keyboardWillHideNotification
 
         if (notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification) {
             view.frame.origin.y = -keyboardRect.height + 110
