@@ -9,40 +9,45 @@ import UIKit
 
 struct LoginViewControllerViewModel {
     
-    var username:String
+    var email:String
     var password:String
     
     
-    init(username:String = "", password:String = "") {
-        self.username = username
+    init(email:String = "", password:String = "") {
+        self.email = email
         self.password = password
     }
     
-    func validateLoginAndCompleteLoginProcess(completion:@escaping(_ result:Result<Bool, LoginError>) -> ()) {
-        
-        guard self.username.isAlphanumeric else {
-            completion(.failure(.invalidCharactersInUsername))
+    
+    func validateCredentialsAndAuthenticate(completion:@escaping(_ result:Result<Bool, LoginError>) -> ()) {
+        guard !self.email.isEmpty, self.email.count > 0 else {
+            completion(.failure(.noemail))
             return
         }
-        guard self.username.count <= 15 else {
-            completion(.failure(.usernameTooLong))
+        guard self.email.isValidEmail else {
+            completion(.failure(.invalidEmail))
+            return
+        }
+        guard !self.password.isEmpty, self.password.count > 0 else {
+            completion(.failure(.nopassword))
             return
         }
         guard self.password.count >= 4 else {
-            completion(.failure(.passwordTooShort))
+            completion(.failure(.passwordMustBeGreaterThan4))
             return
         }
         guard self.password.count <= 15 else {
-            completion(.failure(.passwordTooLong))
+            completion(.failure(.passwordMustBeLessThan16))
             return
         }
         guard self.password.doesHaveCapitalLetter else {
-            completion(.failure(.passwordCapitalLetterMissing))
+            completion(.failure(.passwordMustHaveCapitalLetter))
             return
         }
-       
+        
         completion(.success(true))
     }
+
     
     
     

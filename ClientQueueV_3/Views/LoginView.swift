@@ -10,7 +10,7 @@ import UIKit
 class LoginView: UIView {
     
     @IBOutlet var view: UIView!
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     weak var forgotLoginDelegate:ForgotLoginDelegate!
@@ -31,7 +31,7 @@ class LoginView: UIView {
         view = loadViewFromNib(nibName: "LoginView")
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.frame = self.bounds
-        usernameTextField.layer.masksToBounds = true
+        emailTextField.layer.masksToBounds = true
         passwordTextField.layer.masksToBounds = true
         view.layer.backgroundColor = UIColor.lightGreen.cgColor
         addSubview(view)

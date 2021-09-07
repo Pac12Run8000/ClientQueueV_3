@@ -10,18 +10,14 @@ import UIKit
 class LoginViewController: UIViewController {
     
     
-    @IBOutlet weak var loginErrorLabel: UILabel!
+    
     @IBOutlet weak var loginView: LoginView!
     
-    var viewModel:LoginViewControllerViewModel?
+    var viewModel:LoginViewControllerViewModel? 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        loginView.usernameTextField.becomeFirstResponder()
-        loginView.usernameTextField.delegate = self
+        loginView.emailTextField.delegate = self
         loginView.passwordTextField.delegate = self
         loginView.forgotLoginDelegate = self
         loginView.signupDelegate = self
@@ -38,26 +34,22 @@ extension LoginViewController:UITextFieldDelegate {
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        guard let username = loginView.usernameTextField.text, username.count > 0 else {
-            loginErrorLabel.text = "Enter a username."
-            loginView.usernameTextField.becomeFirstResponder()
+        guard let email = loginView.emailTextField.text else {
             return false
         }
-        guard let password = loginView.passwordTextField.text, password.count > 0 else {
-            loginErrorLabel.text = "Enter a password."
-            loginView.passwordTextField.becomeFirstResponder()
+        guard let password = loginView.passwordTextField.text else {
             return false
         }
-        
-        LoginViewControllerViewModel(username: username, password: password).validateLoginAndCompleteLoginProcess(completion: { result in
-            
+        viewModel = LoginViewControllerViewModel(email: email, password: password)
+        viewModel?.validateCredentialsAndAuthenticate(completion: { result in
             switch result {
-            case .failure(let err):
-                self.loginErrorLabel.text = err.description
+            case .failure(let errDesc):
+                Alert.pushErrorAlert(msg: errDesc.description, control: self)
             case .success(_ ):
-                self.loginErrorLabel.text = "Login is successful."
+                print("Logged In")
             }
         })
+
         return true
     }
     

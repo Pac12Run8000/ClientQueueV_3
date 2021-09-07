@@ -33,30 +33,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMT-2I-iYl">
-                                <rect key="frame" x="20" y="288" width="374" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="1ti-wG-NrO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.015686274509803921" green="0.74901960784313726" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Boc-nz-HT7" secondAttribute="trailing" constant="20" id="KDD-pC-nJt"/>
                             <constraint firstItem="Boc-nz-HT7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TTk-RO-qcE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oMT-2I-iYl" secondAttribute="trailing" constant="20" id="UhO-r9-tWk"/>
-                            <constraint firstItem="oMT-2I-iYl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ul9-FG-Xft"/>
-                            <constraint firstItem="oMT-2I-iYl" firstAttribute="top" secondItem="Boc-nz-HT7" secondAttribute="bottom" constant="25" id="iqq-4G-va4"/>
                             <constraint firstItem="Boc-nz-HT7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="jvg-kP-K7a"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="Q1T-4m-ZhI"/>
                     <connections>
-                        <outlet property="loginErrorLabel" destination="oMT-2I-iYl" id="rM0-TS-MpB"/>
                         <outlet property="loginView" destination="Boc-nz-HT7" id="A3E-Se-wTf"/>
                         <segue destination="jpz-Wu-RDZ" kind="show" identifier="signUpSegueue" id="eGm-ZC-Ef5"/>
                         <segue destination="rVw-i8-1U9" kind="show" identifier="forgotLoginSegue" id="Rm3-mN-CxY"/>
