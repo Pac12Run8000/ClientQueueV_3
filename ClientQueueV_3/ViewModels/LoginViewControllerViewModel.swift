@@ -20,12 +20,20 @@ struct LoginViewControllerViewModel {
     
     
     func validateCredentialsAndAuthenticate(completion:@escaping(_ result:Result<Bool, LoginError>) -> ()) {
+        guard self.email.trimmingCharacters(in: .whitespaces) != "" else {
+            completion(.failure(.nowhitespacesAllowedEmail))
+            return
+        }
         guard !self.email.isEmpty, self.email.count > 0 else {
             completion(.failure(.noemail))
             return
         }
         guard self.email.isValidEmail else {
             completion(.failure(.invalidEmail))
+            return
+        }
+        guard self.password.trimmingCharacters(in: .whitespacesAndNewlines) != "" else {
+            completion(.failure(.nowhitespacesAllowedPassword))
             return
         }
         guard !self.password.isEmpty, self.password.count > 0 else {

@@ -14,6 +14,8 @@ public enum LoginError:Error {
     case passwordMustBeGreaterThan4
     case passwordMustBeLessThan16
     case passwordMustHaveCapitalLetter
+    case nowhitespacesAllowedEmail
+    case nowhitespacesAllowedPassword
 }
 
 extension LoginError:CustomStringConvertible {
@@ -31,6 +33,10 @@ extension LoginError:CustomStringConvertible {
             return "The password can have no more than 15 characters."
         case .passwordMustHaveCapitalLetter:
             return "The password must have at least one capital letter."
+        case .nowhitespacesAllowedEmail:
+            return "No whitespace allowed in email."
+        case .nowhitespacesAllowedPassword:
+            return "No whitespace allowed in password."
         }
     }
 }
