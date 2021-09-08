@@ -112,6 +112,22 @@
             </objects>
             <point key="canvasLocation" x="2095.6521739130435" y="72.991071428571431"/>
         </scene>
+        <!--Client Main View Controller-->
+        <scene sceneID="dlQ-6r-GgX">
+            <objects>
+                <viewController id="xFl-uP-MER" customClass="ClientMainViewController" customModule="ClientQueueV_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iIE-sN-N97">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="BwJ-SQ-GUq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oV5-gG-lRz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eDh-jJ-s3Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3141" y="78"/>
+        </scene>
         <!--Sign Up-->
         <scene sceneID="RWO-s3-sh6">
             <objects>
@@ -149,7 +165,7 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wqy-VX-oiP" customClass="ClientSignupView" customModule="ClientQueueV_3" customModuleProvider="target">
                                 <rect key="frame" x="20" y="338" width="374" height="500"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.015686274510000001" green="0.74901960779999999" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="500" id="82X-fc-SrC"/>
                                 </constraints>
@@ -175,11 +191,29 @@
                         <outlet property="clientView" destination="Wqy-VX-oiP" id="dgD-ns-DbI"/>
                         <outlet property="profileImageView" destination="3dR-2G-LNc" id="QJJ-pF-sSZ"/>
                         <outlet property="spView" destination="7NO-T2-lg7" id="m4z-rL-7pv"/>
+                        <segue destination="xFl-uP-MER" kind="show" identifier="mainClientAuthSegue" id="9Ay-3d-WiK"/>
+                        <segue destination="8ez-cu-3rV" kind="show" identifier="mainServiceProviderAuthSegue" id="MJM-vs-nnt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wwc-nA-dTm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2292.753623188406" y="801.5625"/>
+            <point key="canvasLocation" x="2096" y="840"/>
+        </scene>
+        <!--Service Privider Main View Controller-->
+        <scene sceneID="LEZ-yX-lA1">
+            <objects>
+                <viewController id="8ez-cu-3rV" customClass="ServicePrividerMainViewController" customModule="ClientQueueV_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EG1-gG-pHs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="PT4-UV-79T"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="n1Z-XB-m98"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="815-Pk-eEd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3141" y="840"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hv3-Tm-so0">

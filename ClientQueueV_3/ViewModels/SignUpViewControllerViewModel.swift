@@ -87,7 +87,7 @@ struct SignUpViewControllerViewModel {
         
     }
     
-    public func validateSignupForm(handler:@escaping(_ result:Result<Bool, SignupError>) -> ()) {
+    public func validateSignupForm(handler:@escaping(_ result:Result<UserType, SignupError>) -> ()) {
         if signupState == .clientState {
             
         guard !client.firstnameTextField.text!.isEmpty, client.firstnameTextField.text!.count > 0 else {
@@ -175,7 +175,7 @@ struct SignUpViewControllerViewModel {
                 handler(.failure(.client_password_must_be_alpha_numeric))
                 return
             }
-            handler(.success(true))
+            handler(.success(.client))
         }
         if signupState == .serviceProviderState {
             
@@ -253,7 +253,7 @@ struct SignUpViewControllerViewModel {
                 handler(.failure(.service_provider_password_capital_letter))
                 return
             }
-            handler(.success(true))
+            handler(.success(.serviceProvider))
             
         }
     }

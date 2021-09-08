@@ -117,7 +117,7 @@ extension SignupViewController:UITextFieldDelegate {
             case .failure(let err):
                 Alert.pushErrorAlert(msg: err.description, control: self)
             case .success(let value):
-                print("Login: \(value as Bool)")
+                value.performSegueToMainController(vc: self)
             }
         })
 
