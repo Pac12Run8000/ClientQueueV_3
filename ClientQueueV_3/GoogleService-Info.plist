@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>170118133060-edoeui9dblff8psnhqg265371fjl0s4u.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.170118133060-edoeui9dblff8psnhqg265371fjl0s4u</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDGp-wlI0vz8Oaowd1lWQaCyUaD5riLQF8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>170118133060</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.GroverTech.ClientQueueV-3</string>
+	<key>PROJECT_ID</key>
+	<string>clientqueuev3-ec90f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>clientqueuev3-ec90f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:170118133060:ios:94eeaf4e9b09b1f741d311</string>
+</dict>
+</plist>
