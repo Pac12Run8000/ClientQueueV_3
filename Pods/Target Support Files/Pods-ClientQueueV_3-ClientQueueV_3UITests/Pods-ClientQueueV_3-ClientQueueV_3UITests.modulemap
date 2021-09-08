@@ -1,0 +1,6 @@
+framework module Pods_ClientQueueV_3_ClientQueueV_3UITests {
+  umbrella header "Pods-ClientQueueV_3-ClientQueueV_3UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
