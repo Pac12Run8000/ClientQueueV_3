@@ -44,6 +44,9 @@
 		09F75C1626E8CBE100B25FD5 /* ClientMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F75C1526E8CBE100B25FD5 /* ClientMainViewController.swift */; };
 		09F75C1826E8CC1400B25FD5 /* ServicePrividerMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F75C1726E8CC1400B25FD5 /* ServicePrividerMainViewController.swift */; };
 		09F75C1A26E8CEE300B25FD5 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F75C1926E8CEE300B25FD5 /* UserType.swift */; };
+		09F75C1F26E942B700B25FD5 /* LogoutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F75C1E26E942B700B25FD5 /* LogoutButtonView.swift */; };
+		09F75C2126E942DB00B25FD5 /* LogoutButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F75C2026E942DB00B25FD5 /* LogoutButtonView.xib */; };
+		09F75C2326E95B0600B25FD5 /* LogoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F75C2226E95B0600B25FD5 /* LogoutDelegate.swift */; };
 		0C160A5735919B9022804744 /* Pods_ClientQueueV_3_ClientQueueV_3UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD604894C53945A0B6AB33 /* Pods_ClientQueueV_3_ClientQueueV_3UITests.framework */; };
 		0D7C16FD1AE7BA2415D997CD /* Pods_ClientQueueV_3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C5A120B68078D019A39225 /* Pods_ClientQueueV_3.framework */; };
 		F08B21B7CAA7033139D4C44C /* Pods_ClientQueueV_3Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BB2D224A36D5CB9463C6F3 /* Pods_ClientQueueV_3Tests.framework */; };
@@ -111,6 +114,9 @@
 		09F75C1526E8CBE100B25FD5 /* ClientMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMainViewController.swift; sourceTree = "<group>"; };
 		09F75C1726E8CC1400B25FD5 /* ServicePrividerMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePrividerMainViewController.swift; sourceTree = "<group>"; };
 		09F75C1926E8CEE300B25FD5 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
+		09F75C1E26E942B700B25FD5 /* LogoutButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButtonView.swift; sourceTree = "<group>"; };
+		09F75C2026E942DB00B25FD5 /* LogoutButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutButtonView.xib; sourceTree = "<group>"; };
+		09F75C2226E95B0600B25FD5 /* LogoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutDelegate.swift; sourceTree = "<group>"; };
 		1215B45A92274429AD805817 /* Pods-ClientQueueV_3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientQueueV_3.debug.xcconfig"; path = "Target Support Files/Pods-ClientQueueV_3/Pods-ClientQueueV_3.debug.xcconfig"; sourceTree = "<group>"; };
 		25F9B781E2E798AA41C3498B /* Pods-ClientQueueV_3-ClientQueueV_3UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientQueueV_3-ClientQueueV_3UITests.release.xcconfig"; path = "Target Support Files/Pods-ClientQueueV_3-ClientQueueV_3UITests/Pods-ClientQueueV_3-ClientQueueV_3UITests.release.xcconfig"; sourceTree = "<group>"; };
 		2F9428A3C6FC000F15480924 /* Pods-ClientQueueV_3-ClientQueueV_3UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientQueueV_3-ClientQueueV_3UITests.debug.xcconfig"; path = "Target Support Files/Pods-ClientQueueV_3-ClientQueueV_3UITests/Pods-ClientQueueV_3-ClientQueueV_3UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -182,6 +188,7 @@
 		09EBDE6526BB2BD1003A060B /* ClientQueueV_3 */ = {
 			isa = PBXGroup;
 			children = (
+				09F75C1B26E8DDD900B25FD5 /* AuthenticationUtilities */,
 				09A62F5226CD660500D0B6AB /* CustomObjects */,
 				09EBDEB126C0EEDD003A060B /* Protocols */,
 				09EBDEAC26BD8B34003A060B /* ViewModels */,
@@ -229,6 +236,8 @@
 				09A62F5726CEE34300D0B6AB /* ClientSignupView.xib */,
 				09A62F6926D2AE5900D0B6AB /* SPSignupView.swift */,
 				09A62F6726D2AE2500D0B6AB /* SPSignupView.xib */,
+				09F75C1E26E942B700B25FD5 /* LogoutButtonView.swift */,
+				09F75C2026E942DB00B25FD5 /* LogoutButtonView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -300,8 +309,16 @@
 				09A62F3E26C3B0A500D0B6AB /* ForgotLoginDelegate.swift */,
 				09A62F4026C4882600D0B6AB /* SignupDelegate.swift */,
 				09163A4C26DD84E800897A82 /* RemoveProfileImageDelegate.swift */,
+				09F75C2226E95B0600B25FD5 /* LogoutDelegate.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		09F75C1B26E8DDD900B25FD5 /* AuthenticationUtilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AuthenticationUtilities;
 			sourceTree = "<group>";
 		};
 		5BEB105C576FA92BF06AE8AE /* Frameworks */ = {
@@ -441,6 +458,7 @@
 				09EBDEA026BC2DD3003A060B /* LoginView.xib in Resources */,
 				091B910E26E7EF1E004C76A3 /* GoogleService-Info.plist in Resources */,
 				09A62F5826CEE34300D0B6AB /* ClientSignupView.xib in Resources */,
+				09F75C2126E942DB00B25FD5 /* LogoutButtonView.xib in Resources */,
 				09EBDE6E26BB2BD1003A060B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,6 +591,7 @@
 				09EBDE6B26BB2BD1003A060B /* LoginViewController.swift in Sources */,
 				09F75C1A26E8CEE300B25FD5 /* UserType.swift in Sources */,
 				09A62F4526C4D19000D0B6AB /* ForgotLoginViewController.swift in Sources */,
+				09F75C1F26E942B700B25FD5 /* LogoutButtonView.swift in Sources */,
 				09A62F4F26CD49F300D0B6AB /* Alert.swift in Sources */,
 				09A62F4D26CCCC5300D0B6AB /* imageView+extension.swift in Sources */,
 				09A62F6A26D2AE5900D0B6AB /* SPSignupView.swift in Sources */,
@@ -588,6 +607,7 @@
 				09A62F4326C4D0CA00D0B6AB /* SignupViewController.swift in Sources */,
 				09163A5326E723B600897A82 /* ForgotLoginError.swift in Sources */,
 				09F75C1626E8CBE100B25FD5 /* ClientMainViewController.swift in Sources */,
+				09F75C2326E95B0600B25FD5 /* LogoutDelegate.swift in Sources */,
 				09A62F5126CD650F00D0B6AB /* ImagePickerState.swift in Sources */,
 				09EBDEAB26BD8888003A060B /* String+Extensions.swift in Sources */,
 				09163A4D26DD84E800897A82 /* RemoveProfileImageDelegate.swift in Sources */,

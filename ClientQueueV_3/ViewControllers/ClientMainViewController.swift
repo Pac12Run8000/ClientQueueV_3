@@ -6,11 +6,24 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ClientMainViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var logoutBtnView: LogoutButtonView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        logoutBtnView.logoutdelegate = self
+        
+        print("Auth: \(Auth.auth().currentUser?.email), uiD: \(Auth.auth().currentUser?.uid)")
+        
+
+        
+
 
         
     }
@@ -23,5 +36,23 @@ class ClientMainViewController: UIViewController {
     
 
     
+    
 
 }
+
+extension ClientMainViewController:LogoutDelegate {
+    func logout() {
+        do {
+        try Auth.auth().signOut()
+            self.navigationController?.popToRootViewController(animated: true)
+        } catch {
+            print("error:\(error.localizedDescription)")
+            
+        }
+        
+        
+    }
+    
+    
+}
+

@@ -119,14 +119,31 @@
                     <view key="view" contentMode="scaleToFill" id="iIE-sN-N97">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vqc-ib-wyF" customClass="LogoutButtonView" customModule="ClientQueueV_3" customModuleProvider="target">
+                                <rect key="frame" x="284" y="88" width="120" height="45"/>
+                                <color key="backgroundColor" red="0.015686274510000001" green="0.74901960779999999" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="SdN-AM-1un"/>
+                                    <constraint firstAttribute="height" constant="45" id="rIv-gr-QJp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="BwJ-SQ-GUq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vqc-ib-wyF" firstAttribute="top" secondItem="BwJ-SQ-GUq" secondAttribute="top" id="b4x-fO-9mR"/>
+                            <constraint firstItem="BwJ-SQ-GUq" firstAttribute="trailing" secondItem="Vqc-ib-wyF" secondAttribute="trailing" constant="10" id="raZ-OF-78f"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oV5-gG-lRz"/>
+                    <connections>
+                        <outlet property="logoutBtnView" destination="Vqc-ib-wyF" id="Mpe-4D-JWV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eDh-jJ-s3Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3141" y="78"/>
+            <point key="canvasLocation" x="3140.579710144928" y="77.678571428571431"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="RWO-s3-sh6">
