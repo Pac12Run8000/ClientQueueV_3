@@ -87,7 +87,7 @@ struct SignUpViewControllerViewModel {
         
     }
     
-    public func validateSignupForm(handler:@escaping(_ result:Result<UserType, SignupError>) -> ()) {
+    public func validateSignupForm(handler:@escaping(_ result:Result<[String:AnyObject], SignupError>) -> ()) {
         if signupState == .clientState {
             
         guard !client.firstnameTextField.text!.isEmpty, client.firstnameTextField.text!.count > 0 else {
@@ -175,7 +175,7 @@ struct SignUpViewControllerViewModel {
                 handler(.failure(.client_password_must_be_alpha_numeric))
                 return
             }
-            handler(.success(.client))
+            handler(.success(["firstname":client.firstnameTextField.text as! AnyObject, "lastname": client.lastnameTextField.text as! AnyObject, "gender": GenderType(rawValue: client.segmentedGenderControl.selectedSegmentIndex) as! AnyObject, "address": client.streetaddressTextField.text as! AnyObject, "userType": UserType.client as! AnyObject, "cityState": client.cityandstateTextField.text as! AnyObject, "zipCode":client.zipcodeTextField.text as! AnyObject, "phone":client.phonenumberTextField.text as! AnyObject, "email":client.emailTextField.text as! AnyObject, "username":client.usernameTextField.text as! AnyObject, "password":client.passwordTextField.text as! AnyObject]))
         }
         if signupState == .serviceProviderState {
             
@@ -253,7 +253,7 @@ struct SignUpViewControllerViewModel {
                 handler(.failure(.service_provider_password_capital_letter))
                 return
             }
-            handler(.success(.serviceProvider))
+//            handler(.success(.serviceProvider))
             
         }
     }

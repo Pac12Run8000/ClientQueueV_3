@@ -21,4 +21,12 @@ struct Authenticate {
             throw error
         }
     }
+    
+    static func signInForFirebaseAuthRealtimeDatabase(dictionary:[String:AnyObject], control:UIViewController) {
+        print("dictionary:\(dictionary)")
+        
+        
+        let value = dictionary["userType"] as! UserType
+        value.performSegueToMainController(vc: control)
+    }
 }

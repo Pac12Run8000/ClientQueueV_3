@@ -116,8 +116,8 @@ extension SignupViewController:UITextFieldDelegate {
             switch result {
             case .failure(let err):
                 Alert.pushErrorAlert(msg: err.description, control: self)
-            case .success(let value):
-                value.performSegueToMainController(vc: self)
+            case .success(let dictionary):
+                Authenticate.signInForFirebaseAuthRealtimeDatabase(dictionary: dictionary, control: self)
             }
         })
 

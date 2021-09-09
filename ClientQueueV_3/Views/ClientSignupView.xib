@@ -17,6 +17,7 @@
                 <outlet property="passwordTextField" destination="Wdm-cX-FM4" id="dgO-QH-MV1"/>
                 <outlet property="phonenumberTextField" destination="3CQ-or-b9Y" id="X0t-av-8SD"/>
                 <outlet property="resetButton" destination="Gjy-KE-l29" id="zCy-xa-cgb"/>
+                <outlet property="segmentedGenderControl" destination="vrT-oz-Wgw" id="V1A-sx-7fB"/>
                 <outlet property="streetaddressTextField" destination="jXd-Eq-g3g" id="NMq-Ic-bFr"/>
                 <outlet property="usernameTextField" destination="UWI-l1-Dy0" id="Yst-1L-yjK"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xSq-at-K31"/>
@@ -88,7 +89,7 @@
                         <constraint firstAttribute="height" constant="35" id="vcq-c4-URB"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" spellCheckingType="no" smartQuotesType="no"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wdm-cX-FM4">
                     <rect key="frame" x="20" y="404" width="300" height="35"/>

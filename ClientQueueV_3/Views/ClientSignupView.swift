@@ -13,6 +13,9 @@ class ClientSignupView: UIView {
 
     @IBOutlet var view: UIView!
     
+    
+    @IBOutlet weak var segmentedGenderControl: UISegmentedControl!
+    
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var phonenumberTextField: UITextField!
     @IBOutlet weak var firstnameTextField: UITextField!
