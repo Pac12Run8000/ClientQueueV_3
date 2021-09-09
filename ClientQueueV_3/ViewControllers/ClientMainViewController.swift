@@ -43,12 +43,20 @@ class ClientMainViewController: UIViewController {
 extension ClientMainViewController:LogoutDelegate {
     func logout() {
         do {
-        try Auth.auth().signOut()
-            self.navigationController?.popToRootViewController(animated: true)
+            try Authenticate.logoutAndPopToRoot(control: self)
         } catch {
-            print("error:\(error.localizedDescription)")
-            
+            Alert.pushErrorAlert(msg: error.localizedDescription, control: self)
         }
+//        guard Auth.auth().currentUser?.uid != nil else {
+//            print("The user isn't logged in.")
+//            return
+//        }
+//        do {
+//        try Auth.auth().signOut()
+//            self.navigationController?.popToRootViewController(animated: true)
+//        } catch {
+//            print("error:\(error.localizedDescription)")
+//        }
         
         
     }
