@@ -11,7 +11,7 @@ import Foundation
 enum SignupError:Error {
     case client_no_first_name
     case client_no_last_name
-    case client_only_alphanumeric_chars
+    case client_only_alphanumeric_chars_for_lastname
     case client_no_street_address
     case client_no_city_state
     case client_no_zip_code
@@ -29,6 +29,9 @@ enum SignupError:Error {
     case client_password_must_have_4_characters
     case client_password_must_have_capital_letter
     case client_password_must_be_alpha_numeric
+    case client_create_authentication_profile_error(err:String)
+    case client_save_profile_to_realtime_database_error
+   
     // ****
     case service_provider_no_firstname
     case service_provider_no_lastname
@@ -48,6 +51,7 @@ enum SignupError:Error {
     case service_provider_password_isAlpa_numeric
     case service_provider_password_4_characters
     case service_provider_password_capital_letter
+    
 }
 
 
@@ -58,7 +62,7 @@ extension SignupError:CustomStringConvertible {
             return "Enter a first name"
         case .client_no_last_name:
             return "Enter a last name"
-        case .client_only_alphanumeric_chars:
+        case .client_only_alphanumeric_chars_for_lastname:
             return "Enter only alpha-numeric characters."
         case .client_no_street_address:
             return "Enter a street address."
@@ -130,6 +134,10 @@ extension SignupError:CustomStringConvertible {
             return "The password must have at least 4 characters."
         case .service_provider_password_capital_letter:
             return "The password must have a capital letter."
+        case .client_create_authentication_profile_error:
+            return "There was an error adding user to the Authentication Sytem"
+        case .client_save_profile_to_realtime_database_error:
+            return "There was an error when saving your profile information."
         }
     }
 }

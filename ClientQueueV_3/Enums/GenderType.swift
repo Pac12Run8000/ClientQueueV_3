@@ -13,4 +13,19 @@ enum GenderType:Int {
     case non_binary = 2
 }
 
+extension GenderType:CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .male:
+            return "male"
+        case .female:
+            return "female"
+        case .non_binary:
+            return "non_binary"
+        }
+    }
+    
+    
+}
+
 

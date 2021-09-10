@@ -95,7 +95,7 @@ struct SignUpViewControllerViewModel {
                 return
             }
             guard client.firstnameTextField.text?.isAlphanumeric as! Bool else {
-                handler(.failure(.client_only_alphanumeric_chars))
+                handler(.failure(.client_only_alphanumeric_chars_for_lastname))
                 return
             }
             guard !client.lastnameTextField.text!.isEmpty, client.lastnameTextField.text!.count > 0 else {
@@ -103,7 +103,7 @@ struct SignUpViewControllerViewModel {
                 return
             }
             guard client.lastnameTextField.text?.isAlphanumeric as! Bool else {
-                handler(.failure(.client_only_alphanumeric_chars))
+                handler(.failure(.client_only_alphanumeric_chars_for_lastname))
                 return
             }
             guard !client.streetaddressTextField.text!.isEmpty as! Bool else {
@@ -175,7 +175,7 @@ struct SignUpViewControllerViewModel {
                 handler(.failure(.client_password_must_be_alpha_numeric))
                 return
             }
-            handler(.success(["firstname":client.firstnameTextField.text as! AnyObject, "lastname": client.lastnameTextField.text as! AnyObject, "gender": GenderType(rawValue: client.segmentedGenderControl.selectedSegmentIndex) as! AnyObject, "address": client.streetaddressTextField.text as! AnyObject, "userType": UserType.client as! AnyObject, "cityState": client.cityandstateTextField.text as! AnyObject, "zipCode":client.zipcodeTextField.text as! AnyObject, "phone":client.phonenumberTextField.text as! AnyObject, "email":client.emailTextField.text as! AnyObject, "username":client.usernameTextField.text as! AnyObject, "password":client.passwordTextField.text as! AnyObject]))
+            handler(.success(["firstname":client.firstnameTextField.text as! AnyObject, "lastname": client.lastnameTextField.text as! AnyObject, "gender": GenderType(rawValue: client.segmentedGenderControl.selectedSegmentIndex)?.description as! AnyObject, "address": client.streetaddressTextField.text as! AnyObject, "userType": UserType.client.description as! AnyObject, "cityState": client.cityandstateTextField.text as! AnyObject, "zipCode":client.zipcodeTextField.text as! AnyObject, "phone":client.phonenumberTextField.text as! AnyObject, "email":client.emailTextField.text as! AnyObject, "username":client.usernameTextField.text as! AnyObject, "password":client.passwordTextField.text as! AnyObject]))
         }
         if signupState == .serviceProviderState {
             
