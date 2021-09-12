@@ -254,7 +254,23 @@ struct SignUpViewControllerViewModel {
                 return
             }
 //            handler(.success(.serviceProvider))
-            
+            var dictionary = [String:AnyObject]()
+            if !serviceProvider.businessnameTextField.text!.isEmpty && (serviceProvider.businessnameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).count)! > 0 {
+                dictionary["businessName"] = serviceProvider.businessnameTextField.text as! AnyObject
+            }
+            dictionary["firstname"] = serviceProvider.firstnameTextField.text as! AnyObject
+            dictionary["lastname"] = serviceProvider.lastnameTextField.text as! AnyObject
+            dictionary["address"] = serviceProvider.streetAddressTextField.text as! AnyObject
+            dictionary["zipCode"] = serviceProvider.zipCodeTextField.text as! AnyObject
+            dictionary["cityState"] = serviceProvider.cityStateTextField.text as! AnyObject
+//            GenderType(rawValue: client.segmentedGenderControl.selectedSegmentIndex)?.description as! AnyObject
+            dictionary["gender"] = GenderType(rawValue: serviceProvider.genderSegmentedControl.selectedSegmentIndex)?.description as! AnyObject
+            dictionary["phone"] = serviceProvider.phonenumberTextField.text as! AnyObject
+            dictionary["email"] = serviceProvider.emailTextField.text as! AnyObject
+            dictionary["username"] = serviceProvider.usernameTextField.text as! AnyObject
+            dictionary["password"] = serviceProvider.passwordTextField.text as! AnyObject
+            dictionary["userType"] = UserType.serviceProvider.description as! AnyObject
+            handler(.success(dictionary))
         }
     }
     

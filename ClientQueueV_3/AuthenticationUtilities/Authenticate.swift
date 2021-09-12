@@ -23,8 +23,8 @@ struct Authenticate {
         }
     }
     
-    static func signInForFirebaseAuthRealtimeDatabase(dictionary:[String:AnyObject], control:UIViewController, handler:@escaping(_ succeed:Bool,_ error:Error?) -> ()) {
-        print("dictionary:\(dictionary)")
+    static func signInForFirebaseAuthAndRealtimeDatabase(dictionary:[String:AnyObject], control:UIViewController, handler:@escaping(_ succeed:Bool,_ error:Error?) -> ()) {
+//        print("dictionary:\(dictionary)")
         Auth.auth().createUser(withEmail: dictionary["email"] as! String, password: dictionary["password"] as! String) { result, error in
             guard error == nil else {
                 handler(false, error)
@@ -42,9 +42,10 @@ struct Authenticate {
                     return
                 }
             }
+            
             handler(true, nil)
-            let value = dictionary["userType"] as! String
-            value.performSegueToMainController(vc: control)
+            let userTypeValue = dictionary["userType"] as! String
+            userTypeValue.performSegueToMainController(vc: control)
             
         }
         

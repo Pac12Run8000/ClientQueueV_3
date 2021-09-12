@@ -14,6 +14,7 @@
                 <outlet property="cityStateTextField" destination="sM8-IW-hcq" id="1hb-GR-6aJ"/>
                 <outlet property="emailTextField" destination="6V0-oo-Zau" id="c1W-kz-37U"/>
                 <outlet property="firstnameTextField" destination="NAd-1a-atW" id="nip-tW-PwX"/>
+                <outlet property="genderSegmentedControl" destination="aqU-gH-hPA" id="xkc-fE-iSx"/>
                 <outlet property="lastnameTextField" destination="N7T-jE-NYP" id="yz8-kA-cYn"/>
                 <outlet property="passwordTextField" destination="QDJ-VB-Jub" id="xjB-fz-1xU"/>
                 <outlet property="phonenumberTextField" destination="dLd-Ty-fGK" id="NRZ-Hm-Hq8"/>

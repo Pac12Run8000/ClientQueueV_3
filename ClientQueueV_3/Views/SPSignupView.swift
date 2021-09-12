@@ -13,6 +13,8 @@ class SPSignupView: UIView {
     
     @IBOutlet var view: UIView!
     
+    
+    @IBOutlet weak var genderSegmentedControl: UISegmentedControl!
     @IBOutlet weak var businessnameTextField: UITextField!
     @IBOutlet weak var firstnameTextField: UITextField!
     @IBOutlet weak var lastnameTextField: UITextField!

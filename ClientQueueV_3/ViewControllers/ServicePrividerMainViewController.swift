@@ -8,11 +8,14 @@
 import UIKit
 
 class ServicePrividerMainViewController: UIViewController {
+    
+    @IBOutlet weak var logoutButtonView: LogoutButtonView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        logoutButtonView.logoutdelegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -23,4 +26,17 @@ class ServicePrividerMainViewController: UIViewController {
 
     
 
+}
+
+extension ServicePrividerMainViewController:LogoutDelegate {
+    
+    func logout() {
+        do {
+            try Authenticate.logoutAndPopToRoot(control: self)
+        } catch {
+            Alert.pushErrorAlert(msg: error.localizedDescription, control: self)
+        }
+    }
+    
+    
 }
