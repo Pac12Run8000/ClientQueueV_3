@@ -7,7 +7,7 @@
 
 import UIKit
 import FirebaseAuth
-import FirebaseDatabase
+
 
 struct Authenticate {
     
@@ -24,7 +24,7 @@ struct Authenticate {
     }
     
     static func signInForFirebaseAuthAndRealtimeDatabase(dictionary:[String:AnyObject], control:UIViewController, handler:@escaping(_ succeed:Bool,_ error:Error?) -> ()) {
-//        print("dictionary:\(dictionary)")
+
         Auth.auth().createUser(withEmail: dictionary["email"] as! String, password: dictionary["password"] as! String) { result, error in
             guard error == nil else {
                 handler(false, error)
@@ -37,18 +37,6 @@ struct Authenticate {
                     return
                 }
             }
-            
-//            guard let ref = Database.database().reference() as? DatabaseReference, let usersRef = ref.child("users").child(Auth.auth().currentUser!.uid) as? DatabaseReference else {
-//                handler(false, SignupError.client_save_profile_to_realtime_database_error)
-//                return
-//            }
-//
-//            usersRef.updateChildValues(dictionary) { err, refer in
-//                guard err == nil else {
-//                    handler(false, SignupError.client_save_profile_to_realtime_database_error)
-//                    return
-//                }
-//            }
             
             handler(true, nil)
             let userTypeValue = dictionary["userType"] as! String
