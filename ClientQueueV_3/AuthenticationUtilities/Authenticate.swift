@@ -31,17 +31,24 @@ struct Authenticate {
                 return
             }
             
-            guard let ref = Database.database().reference() as? DatabaseReference, let usersRef = ref.child("users").child(Auth.auth().currentUser!.uid) as? DatabaseReference else {
-                handler(false, SignupError.client_save_profile_to_realtime_database_error)
-                return
-            }
-
-            usersRef.updateChildValues(dictionary) { err, refer in
-                guard err == nil else {
-                    handler(false, SignupError.client_save_profile_to_realtime_database_error)
+            DataAccess.updateUserData(dictionary: dictionary) { error in
+                guard error == nil else {
+                    handler(false, error)
                     return
                 }
             }
+            
+//            guard let ref = Database.database().reference() as? DatabaseReference, let usersRef = ref.child("users").child(Auth.auth().currentUser!.uid) as? DatabaseReference else {
+//                handler(false, SignupError.client_save_profile_to_realtime_database_error)
+//                return
+//            }
+//
+//            usersRef.updateChildValues(dictionary) { err, refer in
+//                guard err == nil else {
+//                    handler(false, SignupError.client_save_profile_to_realtime_database_error)
+//                    return
+//                }
+//            }
             
             handler(true, nil)
             let userTypeValue = dictionary["userType"] as! String

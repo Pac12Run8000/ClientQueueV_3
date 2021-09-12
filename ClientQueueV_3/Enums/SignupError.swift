@@ -30,7 +30,9 @@ enum SignupError:Error {
     case client_password_must_have_capital_letter
     case client_password_must_be_alpha_numeric
     case client_create_authentication_profile_error(err:String)
-    case client_save_profile_to_realtime_database_error
+    // *****
+    
+    case save_profile_to_realtime_database_error
    
     // ****
     case service_provider_no_firstname
@@ -136,7 +138,7 @@ extension SignupError:CustomStringConvertible {
             return "The password must have a capital letter."
         case .client_create_authentication_profile_error:
             return "There was an error adding user to the Authentication Sytem"
-        case .client_save_profile_to_realtime_database_error:
+        case .save_profile_to_realtime_database_error:
             return "There was an error when saving your profile information."
         }
     }
