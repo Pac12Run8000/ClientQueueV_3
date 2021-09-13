@@ -10,6 +10,7 @@ import FirebaseDatabase
 import FirebaseAuth
 
 
+
 struct DataAccess {
     
     static func updateUserData(dictionary:[String:AnyObject], completionHandler:@escaping(_ err:Error?) -> ())  {

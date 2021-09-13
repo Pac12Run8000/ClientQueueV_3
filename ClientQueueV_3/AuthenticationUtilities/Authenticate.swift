@@ -23,7 +23,7 @@ struct Authenticate {
         }
     }
     
-    static func signInForFirebaseAuthAndRealtimeDatabase(dictionary:[String:AnyObject], control:UIViewController, handler:@escaping(_ succeed:Bool,_ error:Error?) -> ()) {
+    static func signUpForFirebaseAuthAndRealtimeDatabase(dictionary:[String:AnyObject], control:UIViewController, handler:@escaping(_ succeed:Bool,_ error:Error?) -> ()) {
 
         Auth.auth().createUser(withEmail: dictionary["email"] as! String, password: dictionary["password"] as! String) { result, error in
             guard error == nil else {

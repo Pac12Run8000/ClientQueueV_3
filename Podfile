@@ -9,6 +9,7 @@ target 'ClientQueueV_3' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
   pod 'Firebase/Database'
+  pod 'Firebase/Core'
 
   target 'ClientQueueV_3Tests' do
     inherit! :search_paths
