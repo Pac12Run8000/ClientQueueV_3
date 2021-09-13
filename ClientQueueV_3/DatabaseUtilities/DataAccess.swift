@@ -13,21 +13,25 @@ import FirebaseAuth
 
 struct DataAccess {
     
-    static func updateUserData(dictionary:[String:AnyObject], completionHandler:@escaping(_ err:Error?) -> ())  {
+    static func updateUserData(dictionary:[String:AnyObject], completionHandler:@escaping(_ success:Bool,_ err:Error?) -> ())  {
         
         
         
         guard let ref = Database.database().reference() as? DatabaseReference, let usersRef = ref.child("users").child(Auth.auth().currentUser!.uid) as? DatabaseReference else {
-            completionHandler(SignupError.save_profile_to_realtime_database_error)
+            completionHandler(false, SignupError.save_profile_to_realtime_database_error)
             return
         }
 
-        usersRef.updateChildValues(dictionary) { err, refer in
+        
+        var filteredDictionary = dictionary
+        filteredDictionary["profileImage"] = nil
+        
+        usersRef.updateChildValues(filteredDictionary) { err, refer in
             guard err == nil else {
-                completionHandler(SignupError.save_profile_to_realtime_database_error)
+                completionHandler(false, SignupError.save_profile_to_realtime_database_error)
                 return
             }
-            completionHandler(nil)
+            completionHandler(true, nil)
         }
     }
     

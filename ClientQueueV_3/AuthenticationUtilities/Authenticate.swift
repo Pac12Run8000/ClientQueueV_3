@@ -31,11 +31,33 @@ struct Authenticate {
                 return
             }
             
-            DataAccess.updateUserData(dictionary: dictionary) { error in
-                guard error == nil else {
+            print("uid:",result?.user.uid)
+            
+            
+            DataAccess.updateUserData(dictionary: dictionary) { success, error in
+                guard success == true else {
                     handler(false, error)
                     return
                 }
+                guard let image = dictionary["profileImage"] as? UIImage else {
+                    print("Couldn't retrieve a profileImage from the dictionary.")
+                    handler(false, ProfileImageError.noImageAvailable)
+                    return
+                }
+                
+                guard let uid = Auth.auth().currentUser?.uid else {
+                    print("No user id available.")
+                    handler(false, LoginError.noUserId)
+                    return
+                }
+                
+                StorageUtility.uploadProfileImage(profileImage: image, uid: uid) { err, isCompleted in
+                    guard isCompleted == true else {
+                        handler(false, ProfileImageError.uplaodError)
+                        return
+                    }
+                }
+                handler(true, nil)
             }
             
             handler(true, nil)

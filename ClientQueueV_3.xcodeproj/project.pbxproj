@@ -51,6 +51,7 @@
 		09F75C2726E9A5D800B25FD5 /* SignoutError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F75C2626E9A5D800B25FD5 /* SignoutError.swift */; };
 		09F75C2926EA2B2200B25FD5 /* GenderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F75C2826EA2B2200B25FD5 /* GenderType.swift */; };
 		09F75C2C26EE663600B25FD5 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F75C2B26EE663600B25FD5 /* DataAccess.swift */; };
+		09F75C2F26EF8D3200B25FD5 /* StorageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F75C2E26EF8D3200B25FD5 /* StorageUtility.swift */; };
 		0C160A5735919B9022804744 /* Pods_ClientQueueV_3_ClientQueueV_3UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD604894C53945A0B6AB33 /* Pods_ClientQueueV_3_ClientQueueV_3UITests.framework */; };
 		0D7C16FD1AE7BA2415D997CD /* Pods_ClientQueueV_3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C5A120B68078D019A39225 /* Pods_ClientQueueV_3.framework */; };
 		F08B21B7CAA7033139D4C44C /* Pods_ClientQueueV_3Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BB2D224A36D5CB9463C6F3 /* Pods_ClientQueueV_3Tests.framework */; };
@@ -125,6 +126,7 @@
 		09F75C2626E9A5D800B25FD5 /* SignoutError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignoutError.swift; sourceTree = "<group>"; };
 		09F75C2826EA2B2200B25FD5 /* GenderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderType.swift; sourceTree = "<group>"; };
 		09F75C2B26EE663600B25FD5 /* DataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
+		09F75C2E26EF8D3200B25FD5 /* StorageUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageUtility.swift; sourceTree = "<group>"; };
 		1215B45A92274429AD805817 /* Pods-ClientQueueV_3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientQueueV_3.debug.xcconfig"; path = "Target Support Files/Pods-ClientQueueV_3/Pods-ClientQueueV_3.debug.xcconfig"; sourceTree = "<group>"; };
 		25F9B781E2E798AA41C3498B /* Pods-ClientQueueV_3-ClientQueueV_3UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientQueueV_3-ClientQueueV_3UITests.release.xcconfig"; path = "Target Support Files/Pods-ClientQueueV_3-ClientQueueV_3UITests/Pods-ClientQueueV_3-ClientQueueV_3UITests.release.xcconfig"; sourceTree = "<group>"; };
 		2F9428A3C6FC000F15480924 /* Pods-ClientQueueV_3-ClientQueueV_3UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientQueueV_3-ClientQueueV_3UITests.debug.xcconfig"; path = "Target Support Files/Pods-ClientQueueV_3-ClientQueueV_3UITests/Pods-ClientQueueV_3-ClientQueueV_3UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		09EBDE6526BB2BD1003A060B /* ClientQueueV_3 */ = {
 			isa = PBXGroup;
 			children = (
+				09F75C2D26EF8CF500B25FD5 /* StorageUtilities */,
 				09F75C2A26EE661800B25FD5 /* DatabaseUtilities */,
 				09F75C1B26E8DDD900B25FD5 /* AuthenticationUtilities */,
 				09A62F5226CD660500D0B6AB /* CustomObjects */,
@@ -339,6 +342,14 @@
 				09F75C2B26EE663600B25FD5 /* DataAccess.swift */,
 			);
 			path = DatabaseUtilities;
+			sourceTree = "<group>";
+		};
+		09F75C2D26EF8CF500B25FD5 /* StorageUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				09F75C2E26EF8D3200B25FD5 /* StorageUtility.swift */,
+			);
+			path = StorageUtilities;
 			sourceTree = "<group>";
 		};
 		5BEB105C576FA92BF06AE8AE /* Frameworks */ = {
@@ -641,6 +652,7 @@
 				09163A4B26D7FBB600897A82 /* TextField+extension.swift in Sources */,
 				09EBDE6926BB2BD1003A060B /* SceneDelegate.swift in Sources */,
 				09A62F5626CED17000D0B6AB /* SignUpViewControllerViewModel.swift in Sources */,
+				09F75C2F26EF8D3200B25FD5 /* StorageUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

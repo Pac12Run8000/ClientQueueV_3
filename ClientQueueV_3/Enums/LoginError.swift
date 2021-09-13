@@ -16,6 +16,7 @@ public enum LoginError:Error {
     case passwordMustHaveCapitalLetter
     case nowhitespacesAllowedEmail
     case nowhitespacesAllowedPassword
+    case noUserId
 }
 
 extension LoginError:CustomStringConvertible {
@@ -37,6 +38,8 @@ extension LoginError:CustomStringConvertible {
             return "No whitespace allowed in email."
         case .nowhitespacesAllowedPassword:
             return "No whitespace allowed in password."
+        case .noUserId:
+            return "There was no user id and user could not be authenticated."
         }
     }
 }

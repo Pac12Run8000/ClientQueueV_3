@@ -112,7 +112,7 @@ extension SignupViewController:UITextFieldDelegate {
             return false
         }
         
-        viewModel?.validateSignupForm(handler: { result in
+        viewModel?.validateSignupForm(profileImage: p_Image, handler: { result in
             switch result {
             case .failure(let err):
                 Alert.pushErrorAlert(msg: err.description, control: self)

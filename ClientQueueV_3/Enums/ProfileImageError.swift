@@ -12,6 +12,8 @@ public enum ProfileImageError:Error {
     case cameraIsNotAvailable
     case photoLibraryIsNotAvailable
     case noImageAvailable
+    case compressJpegError
+    case uplaodError
 }
 
 
@@ -25,6 +27,10 @@ extension ProfileImageError:CustomStringConvertible {
             return "This device cannot access the photo library."
         case .noImageAvailable:
             return "Please select an image for your profile"
+        case .compressJpegError:
+            return "There was an error compressing the image."
+        case .uplaodError:
+            return "There was an error uploading the image."
         }
     }
     

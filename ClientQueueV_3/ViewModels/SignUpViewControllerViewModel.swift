@@ -87,7 +87,7 @@ struct SignUpViewControllerViewModel {
         
     }
     
-    public func validateSignupForm(handler:@escaping(_ result:Result<[String:AnyObject], SignupError>) -> ()) {
+    public func validateSignupForm(profileImage:UIImage, handler:@escaping(_ result:Result<[String:AnyObject], SignupError>) -> ()) {
         if signupState == .clientState {
             
         guard !client.firstnameTextField.text!.isEmpty, client.firstnameTextField.text!.count > 0 else {
@@ -172,7 +172,8 @@ struct SignUpViewControllerViewModel {
                 handler(.failure(.client_password_must_be_alpha_numeric))
                 return
             }
-            handler(.success(["firstname":client.firstnameTextField.text as! AnyObject, "lastname": client.lastnameTextField.text as! AnyObject, "gender": GenderType(rawValue: client.segmentedGenderControl.selectedSegmentIndex)?.description as! AnyObject, "address": client.streetaddressTextField.text as! AnyObject, "userType": UserType.client.description as! AnyObject, "cityState": client.cityandstateTextField.text as! AnyObject, "zipCode":client.zipcodeTextField.text as! AnyObject, "phone":client.phonenumberTextField.text as! AnyObject, "email":client.emailTextField.text as! AnyObject, "username":client.usernameTextField.text as! AnyObject, "password":client.passwordTextField.text as! AnyObject]))
+            handler(.success(["firstname":client.firstnameTextField.text as! AnyObject, "lastname": client.lastnameTextField.text as! AnyObject, "gender": GenderType(rawValue: client.segmentedGenderControl.selectedSegmentIndex)?.description as! AnyObject, "address": client.streetaddressTextField.text as! AnyObject, "userType": UserType.client.description as! AnyObject, "cityState": client.cityandstateTextField.text as! AnyObject, "zipCode":client.zipcodeTextField.text as! AnyObject, "phone":client.phonenumberTextField.text as! AnyObject, "email":client.emailTextField.text as! AnyObject, "username":client.usernameTextField.text as! AnyObject, "password":client.passwordTextField.text as! AnyObject,
+                              "profileImage": profileImage as AnyObject]))
         }
         if signupState == .serviceProviderState {
             
@@ -267,6 +268,7 @@ struct SignUpViewControllerViewModel {
             dictionary["username"] = serviceProvider.usernameTextField.text as! AnyObject
             dictionary["password"] = serviceProvider.passwordTextField.text as! AnyObject
             dictionary["userType"] = UserType.serviceProvider.description as! AnyObject
+            dictionary["profileImage"] = profileImage as AnyObject
             handler(.success(dictionary))
         }
     }
