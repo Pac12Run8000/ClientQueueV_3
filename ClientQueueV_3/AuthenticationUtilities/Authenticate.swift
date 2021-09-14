@@ -11,6 +11,16 @@ import FirebaseAuth
 
 struct Authenticate {
     
+    
+    public static func ifLoggedInPresentLoggedInState(viewController:UIViewController) {
+        guard Auth.auth().currentUser?.uid != nil else {
+            print("No user Id")
+            return
+        }
+      
+        print("User ID:\(Auth.auth().currentUser?.uid)")
+    }
+    
     static func logoutAndPopToRoot(control:UIViewController) throws {
         guard Auth.auth().currentUser?.uid != nil else {
             throw SignoutError.userNotLoggedIn

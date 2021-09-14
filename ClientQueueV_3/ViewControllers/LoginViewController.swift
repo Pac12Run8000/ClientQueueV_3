@@ -20,6 +20,25 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        Authenticate.ifLoggedInPresentLoggedInState(viewController: self)
+        DataAccess.fetchCurrentUserData() { succeed, error, object in
+            guard succeed == true else {
+                return
+            }
+            guard let userType = object!["userType"] as? String else {
+                return
+            }
+            
+            if userType == "serviceProvider" {
+                self.performSegue(withIdentifier: "segueServiceProvider", sender: nil)
+            } else {
+                self.performSegue(withIdentifier: "segueClient", sender: nil)
+            }
+            
+
+            
+            
+        }
         
         
         loginView.emailTextField.delegate = self

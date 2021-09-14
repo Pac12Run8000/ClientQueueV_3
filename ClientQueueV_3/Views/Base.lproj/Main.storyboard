@@ -47,6 +47,8 @@
                         <outlet property="loginView" destination="Boc-nz-HT7" id="A3E-Se-wTf"/>
                         <segue destination="jpz-Wu-RDZ" kind="show" identifier="signUpSegueue" id="eGm-ZC-Ef5"/>
                         <segue destination="rVw-i8-1U9" kind="show" identifier="forgotLoginSegue" id="Rm3-mN-CxY"/>
+                        <segue destination="8ez-cu-3rV" kind="show" identifier="segueServiceProvider" id="A84-tT-HyB"/>
+                        <segue destination="xFl-uP-MER" kind="show" identifier="segueClient" id="1u1-TV-dpo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -112,7 +114,7 @@
             </objects>
             <point key="canvasLocation" x="2095.6521739130435" y="72.991071428571431"/>
         </scene>
-        <!--Client Main View Controller-->
+        <!--Cleint-->
         <scene sceneID="dlQ-6r-GgX">
             <objects>
                 <viewController id="xFl-uP-MER" customClass="ClientMainViewController" customModule="ClientQueueV_3" customModuleProvider="target" sceneMemberID="viewController">
@@ -136,14 +138,14 @@
                             <constraint firstItem="BwJ-SQ-GUq" firstAttribute="trailing" secondItem="Vqc-ib-wyF" secondAttribute="trailing" constant="10" id="raZ-OF-78f"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="oV5-gG-lRz"/>
+                    <navigationItem key="navigationItem" title="Cleint" id="oV5-gG-lRz"/>
                     <connections>
                         <outlet property="logoutBtnView" destination="Vqc-ib-wyF" id="Mpe-4D-JWV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eDh-jJ-s3Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3140.579710144928" y="77.678571428571431"/>
+            <point key="canvasLocation" x="3101" y="-916"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="RWO-s3-sh6">
@@ -216,10 +218,10 @@
             </objects>
             <point key="canvasLocation" x="2096" y="840"/>
         </scene>
-        <!--Service Privider Main View Controller-->
+        <!--Service Provider-->
         <scene sceneID="LEZ-yX-lA1">
             <objects>
-                <viewController id="8ez-cu-3rV" customClass="ServicePrividerMainViewController" customModule="ClientQueueV_3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ServicePrividerMainViewController" id="8ez-cu-3rV" customClass="ServicePrividerMainViewController" customModule="ClientQueueV_3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EG1-gG-pHs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -240,7 +242,7 @@
                             <constraint firstItem="h1L-Gi-Kro" firstAttribute="top" secondItem="PT4-UV-79T" secondAttribute="top" id="X7J-MO-Zao"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="n1Z-XB-m98"/>
+                    <navigationItem key="navigationItem" title="Service Provider" id="n1Z-XB-m98"/>
                     <connections>
                         <outlet property="logoutButtonView" destination="h1L-Gi-Kro" id="dbQ-Vw-6Yt"/>
                     </connections>
@@ -268,6 +270,10 @@
             <point key="canvasLocation" x="105.79710144927537" y="72.991071428571431"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="A84-tT-HyB"/>
+        <segue reference="1u1-TV-dpo"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
