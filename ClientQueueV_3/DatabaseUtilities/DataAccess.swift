@@ -31,6 +31,16 @@ struct DataAccess {
                 completionHandler(false, SignupError.save_profile_to_realtime_database_error)
                 return
             }
+            
+            Geocoding.fetchNSObjectCoordinateForAddress(dictionary: dictionary) { object, success, error in
+                guard success == true else {
+                    print("Error: \(error)")
+                    completionHandler(false, GeocodingError.addressStringFormatError)
+                    return
+                }
+                usersRef.child("location").setValue(object)
+            }
+           
             completionHandler(true, nil)
         }
     }

@@ -31,12 +31,11 @@ struct Authenticate {
                 return
             }
             
-            print("uid:",result?.user.uid)
-            
             
             DataAccess.updateUserData(dictionary: dictionary) { success, error in
                 guard success == true else {
-                    handler(false, error)
+                    print("There is another error:\(error?.localizedDescription)")
+                    handler(false, GeocodingError.coordinateObjectError)
                     return
                 }
                 guard let image = dictionary["profileImage"] as? UIImage else {
@@ -44,7 +43,6 @@ struct Authenticate {
                     handler(false, ProfileImageError.noImageAvailable)
                     return
                 }
-                
                 guard let uid = Auth.auth().currentUser?.uid else {
                     print("No user id available.")
                     handler(false, LoginError.noUserId)
@@ -57,13 +55,13 @@ struct Authenticate {
                         return
                     }
                 }
+                
                 handler(true, nil)
             }
             
             handler(true, nil)
             let userTypeValue = dictionary["userType"] as! String
             userTypeValue.performSegueToMainController(vc: control)
-            
         }
         
         

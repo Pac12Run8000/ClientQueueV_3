@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 
+
 class LoginViewController: UIViewController {
     
     
@@ -18,6 +19,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         loginView.emailTextField.delegate = self
         loginView.passwordTextField.delegate = self
