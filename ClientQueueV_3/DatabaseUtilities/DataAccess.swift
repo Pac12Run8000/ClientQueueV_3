@@ -15,7 +15,7 @@ struct DataAccess {
     
     
     
-    static func fetchCurrentUserData(completion:@escaping(_ success:Bool, _ error:Error?,_ dictionary:[String:AnyObject]?) -> ()) {
+    func fetchCurrentUserTypeAsString(completion:@escaping(_ success:Bool, _ error:Error?,_ userType:String?) -> ()) {
         guard let uid = Auth.auth().currentUser?.uid else {
             completion(false, nil, nil)
             return
@@ -27,8 +27,10 @@ struct DataAccess {
             if let userSnapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for user in userSnapshot {
                     if user.key == uid {
-                        if let dictionary = user.value as? [String:AnyObject] {
-                            completion(true, nil, dictionary)
+                        if let dictionary = user.value as? [String:AnyObject], let uType = dictionary["userType"] as? String {
+                            completion(true, nil, uType)
+                        } else {
+                            completion(false, nil, nil)
                         }
                     } 
                 }

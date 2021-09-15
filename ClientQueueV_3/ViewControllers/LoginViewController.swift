@@ -15,31 +15,21 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginView: LoginView!
     
-    var viewModel:LoginViewControllerViewModel? 
+    var viewModel:LoginViewControllerViewModel?
+    
+    var dataAccess:DataAccess!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        Authenticate.ifLoggedInPresentLoggedInState(viewController: self)
-        DataAccess.fetchCurrentUserData() { succeed, error, object in
-            guard succeed == true else {
-                return
+        dataAccess = DataAccess()
+        dataAccess.fetchCurrentUserTypeAsString() { succeed, error, userType in
+           
+            if let userType = userType, succeed == true {
+                userType.presentMainControllerIfLoggedIn(viewController: self, svSegue: "segueServiceProvider", clientSegue: "segueClient")
             }
-            guard let userType = object!["userType"] as? String else {
-                return
-            }
-            
-            if userType == "serviceProvider" {
-                self.performSegue(withIdentifier: "segueServiceProvider", sender: nil)
-            } else {
-                self.performSegue(withIdentifier: "segueClient", sender: nil)
-            }
-            
 
-            
-            
         }
-        
         
         loginView.emailTextField.delegate = self
         loginView.passwordTextField.delegate = self
