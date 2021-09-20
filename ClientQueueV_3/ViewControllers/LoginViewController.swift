@@ -77,20 +77,14 @@ extension LoginViewController: ForgotLoginDelegate {
     func fetchLogin() {
         performSegue(withIdentifier: "forgotLoginSegue", sender: nil)
     }
-    
-    
-    
-    
-    
 }
 
 extension LoginViewController: SignupDelegate {
     func fetchSignup() {
         performSegue(withIdentifier: "signUpSegueue", sender: nil)
     }
-    
-    
 }
+
 
 
 
