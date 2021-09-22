@@ -99,10 +99,7 @@ struct SignUpViewControllerViewModel {
                 handler(.failure(.client_no_last_name))
                 return
             }
-            guard client.lastnameTextField.text?.isAlphanumeric as! Bool else {
-                handler(.failure(.client_only_alphanumeric_chars_for_lastname))
-                return
-            }
+            
             guard !client.streetaddressTextField.text!.isEmpty as! Bool else {
                 handler(.failure(.client_no_street_address))
                 return
