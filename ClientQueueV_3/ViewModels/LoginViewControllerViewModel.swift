@@ -69,7 +69,6 @@ struct LoginViewControllerViewModel {
                     completion(.failure(.noUserType))
                     return
                 }
-//                print("userType:\(userType)")
                
                 userType?.presentMainControllerIfLoggedIn(viewController: vc, spSegue: "segueServiceProvider", clientSegue: "segueClient")
             }

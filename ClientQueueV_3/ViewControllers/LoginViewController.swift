@@ -11,8 +11,6 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
-    
-    
     @IBOutlet weak var loginView: LoginView!
     
     var viewModel:LoginViewControllerViewModel?
