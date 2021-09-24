@@ -17,6 +17,8 @@ public enum LoginError:Error {
     case nowhitespacesAllowedEmail
     case nowhitespacesAllowedPassword
     case noUserId
+    case authSignIn(desc:String)
+    case noUserType
 }
 
 extension LoginError:CustomStringConvertible {
@@ -40,6 +42,10 @@ extension LoginError:CustomStringConvertible {
             return "No whitespace allowed in password."
         case .noUserId:
             return "There was no user id and user could not be authenticated."
+        case .authSignIn:
+            return "There was an error with your login."
+        case .noUserType:
+            return "The app cannot figure out what kind of user you are."
         }
     }
 }

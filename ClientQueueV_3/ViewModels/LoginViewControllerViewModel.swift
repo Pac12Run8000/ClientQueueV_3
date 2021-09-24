@@ -23,36 +23,6 @@ struct LoginViewControllerViewModel {
     
     
     func validateCredentialsAndAuthenticate(completion:@escaping(_ result:Result<Bool, LoginError>) -> ()) {
-        Datafetching.fetchUsersSnapshot { snapshot in
-            
-            snapshot?.fetchSnaphotByID(uid: "bomN33hqhJaZwwDdOPeVRbaCWNY2")
-            
-//            if let clientSnapshot = snapshot!.children.allObjects as? [DataSnapshot] {
-                
-//                for client in clientSnapshot {
-//                    print("client:\(client.value)")
-//                    if let dictionary = client.value as? [String:AnyObject] {
-//                        print(dictionary["address"])
-//                    }
-//                }
-//            }
-          
-            
-//            if let dict = snapshot?.value as? [String:Any] {
-//                print("Dict == \(dict)")
-//            }
-//            do {
-//                let response = try FirebaseDecoder().decode(User.self, from: snapshot?.value)
-//                print(response)
-//            } catch {
-//                print("Error:error:\(error)")
-//            }
-            
-            
-        }
-        
-        return
-        
         
         guard self.email.trimmingCharacters(in: .whitespaces) != "" else {
             completion(.failure(.nowhitespacesAllowedEmail))
@@ -86,6 +56,35 @@ struct LoginViewControllerViewModel {
             completion(.failure(.passwordMustHaveCapitalLetter))
             return
         }
+        
+        Auth.auth().signIn(withEmail: self.email, password: self.password) { result, error in
+            guard error == nil else {
+                completion(.failure(.authSignIn(desc: error!.localizedDescription)))
+                return
+            }
+            
+            print("Signed In!!!")
+            DataAccess.fetchCurrentUserTypeAsString { success, error, userType in
+                guard error == nil else {
+                    completion(.failure(.noUserType))
+                    return
+                }
+                print("userType:\(userType)")
+            }
+            
+        }
+        
+//        Datafetching.fetchUsersSnapshot { snapshot in
+//
+//            snapshot?.fetchSnaphotByID(uid: "bomN33hqhJaZwwDdOPeVRbaCWNY2", completion: { success, snapshot, error in
+//                guard success == true else {
+//                    return
+//                }
+//                print("snapshot:", snapshot)
+//            })
+//        }
+        
+        return
         
         
         

@@ -22,8 +22,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataAccess = DataAccess()
-        dataAccess.fetchCurrentUserTypeAsString() { succeed, error, userType in
+        
+        DataAccess.fetchCurrentUserTypeAsString() { succeed, error, userType in
            
             if let userType = userType, succeed == true {
                 userType.presentMainControllerIfLoggedIn(viewController: self, svSegue: "segueServiceProvider", clientSegue: "segueClient")

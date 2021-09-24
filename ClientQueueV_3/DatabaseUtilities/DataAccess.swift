@@ -15,7 +15,7 @@ struct DataAccess {
     
     
     
-    func fetchCurrentUserTypeAsString(completion:@escaping(_ success:Bool, _ error:Error?,_ userType:String?) -> ()) {
+    static func fetchCurrentUserTypeAsString(completion:@escaping(_ success:Bool, _ error:Error?,_ userType:String?) -> ()) {
         guard let uid = Auth.auth().currentUser?.uid else {
             completion(false, nil, nil)
             return
@@ -30,7 +30,7 @@ struct DataAccess {
                         if let dictionary = user.value as? [String:AnyObject], let uType = dictionary["userType"] as? String {
                             completion(true, nil, uType)
                         } else {
-                            completion(false, nil, nil)
+                            completion(false, UserTypeError.noUserType, nil)
                         }
                     } 
                 }

@@ -10,11 +10,13 @@ import Firebase
 
 extension DataSnapshot {
     
-    func fetchSnaphotByID(uid:String) {
+    func fetchSnaphotByID(uid:String, completion handler:@escaping(_ success:Bool,_ snapshot:DataSnapshot?,_ error:Error?) -> ()) {
         if let accountSnapShot = self.children.allObjects as? [DataSnapshot] {
             for account in accountSnapShot {
                 if account.key == uid {
-                    print("account logged in:\(account.value)")
+                    handler(true, account, nil)
+                } else {
+                    handler(false, nil, SnapShotDataError.accountDoesntExist)
                 }
             }
         }

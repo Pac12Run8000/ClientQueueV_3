@@ -15,6 +15,8 @@
 		097CF8CA26FBD9C00058E009 /* Datafetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097CF8C926FBD9C00058E009 /* Datafetching.swift */; };
 		097CF8CC26FCCCA90058E009 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097CF8CB26FCCCA90058E009 /* Users.swift */; };
 		097CF8CE26FDFAC90058E009 /* DataSnapshot+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097CF8CD26FDFAC90058E009 /* DataSnapshot+Extension.swift */; };
+		097CF8D026FDFF070058E009 /* SnapShotDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097CF8CF26FDFF070058E009 /* SnapShotDataError.swift */; };
+		097CF8D226FE53CE0058E009 /* UserTypeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097CF8D126FE53CE0058E009 /* UserTypeError.swift */; };
 		09A62F3F26C3B0A500D0B6AB /* ForgotLoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A62F3E26C3B0A500D0B6AB /* ForgotLoginDelegate.swift */; };
 		09A62F4126C4882600D0B6AB /* SignupDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A62F4026C4882600D0B6AB /* SignupDelegate.swift */; };
 		09A62F4326C4D0CA00D0B6AB /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A62F4226C4D0CA00D0B6AB /* SignupViewController.swift */; };
@@ -89,6 +91,8 @@
 		097CF8C926FBD9C00058E009 /* Datafetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datafetching.swift; sourceTree = "<group>"; };
 		097CF8CB26FCCCA90058E009 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		097CF8CD26FDFAC90058E009 /* DataSnapshot+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataSnapshot+Extension.swift"; sourceTree = "<group>"; };
+		097CF8CF26FDFF070058E009 /* SnapShotDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShotDataError.swift; sourceTree = "<group>"; };
+		097CF8D126FE53CE0058E009 /* UserTypeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeError.swift; sourceTree = "<group>"; };
 		09A62F3E26C3B0A500D0B6AB /* ForgotLoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotLoginDelegate.swift; sourceTree = "<group>"; };
 		09A62F4026C4882600D0B6AB /* SignupDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupDelegate.swift; sourceTree = "<group>"; };
 		09A62F4226C4D0CA00D0B6AB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -310,6 +314,8 @@
 				09F75C2626E9A5D800B25FD5 /* SignoutError.swift */,
 				09F75C2826EA2B2200B25FD5 /* GenderType.swift */,
 				09F75C3326F0BE6400B25FD5 /* GeocodingError.swift */,
+				097CF8CF26FDFF070058E009 /* SnapShotDataError.swift */,
+				097CF8D126FE53CE0058E009 /* UserTypeError.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -662,6 +668,7 @@
 				09A62F6026D1D1CA00D0B6AB /* SignupState.swift in Sources */,
 				09A62F5426CD855D00D0B6AB /* ProfileImageError.swift in Sources */,
 				09A62F3F26C3B0A500D0B6AB /* ForgotLoginDelegate.swift in Sources */,
+				097CF8D226FE53CE0058E009 /* UserTypeError.swift in Sources */,
 				09A62F4326C4D0CA00D0B6AB /* SignupViewController.swift in Sources */,
 				09F75C2526E9A3BF00B25FD5 /* Authenticate.swift in Sources */,
 				09F75C3426F0BE6400B25FD5 /* GeocodingError.swift in Sources */,
@@ -669,6 +676,7 @@
 				097CF8CE26FDFAC90058E009 /* DataSnapshot+Extension.swift in Sources */,
 				09F75C1626E8CBE100B25FD5 /* ClientMainViewController.swift in Sources */,
 				09F75C2326E95B0600B25FD5 /* LogoutDelegate.swift in Sources */,
+				097CF8D026FDFF070058E009 /* SnapShotDataError.swift in Sources */,
 				09F75C2926EA2B2200B25FD5 /* GenderType.swift in Sources */,
 				09A62F5126CD650F00D0B6AB /* ImagePickerState.swift in Sources */,
 				09EBDEAB26BD8888003A060B /* String+Extensions.swift in Sources */,
