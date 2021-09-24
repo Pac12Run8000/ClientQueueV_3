@@ -12,6 +12,9 @@
 		09163A4F26DE6C1200897A82 /* SignupError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09163A4E26DE6C1200897A82 /* SignupError.swift */; };
 		09163A5326E723B600897A82 /* ForgotLoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09163A5226E723B600897A82 /* ForgotLoginError.swift */; };
 		091B910E26E7EF1E004C76A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 091B910D26E7EF1E004C76A3 /* GoogleService-Info.plist */; };
+		097CF8CA26FBD9C00058E009 /* Datafetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097CF8C926FBD9C00058E009 /* Datafetching.swift */; };
+		097CF8CC26FCCCA90058E009 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097CF8CB26FCCCA90058E009 /* Users.swift */; };
+		097CF8CE26FDFAC90058E009 /* DataSnapshot+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097CF8CD26FDFAC90058E009 /* DataSnapshot+Extension.swift */; };
 		09A62F3F26C3B0A500D0B6AB /* ForgotLoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A62F3E26C3B0A500D0B6AB /* ForgotLoginDelegate.swift */; };
 		09A62F4126C4882600D0B6AB /* SignupDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A62F4026C4882600D0B6AB /* SignupDelegate.swift */; };
 		09A62F4326C4D0CA00D0B6AB /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A62F4226C4D0CA00D0B6AB /* SignupViewController.swift */; };
@@ -83,6 +86,9 @@
 		09163A4E26DE6C1200897A82 /* SignupError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupError.swift; sourceTree = "<group>"; };
 		09163A5226E723B600897A82 /* ForgotLoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotLoginError.swift; sourceTree = "<group>"; };
 		091B910D26E7EF1E004C76A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		097CF8C926FBD9C00058E009 /* Datafetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datafetching.swift; sourceTree = "<group>"; };
+		097CF8CB26FCCCA90058E009 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		097CF8CD26FDFAC90058E009 /* DataSnapshot+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataSnapshot+Extension.swift"; sourceTree = "<group>"; };
 		09A62F3E26C3B0A500D0B6AB /* ForgotLoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotLoginDelegate.swift; sourceTree = "<group>"; };
 		09A62F4026C4882600D0B6AB /* SignupDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupDelegate.swift; sourceTree = "<group>"; };
 		09A62F4226C4D0CA00D0B6AB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -208,11 +214,11 @@
 				09F75C1B26E8DDD900B25FD5 /* AuthenticationUtilities */,
 				09A62F5226CD660500D0B6AB /* CustomObjects */,
 				09EBDEB126C0EEDD003A060B /* Protocols */,
+				09EBDE9826BB312A003A060B /* Models */,
 				09EBDEAC26BD8B34003A060B /* ViewModels */,
 				09EBDEA726BCF15B003A060B /* Validation */,
 				09EBDEA426BCF071003A060B /* Enums */,
 				09EBDEA126BCC0CF003A060B /* Extensions */,
-				09EBDE9826BB312A003A060B /* Models */,
 				09EBDE9726BB311D003A060B /* ViewControllers */,
 				09EBDE9626BB30A1003A060B /* Views */,
 				09EBDE6626BB2BD1003A060B /* AppDelegate.swift */,
@@ -274,6 +280,7 @@
 		09EBDE9826BB312A003A060B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				097CF8CB26FCCCA90058E009 /* Users.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -285,6 +292,7 @@
 				09EBDEAA26BD8888003A060B /* String+Extensions.swift */,
 				09A62F4C26CCCC5300D0B6AB /* imageView+extension.swift */,
 				09163A4A26D7FBB600897A82 /* TextField+extension.swift */,
+				097CF8CD26FDFAC90058E009 /* DataSnapshot+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -345,6 +353,7 @@
 		09F75C2A26EE661800B25FD5 /* DatabaseUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				097CF8C926FBD9C00058E009 /* Datafetching.swift */,
 				09F75C2B26EE663600B25FD5 /* DataAccess.swift */,
 			);
 			path = DatabaseUtilities;
@@ -649,6 +658,7 @@
 				09EBDEB026BF8909003A060B /* LoginValidation.swift in Sources */,
 				09F75C1826E8CC1400B25FD5 /* ServicePrividerMainViewController.swift in Sources */,
 				09163A4F26DE6C1200897A82 /* SignupError.swift in Sources */,
+				097CF8CA26FBD9C00058E009 /* Datafetching.swift in Sources */,
 				09A62F6026D1D1CA00D0B6AB /* SignupState.swift in Sources */,
 				09A62F5426CD855D00D0B6AB /* ProfileImageError.swift in Sources */,
 				09A62F3F26C3B0A500D0B6AB /* ForgotLoginDelegate.swift in Sources */,
@@ -656,6 +666,7 @@
 				09F75C2526E9A3BF00B25FD5 /* Authenticate.swift in Sources */,
 				09F75C3426F0BE6400B25FD5 /* GeocodingError.swift in Sources */,
 				09163A5326E723B600897A82 /* ForgotLoginError.swift in Sources */,
+				097CF8CE26FDFAC90058E009 /* DataSnapshot+Extension.swift in Sources */,
 				09F75C1626E8CBE100B25FD5 /* ClientMainViewController.swift in Sources */,
 				09F75C2326E95B0600B25FD5 /* LogoutDelegate.swift in Sources */,
 				09F75C2926EA2B2200B25FD5 /* GenderType.swift in Sources */,
@@ -663,6 +674,7 @@
 				09EBDEAB26BD8888003A060B /* String+Extensions.swift in Sources */,
 				09163A4D26DD84E800897A82 /* RemoveProfileImageDelegate.swift in Sources */,
 				09A62F4126C4882600D0B6AB /* SignupDelegate.swift in Sources */,
+				097CF8CC26FCCCA90058E009 /* Users.swift in Sources */,
 				09EBDE9E26BC2DB6003A060B /* LoginView.swift in Sources */,
 				09EBDEA326BCC0E7003A060B /* ColorPallete.swift in Sources */,
 				09163A4B26D7FBB600897A82 /* TextField+extension.swift in Sources */,

@@ -10,6 +10,7 @@ target 'ClientQueueV_3' do
   pod 'Firebase/Storage'
   pod 'Firebase/Database'
   pod 'Firebase/Core'
+  pod 'CodableFirebase'
 
   target 'ClientQueueV_3Tests' do
     inherit! :search_paths
