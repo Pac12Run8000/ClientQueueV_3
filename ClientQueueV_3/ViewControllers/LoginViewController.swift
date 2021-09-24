@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
         DataAccess.fetchCurrentUserTypeAsString() { succeed, error, userType in
            
             if let userType = userType, succeed == true {
-                userType.presentMainControllerIfLoggedIn(viewController: self, svSegue: "segueServiceProvider", clientSegue: "segueClient")
+                userType.presentMainControllerIfLoggedIn(viewController: self, spSegue: "segueServiceProvider", clientSegue: "segueClient")
             }
 
         }
@@ -55,7 +55,7 @@ extension LoginViewController:UITextFieldDelegate {
             return false
         }
         viewModel = LoginViewControllerViewModel(email: email, password: password)
-        viewModel?.validateCredentialsAndAuthenticate(completion: { result in
+        viewModel?.validateCredentialsAndAuthenticate(vc: self, completion: { result in
             switch result {
             case .failure(let errDesc):
                 Alert.pushErrorAlert(msg: errDesc.description, control: self)

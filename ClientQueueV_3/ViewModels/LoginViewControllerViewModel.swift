@@ -22,7 +22,7 @@ struct LoginViewControllerViewModel {
     }
     
     
-    func validateCredentialsAndAuthenticate(completion:@escaping(_ result:Result<Bool, LoginError>) -> ()) {
+    func validateCredentialsAndAuthenticate(vc: UIViewController, completion:@escaping(_ result:Result<Bool, LoginError>) -> ()) {
         
         guard self.email.trimmingCharacters(in: .whitespaces) != "" else {
             completion(.failure(.nowhitespacesAllowedEmail))
@@ -69,7 +69,9 @@ struct LoginViewControllerViewModel {
                     completion(.failure(.noUserType))
                     return
                 }
-                print("userType:\(userType)")
+//                print("userType:\(userType)")
+               
+                userType?.presentMainControllerIfLoggedIn(viewController: vc, spSegue: "segueServiceProvider", clientSegue: "segueClient")
             }
             
         }

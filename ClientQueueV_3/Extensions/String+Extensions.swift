@@ -66,12 +66,12 @@ extension String {
         return true
     }
     
-    func presentMainControllerIfLoggedIn(viewController:UIViewController, svSegue:String, clientSegue:String) {
+    func presentMainControllerIfLoggedIn(viewController:UIViewController, spSegue:String, clientSegue:String) {
         if self == "serviceProvider" {
-//            viewController.performSegue(withIdentifier: "segueServiceProvider", sender: nil)
-            viewController.performSegue(withIdentifier: svSegue, sender: nil)
+
+            viewController.performSegue(withIdentifier: spSegue, sender: nil)
         } else {
-//            viewController.performSegue(withIdentifier: "segueClient", sender: nil)
+
             viewController.performSegue(withIdentifier: clientSegue, sender: nil)
         }
     }
