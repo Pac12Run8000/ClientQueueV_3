@@ -34,17 +34,23 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jjE-EX-rK7">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.015686274509803921" green="0.74901960784313726" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="jjE-EX-rK7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4Kw-Cg-7fB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Boc-nz-HT7" secondAttribute="trailing" constant="20" id="KDD-pC-nJt"/>
                             <constraint firstItem="Boc-nz-HT7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TTk-RO-qcE"/>
                             <constraint firstItem="Boc-nz-HT7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="jvg-kP-K7a"/>
+                            <constraint firstItem="jjE-EX-rK7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="m0p-Rw-jDK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="Q1T-4m-ZhI"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="jjE-EX-rK7" id="AJu-m3-3NE"/>
                         <outlet property="loginView" destination="Boc-nz-HT7" id="A3E-Se-wTf"/>
                         <segue destination="jpz-Wu-RDZ" kind="show" identifier="signUpSegueue" id="eGm-ZC-Ef5"/>
                         <segue destination="rVw-i8-1U9" kind="show" identifier="forgotLoginSegue" id="Rm3-mN-CxY"/>

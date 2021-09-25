@@ -18,7 +18,7 @@ struct Authenticate {
             return
         }
       
-        print("User ID:\(Auth.auth().currentUser?.uid)")
+        
     }
     
     static func logoutAndPopToRoot(control:UIViewController) throws {

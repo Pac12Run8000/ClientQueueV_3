@@ -7,9 +7,17 @@
 
 import UIKit
 import FirebaseAuth
+import CodableFirebase
 
 class ClientMainViewController: UIViewController {
     
+    let uid:String? = Auth.auth().currentUser?.uid
+    var client:Client? {
+        didSet {
+            guard let client = client else {return}
+            print("client:\(client)")
+        }
+    }
     
     @IBOutlet weak var logoutBtnView: LogoutButtonView!
     
@@ -17,9 +25,18 @@ class ClientMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Datafetching.fetchClientModel(uid: uid!) { err, client, success in
+            guard success == true else {
+                return
+            }
+            self.client = client
+        }
+        
+
+        
         logoutBtnView.logoutdelegate = self
         
-        print("Auth: \(Auth.auth().currentUser?.email), uiD: \(Auth.auth().currentUser?.uid)")
+
         
 
         

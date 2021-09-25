@@ -19,6 +19,7 @@ public enum LoginError:Error {
     case noUserId
     case authSignIn(desc:String)
     case noUserType
+    case noDataAvailableForUser
 }
 
 extension LoginError:CustomStringConvertible {
@@ -46,6 +47,8 @@ extension LoginError:CustomStringConvertible {
             return "There was an error with your login."
         case .noUserType:
             return "The app cannot figure out what kind of user you are."
+        case .noDataAvailableForUser:
+            return "The data for this user doesn't exist."
         }
     }
 }

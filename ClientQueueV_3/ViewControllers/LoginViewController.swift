@@ -11,10 +11,11 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var loginView: LoginView!
     
     var viewModel:LoginViewControllerViewModel?
-    
     var dataAccess:DataAccess!
     
     override func viewDidLoad() {
@@ -22,11 +23,12 @@ class LoginViewController: UIViewController {
         
         
         DataAccess.fetchCurrentUserTypeAsString() { succeed, error, userType in
-           
+            self.activityIndicator.startAnimating()
             if let userType = userType, succeed == true {
                 userType.presentMainControllerIfLoggedIn(viewController: self, spSegue: "segueServiceProvider", clientSegue: "segueClient")
+                self.activityIndicator.stopAnimating()
             }
-
+            self.activityIndicator.stopAnimating()
         }
         
         loginView.emailTextField.delegate = self
@@ -46,10 +48,13 @@ extension LoginViewController:UITextFieldDelegate {
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.activityIndicator.startAnimating()
         guard let email = loginView.emailTextField.text else {
+            self.activityIndicator.stopAnimating()
             return false
         }
         guard let password = loginView.passwordTextField.text else {
+            self.activityIndicator.stopAnimating()
             return false
         }
         viewModel = LoginViewControllerViewModel(email: email, password: password)
@@ -57,8 +62,10 @@ extension LoginViewController:UITextFieldDelegate {
             switch result {
             case .failure(let errDesc):
                 Alert.pushErrorAlert(msg: errDesc.description, control: self)
+                self.activityIndicator.stopAnimating()
             case .success(_ ):
                 print("Logged In")
+                self.activityIndicator.stopAnimating()
             }
         })
 
