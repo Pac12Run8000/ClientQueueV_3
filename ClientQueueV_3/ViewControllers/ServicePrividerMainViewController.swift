@@ -26,7 +26,8 @@ class ServicePrividerMainViewController: UIViewController {
         logoutButtonView.logoutdelegate = self
         
         Datafetching.fetchServiceProviderModel(uid: uid!) { err, serviceProvider, success in
-            guard success == true else {
+            guard success == true, err == nil else {
+                Alert.pushErrorAlert(msg: "There was an error fetching Service Provider data. Try again later.", control: self)
                 return
             }
             self.serviceProvider = serviceProvider

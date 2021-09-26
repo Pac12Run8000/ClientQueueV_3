@@ -39,35 +39,18 @@ class Datafetching {
 
 
         }
-        
-        //        Datafetching.fetchUsersSnapshot { snapshot in
-        //            guard let snapshot = snapshot else {
-        //                print("No snapshot data.")
-        //                return
-        //            }
-        //            snapshot.fetchSnaphot(by: self.uid!) { success, snapshot, error in
-        //                guard let data = snapshot?.value else {
-        //                    return
-        //                }
-        //
-        //                guard let serviceProvider = try? FirebaseDecoder().decode(ServiceProvider.self, from: data) else {
-        //                    return
-        //                }
-        //
-        //                self.serviceProvider = serviceProvider
-        //            }
-        //
-        //        }
     }
     
     
     static func fetchClientModel(uid:String, handler:@escaping(_ err:Error?,_ client:Client?,_ success:Bool) -> ()) {
         Datafetching.fetchUsersSnapshot { snapshot in
-            snapshot?.fetchSnaphot(by: uid, completion: { success, childSnapshot, error in
-                guard error == nil else {
-                    handler(LoginError.noDataAvailableForUser, nil, false)
-                    return
-                }
+            guard let snapshot = snapshot else {
+                print("There is no snapshot")
+                handler(SnapShotDataError.noSnapshotExists, nil, false)
+                return
+            }
+
+            snapshot.fetchSnaphot(by: uid, completion: { success, childSnapshot, error in
                 guard let data = childSnapshot?.value else {return}
                 guard let client = try? FirebaseDecoder().decode(Client.self, from: data) else {
                     handler(error, nil, false)
@@ -91,8 +74,8 @@ class Datafetching {
             } else {
                 handler(nil)
             }
-            
         }, withCancel: nil)
-        
     }
+    
+    
 }

@@ -27,6 +27,7 @@ class ClientMainViewController: UIViewController {
         
         Datafetching.fetchClientModel(uid: uid!) { err, client, success in
             guard success == true else {
+                Alert.pushErrorAlert(msg: "There was an error fetching Client data. Try again later.", control: self)
                 return
             }
             self.client = client
