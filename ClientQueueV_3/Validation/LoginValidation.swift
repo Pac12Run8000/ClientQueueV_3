@@ -19,6 +19,7 @@ struct LoginValidation {
                     handler(.failure(.isInvalidEmail))
                     return
                 }
+                
                 handler(.success(true))
         
     }

@@ -13,6 +13,24 @@ import CodableFirebase
 class Datafetching {
     
     
+    static func fetchAllEmailsInTheSystem(completion handler:@escaping(_ emails:[String]?) -> ()) {
+        Datafetching.fetchUsersSnapshot { snapshot in
+            var emails = [String]()
+            if let snapArray = snapshot?.children.allObjects as? [DataSnapshot] {
+                for item in snapArray {
+                    guard let userArray = item.value as? [String:AnyObject] else {return}
+
+                    guard let email = userArray["email"] as? String else {return}
+                    emails.append(email)
+                }
+                handler(emails)
+            } else {
+                handler(nil)
+            }
+        }
+    }
+    
+    
     static func fetchServiceProviderModel(uid:String, handler:@escaping(_ err:Error?,_ serviceProvider:ServiceProvider?,_ success:Bool) -> ()) {
         
         Datafetching.fetchUsersSnapshot { snapshot in

@@ -6,17 +6,28 @@
 //
 
 import UIKit
+import Firebase
 
 class ForgotLoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var errormsgLabel: UILabel!
     
+    var emailArray = [String]() {
+        didSet {
+            print("email:\(emailArray)")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Datafetching.fetchAllEmailsInTheSystem { emails in
+            guard let emails = emails else {return}
+            self.emailArray = emails
+        }
         
+
         emailTextField.becomeFirstResponder()
         emailTextField.delegate = self
         
@@ -27,6 +38,17 @@ class ForgotLoginViewController: UIViewController {
 
     
 
+}
+
+
+extension ForgotLoginViewController {
+    
+    private func isEmailInSystem(sysEmail:String, textFieldEmail:String) -> Bool {
+        if sysEmail != textFieldEmail {
+            return false
+        }
+        return true
+    }
 }
 
 extension ForgotLoginViewController:UITextFieldDelegate {
