@@ -228,7 +228,7 @@
         <!--Service Provider-->
         <scene sceneID="LEZ-yX-lA1">
             <objects>
-                <viewController storyboardIdentifier="ServicePrividerMainViewController" id="8ez-cu-3rV" customClass="ServicePrividerMainViewController" customModule="ClientQueueV_3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ServicePrividerMainViewController" id="8ez-cu-3rV" customClass="ServicePrividerMainViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EG1-gG-pHs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -24,6 +24,7 @@ class ForgotLoginViewController: UIViewController {
         
         Datafetching.fetchAllEmailsInTheSystem { emails in
             guard let emails = emails else {return}
+            
             self.emailArray = emails
         }
         
