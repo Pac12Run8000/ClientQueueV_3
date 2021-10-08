@@ -48,7 +48,7 @@
 		09EBDEAE26BD8B5B003A060B /* LoginViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDEAD26BD8B5B003A060B /* LoginViewControllerViewModel.swift */; };
 		09EBDEB026BF8909003A060B /* LoginValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBDEAF26BF8909003A060B /* LoginValidation.swift */; };
 		09F75C1626E8CBE100B25FD5 /* ClientMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F75C1526E8CBE100B25FD5 /* ClientMainViewController.swift */; };
-		09F75C1826E8CC1400B25FD5 /* ServicePrividerMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F75C1726E8CC1400B25FD5 /* ServicePrividerMainViewController.swift */; };
+		09F75C1826E8CC1400B25FD5 /* ServiceProviderMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F75C1726E8CC1400B25FD5 /* ServiceProviderMainViewController.swift */; };
 		09F75C1A26E8CEE300B25FD5 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F75C1926E8CEE300B25FD5 /* UserType.swift */; };
 		09F75C1F26E942B700B25FD5 /* LogoutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F75C1E26E942B700B25FD5 /* LogoutButtonView.swift */; };
 		09F75C2126E942DB00B25FD5 /* LogoutButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F75C2026E942DB00B25FD5 /* LogoutButtonView.xib */; };
@@ -131,7 +131,7 @@
 		09EBDEAD26BD8B5B003A060B /* LoginViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerViewModel.swift; sourceTree = "<group>"; };
 		09EBDEAF26BF8909003A060B /* LoginValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidation.swift; sourceTree = "<group>"; };
 		09F75C1526E8CBE100B25FD5 /* ClientMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMainViewController.swift; sourceTree = "<group>"; };
-		09F75C1726E8CC1400B25FD5 /* ServicePrividerMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePrividerMainViewController.swift; sourceTree = "<group>"; };
+		09F75C1726E8CC1400B25FD5 /* ServiceProviderMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProviderMainViewController.swift; sourceTree = "<group>"; };
 		09F75C1926E8CEE300B25FD5 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		09F75C1E26E942B700B25FD5 /* LogoutButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButtonView.swift; sourceTree = "<group>"; };
 		09F75C2026E942DB00B25FD5 /* LogoutButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutButtonView.xib; sourceTree = "<group>"; };
@@ -278,7 +278,7 @@
 				09A62F4226C4D0CA00D0B6AB /* SignupViewController.swift */,
 				09A62F4426C4D19000D0B6AB /* ForgotLoginViewController.swift */,
 				09F75C1526E8CBE100B25FD5 /* ClientMainViewController.swift */,
-				09F75C1726E8CC1400B25FD5 /* ServicePrividerMainViewController.swift */,
+				09F75C1726E8CC1400B25FD5 /* ServiceProviderMainViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -665,7 +665,7 @@
 				09EBDE6726BB2BD1003A060B /* AppDelegate.swift in Sources */,
 				09EBDEA626BCF08B003A060B /* LoginError.swift in Sources */,
 				09EBDEB026BF8909003A060B /* LoginValidation.swift in Sources */,
-				09F75C1826E8CC1400B25FD5 /* ServicePrividerMainViewController.swift in Sources */,
+				09F75C1826E8CC1400B25FD5 /* ServiceProviderMainViewController.swift in Sources */,
 				09163A4F26DE6C1200897A82 /* SignupError.swift in Sources */,
 				097CF8CA26FBD9C00058E009 /* Datafetching.swift in Sources */,
 				09A62F6026D1D1CA00D0B6AB /* SignupState.swift in Sources */,

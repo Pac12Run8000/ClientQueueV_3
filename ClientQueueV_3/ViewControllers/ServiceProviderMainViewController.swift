@@ -10,7 +10,7 @@ import FirebaseAuth
 import Firebase
 import CodableFirebase
 
-class ServicePrividerMainViewController: UIViewController {
+class ServiceProviderMainViewController: UIViewController {
     
     @IBOutlet weak var logoutButtonView: LogoutButtonView!
     let uid:String? = Auth.auth().currentUser?.uid
@@ -47,7 +47,7 @@ class ServicePrividerMainViewController: UIViewController {
 
 }
 
-extension ServicePrividerMainViewController:LogoutDelegate {
+extension ServiceProviderMainViewController:LogoutDelegate {
     
     func logout() {
         do {
